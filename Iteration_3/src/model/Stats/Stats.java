@@ -1,3 +1,5 @@
+// figure out experience and level system
+
 public abstract class Stats
 {
 	// primary stats
@@ -64,6 +66,11 @@ public abstract class Stats
 		return lives;
 	}
 
+	publc void setLives(int lives)
+	{
+		this.lives = adjust(lives);
+	}
+
 	public void modStrength(int n)
 	{
 		strength = adjust(strength + n);
@@ -77,7 +84,7 @@ public abstract class Stats
 
 	public void setStrength(int strength)
 	{
-		this.strength = strength;
+		this.strength = adjust(strength);
 	}
 
 	public void modAgility(int n)
@@ -93,7 +100,7 @@ public abstract class Stats
 
 	public void setAgility(int agility)
 	{
-		this.agility = agility;
+		this.agility = adjust(agility);
 	}
 
 	public void modIntellect(int n)
@@ -108,7 +115,7 @@ public abstract class Stats
 
 	public void setIntellect(int intellect)
 	{
-		this.intellect = intellect;
+		this.intellect = adjust(intellect);
 	}
 
 	public void modHardiness(int n)
@@ -124,7 +131,7 @@ public abstract class Stats
 
 	public void setHardiness(int hardiness)
 	{
-		this.hardiness = hardiness;
+		this.hardiness = adjust(hardiness);
 	}
 
 	public void modExperience(int n)
@@ -155,7 +162,7 @@ public abstract class Stats
 
 	public void setMovement(int movement)
 	{
-		this.movement = movement;
+		this.movement = adjust(movement);
 	}
 
 	public void modLevel(int n)
@@ -170,7 +177,7 @@ public abstract class Stats
 
 	public void setLevel(int level)
 	{
-		this.level = level;
+		this.level = adjust(level);
 	}
 
 	public void modMaxHealth(int n)
@@ -185,7 +192,7 @@ public abstract class Stats
 
 	public void setMaxHealth(int maxHealth)
 	{
-		this.maxHealth = maxHealth;
+		this.maxHealth = adjust(maxHealth);
 	}
 
 	public void modCurrentHealth(int n)
@@ -200,7 +207,9 @@ public abstract class Stats
 
 	public void setCurrentHealth(int currentHealth)
 	{
-		this.currentHealth = currentHealth;
+		this.currentHealth = adjust(currentHealth);
+		if(this.currentHealth > this.maxHealth)
+			this.currentHealth = this.maxHealth;
 	}
 
 	public void modMaxMana(int n)
@@ -215,7 +224,7 @@ public abstract class Stats
 
 	public void setMaxMana(int maxMana)
 	{
-		this.maxmana = maxMana;
+		this.maxmana = adjust(maxMana);
 	}
 
 	public void currentMana(int n)
@@ -230,7 +239,9 @@ public abstract class Stats
 
 	public void setCurrentMana(int currentMana)
 	{
-		this.currentMana = currentMana;
+		this.currentMana = adjust(currentMana);
+		if(this.currentMana > this.maxMana)
+			this.currentMana = this.maxMana;
 	}
 
 	public void modSkillPoints(int n)
@@ -245,7 +256,7 @@ public abstract class Stats
 
 	public void setSkillPoints(int skillPoints)
 	{
-		this.skillPoints = skillPoints;
+		this.skillPoints = adjust(skillPoints);
 	}
 
 	public void modBindWounds()
@@ -263,7 +274,7 @@ public abstract class Stats
 
 	public void setBindWounds(int bindWounds)
 	{
-		this.bindWounds = bindWounds;
+		this.bindWounds = adjust(bindWounds);
 	}
 
 	public void modBargain()
@@ -281,7 +292,7 @@ public abstract class Stats
 
 	public void setBargain(int bargain)
 	{
-		this.bargain = bargain;
+		this.bargain = adjust(bargain);
 	}
 
 	public void modObservation()
@@ -299,7 +310,7 @@ public abstract class Stats
 
 	public void setObservation(int observation)
 	{
-		this.observation = observation;
+		this.observation = adjust(observation);
 	}
 
 	// helper method to ensure no stat is below 0 or above 999
