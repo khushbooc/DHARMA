@@ -1,16 +1,14 @@
-package model;
+package model.gameMap;
 
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
- 
- 
+
+
 public class GameMech
 {
  
@@ -95,11 +93,11 @@ public class GameMech
 			} catch (IOException e) {
 				System.out.println(e);
 			}
-		//g2.setColor(GameMap.COLOURCELL);
+		//g2.setColor(gameMap.COLOURCELL);
 		g2.drawImage(cell,x+10,y+10,x+GameMap.HEXSIZE+20,y+GameMap.HEXSIZE+10,0,0,cell.getWidth(),cell.getHeight(),null);
 		//g2.fillPolygon(GameMech.hex(x,y));
 		//g2.fillPolygon(poly);
-		//g2.setColor(GameMap.COLOURGRID);
+		//g2.setColor(gameMap.COLOURGRID);
 		g2.drawPolygon(poly);
 	}
 

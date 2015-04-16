@@ -1,3 +1,4 @@
+package model.statistics;
 public class SummonerStats extends Stats
 {
 	private int enchantment;
@@ -5,7 +6,7 @@ public class SummonerStats extends Stats
 	private int bane;
 	private int staff;
 
-	public SummonerStats
+	public SummonerStats()
 	{
 		super();
 		enchantment = 1;
@@ -28,33 +29,33 @@ public class SummonerStats extends Stats
 
 	public void modEnchantment()
 	{
-		if(skillPoints <= 0)
-			return;
-		--skillPoints;
-		++enchantment;
+//		if(skillPoints <= 0)
+//			return;
+//		--skillPoints;
+//		++enchantment;
 	}
 
 	public void modBoon()
 	{
-		if(skillPoints <= 0)
-			return;
-		--skillPoints;
-		++boon;
+//		if(skillPoints <= 0)
+//			return;
+//		--skillPoints;
+//		++boon;
 	}
 
 	public void modBane()
 	{
-		if(skillPoints <= 0)
-			return;
-		--skillPoints;
-		++bane;
+//		if(skillPoints <= 0)
+//			return;
+//		--skillPoints;
+//		++bane;
 	}
 
 	public void modStaff()
 	{
-		if(skillPoints <= 0)
-			return;
-		--skillPoints;
-		++staff;
+//		if(skillPoints <= 0)
+//			return;
+//		--skillPoints;
+//		++staff;
 	}
 }

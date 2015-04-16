@@ -1,3 +1,4 @@
+package model.statistics;
 public class SneakStats extends Stats
 {
 	private int pickPocket;
@@ -28,33 +29,33 @@ public class SneakStats extends Stats
 
 	public void modPickPocket()
 	{
-		if(skillPoints <= 0)
-			return;
-		--skillPoints;
-		++oneHandedWeapon;
+//		if(skillPoints <= 0)
+//			return;
+//		--skillPoints;
+//		++oneHandedWeapon;
 	}
 
 	public void modDetectRemoveTrap()
 	{
-		if(skillPoints <= 0)
-			return;
-		--skillPoints;
-		++twoHandedWeapon;
+//		if(skillPoints <= 0)
+//			return;
+//		--skillPoints;
+//		++twoHandedWeapon;
 	}
 
 	public void modCreep()
-	{
-		if(skillPoints <= 0)
-			return;
-		--skillPoints;
-		++brawling;
+    {
+//		if(skillPoints <= 0)
+//			return;
+//		--skillPoints;
+//		++brawling;
 	}
 
 	public void modRangedWeapon()
 	{
-		if(skillPoints <= 0)
-			return;
-		--skillPoints;
-		++rangedWeapon;
+//		if(skillPoints <= 0)
+//			return;
+//		--skillPoints;
+//		++rangedWeapon;
 	}
 }

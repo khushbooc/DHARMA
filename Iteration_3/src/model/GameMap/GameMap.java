@@ -1,10 +1,9 @@
-package model;
+package model.gameMap;
 import java.awt.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-import java.awt.event.*; 
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -12,19 +11,19 @@ import java.io.IOException;
  
 public class GameMap
 {
-  private GameMap() {
+  public GameMap() {
 		initGame();
 		createAndShowGUI();
 	}
  
-	public static void main(String[] args)
-	{
-		SwingUtilities.invokeLater(new Runnable() {
-				public void run() {
-				new GameMap();
-				}
-				});
-	}
+//	public static void main(String[] args)
+//	{
+//		SwingUtilities.invokeLater(new Runnable() {
+//				public void run() {
+//				new gameMap();
+//				}
+//				});
+//	}
  
 	final static Color COLOURBACK =  Color.WHITE;
 	final static Color COLOURCELL =  Color.CYAN;	 

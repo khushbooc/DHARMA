@@ -1,4 +1,4 @@
-package model;
+package model.gameMap;
 
 import java.awt.Point;
 

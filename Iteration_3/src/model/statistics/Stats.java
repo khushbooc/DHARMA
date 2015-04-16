@@ -1,3 +1,4 @@
+package model.statistics;
 // figure out experience and level system
 
 public abstract class Stats
@@ -9,6 +10,7 @@ public abstract class Stats
 	private int intellect;
 	private int hardiness;
 	private int movement;
+    private int experience; // Giang added to avoid compile error
 
 	// derived stats
 	private int level;
@@ -22,11 +24,12 @@ public abstract class Stats
 	private int offense;
 	private int defense;
 	private int armor;
+    private int maxmana; //Giang: added to avoid compile error
 
 	// general skills
-	private int bindWounds;
-	private int bargain;
-	private int observation;
+	protected int bindWounds;
+	protected int bargain;
+	protected int observation;
 
 	// skill points to spend on level up
 	private int skillPoints;
@@ -66,7 +69,7 @@ public abstract class Stats
 		return lives;
 	}
 
-	publc void setLives(int lives)
+	public void setLives(int lives)
 	{
 		this.lives = adjust(lives);
 	}
@@ -287,7 +290,7 @@ public abstract class Stats
 
 	public int getBargain()
 	{
-		return bargin;
+		return bargain;
 	}
 
 	public void setBargain(int bargain)

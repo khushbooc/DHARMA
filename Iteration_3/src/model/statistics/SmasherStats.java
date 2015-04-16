@@ -1,3 +1,4 @@
+package model.statistics;
 public class SmasherStats extends Stats
 {
 	private int oneHandedWeapon;
@@ -26,25 +27,25 @@ public class SmasherStats extends Stats
 
 	public void modOneHandedWeapon()
 	{
-		if(skillPoints <= 0)
+		if(getSkillPoints() <= 0)
 			return;
-		--skillPoints;
+//		--skillPoints;
 		++oneHandedWeapon;
 	}
 
 	public void modTwoHandedWeapon()
 	{
-		if(skillPoints <= 0)
+		if(getSkillPoints() <= 0)
 			return;
-		--skillPoints;
+//		--skillPoints;
 		++twoHandedWeapon;
 	}
 
 	public void modBrawling()
 	{
-		if(skillPoints <= 0)
+		if(getSkillPoints() <= 0)
 			return;
-		--skillPoints;
+//		--skillPoints;
 		++brawling;
 	}
 }
