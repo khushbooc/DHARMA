@@ -87,9 +87,7 @@ public class GameMap
  
 	@SuppressWarnings("serial")
 	class DrawingPanel extends JPanel
-	{		
-		
- 
+	{
 		public DrawingPanel()
 		{	
 			setBackground(COLOURBACK);
@@ -99,11 +97,12 @@ public class GameMap
  
 		public void paintComponent(Graphics g)
 		{
-			Graphics2D g2 = (Graphics2D)g;
+            Graphics2D g2 = (Graphics2D)g;
 			g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 			g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
 			super.paintComponent(g2);
 			//draw grid
+
 			for (int i=0;i<BSIZE;i++) {
 				for (int j=0;j<BSIZE;j++) {
 					GameMech.drawHex(i,j,g2);

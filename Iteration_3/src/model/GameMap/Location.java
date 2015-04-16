@@ -2,9 +2,6 @@ package model.gameMap;
 
 import java.awt.Point;
 
-
-
-
 @SuppressWarnings("serial")
 public class Location extends Point{
 
@@ -30,13 +27,13 @@ public class Location extends Point{
 	}
 	
 	public String toString(){
-		return "Location:" + this.x + "," + this.y;
+        return "Location:" + this.x + "," + this.y;
 	}
 	public void add(Point point) {  
 		this.x += point.getX();
 		this.y += point.getY();
 	}
-	
+
 	public Location addLocation(int x, int y){
 		this.x+=x;
 		this.y+=y;

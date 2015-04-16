@@ -11,10 +11,6 @@ import javax.imageio.ImageIO;
 
 public class GameMech
 {
- 
- 
-	
- 
 	//Constants
 	public final static boolean orFLAT= true;
 	public final static boolean orPOINT= false;

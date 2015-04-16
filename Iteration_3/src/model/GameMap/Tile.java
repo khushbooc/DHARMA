@@ -2,28 +2,17 @@ package model.gameMap;
 
 
 
-public class Tile {	
-	
-	
-	private Location location;
-	
+public class Tile extends MapObject{
 	// private AreaEffect areaEffect;
-	
 
-	public Tile(int x,int y){ //will take more parameters(maybe)
-		
-		location= new Location(x,y);
-	}  
-	
-	public Tile (Tile tile) {
-		this.location = tile.getLocation();
+	public Tile(Location location){ //will take more parameters(maybe)
+        super(location);
 	}
 	
-	/*
-	public Tile getTile(){  //not sure if this is needed. Leaving it here for later
-		return this;
-	}
-	*/ 
+//	public Tile (Tile tile) {
+//		this.location = tile.getLocation();
+//	}
+
 	
 	public Location getLocation(){  // can be deleted later. Used for debugging.
 		return location;
