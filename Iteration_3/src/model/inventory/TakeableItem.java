@@ -1,21 +1,25 @@
-import model.GameMap;
+package model.inventory;
+
+import model.gameMap.Entity;
+import model.gameMap.Item;
+import model.gameMap.Location;
 
 //created by ashish aggarwal
 
-public class TakeableItem extends Item{
-	 public TakeableItem(Location location, String name){
-	        super(location);
-	        this.name = name;
-	    }
+public abstract class TakeableItem extends Item {
 
-	    public boolean isCollidable();
-	    {
+    public TakeableItem(Location location, String name){
+	        super(location, name);
+    }
+
+    public boolean isCollidable()
+    {
 	    	return true;
-	    }
-
-	    public void onTouch(Entity e);
-	    { 
-	        
-	    }
-
+    }
+    @Override
+    public void onTouch(Entity e)
+    {
+	  //TODO
+    }
+    public abstract void use (Entity e);
 }

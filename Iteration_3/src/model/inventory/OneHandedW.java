@@ -1,10 +1,18 @@
-import model.GameMap;
+package model.inventory;
 
-public class OneHandedW extends EquipableItem{
+import model.gameMap.Entity;
+import model.gameMap.Location;
+
+public class OneHandedW extends EquipableItem {
 	public OneHandedW(Location location, String name){
-        super(location);
-        this.name = name;
+        super(location, name);
     }
+
+    @Override
+    public void use(Entity e){
+        //TODO
+    }
+
 
 
 }

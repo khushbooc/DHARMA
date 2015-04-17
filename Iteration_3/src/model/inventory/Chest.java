@@ -1,9 +1,17 @@
-import model.GameMap;
+package model.inventory;
 
-public class Chest extend EquipableItem{
+import model.gameMap.Entity;
+import model.gameMap.Location;
+
+
+public class Chest extends EquipableItem{
 	public Chest(Location location, String name){
-        super(location);
-        this.name = name;
+        super(location, name);
 	}
+
+    @Override
+    public void use(Entity e){
+        //TODO
+    }
 
 }
