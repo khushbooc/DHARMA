@@ -47,7 +47,6 @@ public class Tile extends MapObject{
 	public String toString() {
 		String result = "";
 		result += "Tile:" + this.location.getX() + "," + this.location.getY();
-		
 		return result;
 	}
 	
