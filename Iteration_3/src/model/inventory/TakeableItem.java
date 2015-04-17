@@ -2,7 +2,7 @@
 package model.inventory;
 
 
-import model.gameMap.Entity;
+import model.entity.Entity;
 import model.gameMap.Item;
 import model.gameMap.Location;
 

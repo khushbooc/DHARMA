@@ -1,6 +1,8 @@
 package model.gameMap;
 
 
+import model.entity.Entity;
+
 public class LevelUp extends AreaEffect {
 
     public LevelUp(String name){

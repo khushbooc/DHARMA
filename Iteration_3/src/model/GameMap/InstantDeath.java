@@ -1,5 +1,7 @@
 package model.gameMap;
 
+import model.entity.Entity;
+
 public class InstantDeath extends AreaEffect{
 
     public InstantDeath(String name){

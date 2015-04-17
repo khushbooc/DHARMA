@@ -1,5 +1,7 @@
 package model.gameMap;
 
+import model.entity.Entity;
+
 public abstract class AreaEffect {
     String name;
     public AreaEffect(String name){

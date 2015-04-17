@@ -1,5 +1,7 @@
 package model.gameMap;
 
+import model.entity.Entity;
+
 public class TakeDamage extends AreaEffect {
 
     public TakeDamage(String name){

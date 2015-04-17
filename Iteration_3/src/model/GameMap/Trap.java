@@ -1,6 +1,8 @@
 package model.gameMap;
 
 
+import model.entity.Entity;
+
 public class Trap extends AreaEffect{
 
     public Trap(String name){

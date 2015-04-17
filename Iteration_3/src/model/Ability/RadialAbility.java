@@ -1,5 +1,5 @@
 package model.ability;
-import model.gameMap.Entity;
+import model.entity.Entity;
 public abstract class RadialAbility extends Ability
 {
 	private int degree;

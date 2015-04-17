@@ -1,6 +1,6 @@
 
 package model.inventory;
-import model.gameMap.Entity;
+import model.entity.Entity;
 import model.gameMap.Location;
 
 

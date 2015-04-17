@@ -1,5 +1,7 @@
 package model.gameMap;
 
+import model.entity.Entity;
+
 /**
  * Created by giangnguyen on 4/16/15.
  */
