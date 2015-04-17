@@ -1,5 +1,19 @@
-import model.gameMap;
+package model.inventory;
 
-public class Potion {
+
+import model.gameMap.Entity;
+import model.gameMap.Location;
+
+public class Potion extends NonEquipableItem {
+
+    public Potion(Location location, String name){
+        super(location, name);
+
+    }
+
+    @Override
+    public void use(Entity e){
+        //TODO
+    }
 
 }

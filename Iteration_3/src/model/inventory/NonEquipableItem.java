@@ -1,10 +1,8 @@
-<<<<<<< HEAD
-import model.gameMap;
-=======
+
 package model.inventory;
 import model.gameMap.Entity;
 import model.gameMap.Location;
->>>>>>> 40b07fdd36a97c09e828802d384d89a0cdad894a
+
 
 
 public abstract class NonEquipableItem extends TakeableItem {
