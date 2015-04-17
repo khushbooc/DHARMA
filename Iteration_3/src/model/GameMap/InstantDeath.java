@@ -1,10 +1,9 @@
 package model.gameMap;
 
 public class InstantDeath extends AreaEffect{
-    private String name;
 
     public InstantDeath(String name){
-        this.name = name;
+        super(name);
     }
 
     @Override

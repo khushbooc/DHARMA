@@ -5,10 +5,8 @@ package model.gameMap;
  */
 public class HealDamage extends AreaEffect {
 
-    private String name;
-
     public HealDamage(String name){
-        this.name = name;
+        super(name);
     }
 
     @Override

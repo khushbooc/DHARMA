@@ -2,10 +2,9 @@ package model.gameMap;
 
 
 public class Trap extends AreaEffect{
-    private String name;
 
     public Trap(String name){
-        this.name = name;
+        super(name);
     }
 
     @Override

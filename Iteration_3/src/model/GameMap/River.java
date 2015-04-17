@@ -3,17 +3,22 @@ package model.gameMap;
 /**
  * Created by giangnguyen on 4/16/15.
  */
-public class Mountain extends Terrain {
+public class River extends Terrain {
 
-    public Mountain(String name){
+    public River(String name){
         super(name);
     }
     @Override
     public boolean isPassable(){
-        return false;
+        return true;
     }
 
     String getName(){
         return name;
     }
+
+    public void affectEntity(){
+        //TODO
+    }
+
 }

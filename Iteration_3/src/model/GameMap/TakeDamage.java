@@ -1,10 +1,9 @@
 package model.gameMap;
 
 public class TakeDamage extends AreaEffect {
-    private String name;
 
     public TakeDamage(String name){
-        this.name = name;
+        super(name);
     }
 
     @Override

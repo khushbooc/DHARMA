@@ -3,14 +3,14 @@ package model.gameMap;
 /**
  * Created by giangnguyen on 4/16/15.
  */
-public class Mountain extends Terrain {
+public class Grass extends Terrain{
 
-    public Mountain(String name){
+    public Grass (String name){
         super(name);
     }
     @Override
     public boolean isPassable(){
-        return false;
+        return true;
     }
 
     String getName(){
