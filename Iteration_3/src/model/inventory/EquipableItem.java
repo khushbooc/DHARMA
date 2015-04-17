@@ -1,4 +1,4 @@
-import model.GameMap;
+import model.gameMap;
 
 
 public class EquipableItem extends TakeableItem{

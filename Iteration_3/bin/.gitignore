@@ -1,4 +1,5 @@
-/entity/
+/Controller/
 /model/
 /res/
-/stats/
+/Utility/
+/utilities/

@@ -1,4 +1,4 @@
-import model.GameMap;
+import model.gameMap;
 
 public class TwoHandedW extends EquipableItem{
 	public TwoHandedW(Location location, String name){

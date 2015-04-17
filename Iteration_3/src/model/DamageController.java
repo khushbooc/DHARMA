@@ -1,3 +1,5 @@
+package model;
+
 // mainly for testing combat code, not an actualy class we will use.
 
 import java.util.Random;
