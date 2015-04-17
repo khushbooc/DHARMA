@@ -19,12 +19,13 @@ public class DamageController
 	{
 		int critical;
 		int damage;
-		double base, random, criticalStrike, modifier, offense, defense, level;
+		double base, random, criticalStrike, modifier, offense, defense, level, skill;
 
 		level = 100;
 		offense = 450;
 		defense = 300;
 		base = 90;
+		skill = 50;
 
 		random = (double) random(85,100) / 100;
 		critical = random(1,16);
@@ -34,7 +35,7 @@ public class DamageController
 		else
 			criticalStrike = 1;
 
-		modifier = random * criticalStrike;
+		modifier = random * criticalStrike * (1 + 0.5 * skill/125);
 		damage = (int) Math.floor(((2 * level + 10) / 250 * offense / defense * base + 2) * modifier);
 
 		return damage;

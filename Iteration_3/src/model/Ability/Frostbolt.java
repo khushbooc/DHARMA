@@ -10,7 +10,7 @@ public class Frostbolt extends LinearAbility
 		this.setLevelRequirement(1);
 		this.setName("Frostbolt");
 		this.setRadius(100);
-		this.type = "bane";
+		// this.type = "bane";
 	}
 
 	public Frostbolt(String name, int cost, int levelRequirement, int radius, int damage)
@@ -31,12 +31,6 @@ public class Frostbolt extends LinearAbility
 	{
 		this.damage = damage;
 	}
-	/*
-	public String getType()
-	{
-		return type;
-	}
-	*/
 
-	public abstract boolean use();
+	public abstract boolean use()
 }

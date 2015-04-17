@@ -61,6 +61,16 @@ public abstract class Ability
 		this.radius = radius;
 	}
 
+	// random number generator for all abilities
+	// generate a random int within [min, max]
+	public static int random(int min, int max)
+	{
+		Random random = new Random();
+		int randomNumber = random.nextInt(max - min + 1) + min;
+
+		return randomNumber;
+	}
+
 	public abstract boolean use();
 	public abstract boolean inRadius();
 }
