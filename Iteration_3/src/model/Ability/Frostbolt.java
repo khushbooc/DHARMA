@@ -21,10 +21,11 @@ public class Frostbolt extends LinearAbility
 	public Frostbolt(String name, int cost, int levelRequirement, int radius, int damage)
 	{
         super(name, cost, levelRequirement, radius);
-//		this.name = name;
-//		this.cost = cost;
-//		this.levelRequirement = levelRequirement;
-//		this.radius = radius;
+        setName(name);
+        setCost(cost);
+        setLevelRequirement(levelRequirement);
+        setRadius(radius);
+        setDamage(damage);
 		this.damage = damage;
 	}
 

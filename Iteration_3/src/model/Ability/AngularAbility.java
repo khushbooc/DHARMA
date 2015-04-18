@@ -7,14 +7,13 @@ public abstract class AngularAbility extends Ability
 	{
 		super();
 		degree = 90;
-//		radius = 1; commemented out to avoid compile error
+		setRadius(1);
 	}
 
 	public AngularAbility(String name, int cost, int levelRequirement, int degree, int radius)
 	{
 		super(name, cost, levelRequirement, radius);
 		this.degree = degree;
-//		this.radius = radius;
 	}
 
 	public int getDegree()
