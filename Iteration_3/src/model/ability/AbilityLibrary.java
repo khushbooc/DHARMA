@@ -6,20 +6,15 @@ import java.util.List;
 import model.ability.Ability;
 import model.entity.Entity;
 
-
-//TODO: add the following operation: useAbility(int position)
-
-/**
- * The purpose of this class is to serve as a container for Spells, passing commands downward from [TBD, Entity?]
- * @author Jason Owens, Matthew Kroeze
+/*
+ * @author Aaron Iglesias
  */
 public abstract class AbilityLibrary {
     private ArrayList<Ability> learnedAbilities;
     private ArrayList<Ability> unlearnedAbilities;
 
-    private Entity owner;
+    private Entity avatar;
 
-    /* -------------------- CONSTRUCTORS -------------------- */
     public AbilityLibrary(Entity myEntity){
         learnedAbilities = new ArrayList<Ability>();
         unlearnedAbilities = new ArrayList<Ability>();
@@ -28,19 +23,9 @@ public abstract class AbilityLibrary {
         this.addToLibrary(new HealAbility());
     }
 
-    /*-----------Mutators-----------*/
     protected void addAbility(Ability ability){
         learnedAbilities.add(ability);
         unlearnedAbilities.remove(ability);
-    }
-    protected boolean forgetAbility(String abilityName){
-        for(Ability s : learnedAbilities) {
-            if (s.getName().equals(abilityName)) {
-                unlearnedAbilities.add(s);
-                return learnedAbilities.remove(s);
-            }
-        }
-        return false; //ability isn't known
     }
 
     protected void addToLibrary(Ability ability){
@@ -51,14 +36,6 @@ public abstract class AbilityLibrary {
         return (learnedAbilities.remove(ability) || unlearnedAbilities.remove(ability));
     }
 
-    /*-----------Accessors-----------*/
-    /*
-     * @author Jason Owens
-     *
-     * Checks to see if library contains ability.
-     * @returns whether or not the ability is found 
-     * @param abilityName the name of the ability 
-     */
     public boolean hasAbility(String abilityName){
         for(Ability s : learnedAbilities) {
             if (abilityName.equals(s.getName())) {
@@ -68,18 +45,6 @@ public abstract class AbilityLibrary {
         return false;
     }
     
-    /*-----------Accessors-----------*/
-
-
-    /**
-     * @author Jason Owens
-     *
-     * Activates ability. 
-     * TODO Maybe store abilities in a Map<Name, Ability>? - Kyle
-     *@returns whether or not the ability is found  
-     *@params abilityName the String form of the ability to perform
-     *@params callingEntity the Entity using the ability
-     */
     public boolean performActiveAbility(String abilityName, Entity callingEntity){
         for(Ability a : learnedAbilities) {
             if (a.getName().equals(abilityName)) {
@@ -90,13 +55,6 @@ public abstract class AbilityLibrary {
         return false;
     }
 
-
-    /**
-     * Checks to see if a skill can be moved from unlearnedSkills to LearnedSkill based 
-     * on new Stats.
-     * @author Jason Owens
-     *
-     */
     public void update(){
         for (Ability ability : unlearnedAbilities){
             if (ability.meetsStatRequirements(owner)){
@@ -104,7 +62,6 @@ public abstract class AbilityLibrary {
             }
         }
     }
-
 
     public boolean performActiveAbility(int position, Entity callingEntity){
         position = position -1;

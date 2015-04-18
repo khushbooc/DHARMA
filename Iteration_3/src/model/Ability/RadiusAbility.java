@@ -4,7 +4,6 @@ import model.entity.Entity;
 import java.util.Random;
 public abstract class RadiusAbility extends Ability
 {
-	private int effect;
 	private int radius;
 
 	public RadiusAbility()
@@ -13,20 +12,10 @@ public abstract class RadiusAbility extends Ability
 		radius = 1;
 	}
 
-	public Ability(String name, int cost, int levelRequirement, int radius, int base)
+	public RadiusAbility(String name, int cost, int levelRequirement, int radius, int base)
 	{
 		super(name, cost, levelRequirement);
 		this.radius = radius;
-	}
-
-	public int getEffect()
-	{
-		return effect;
-	}
-
-	public void setEffect(int effect)
-	{
-		this.effect = effect;
 	}
 
 	public int getRadius()
