@@ -10,6 +10,7 @@ public abstract class Stats
 	private int hardiness;
 	private int movement;
     private int experience; // Giang added to avoid compile error
+    private int critical;
 
 	// derived stats
 	private int level;
@@ -167,6 +168,30 @@ public abstract class Stats
 		this.experience = experience;
 	}
 
+	public int getCritical()
+	{
+		return critical;
+	}
+
+	public void setCritical(int critical)
+	{
+		if(critical < 0 || critical > 3)
+			return;
+		else
+			this.critical = critical;
+	}
+
+	public void modCritical(int n)
+	{
+		boolean tooLow = critical + n < 0;
+		boolean tooHigh = critical + n > 3;
+
+		if(tooLow || tooHigh)
+			return;
+		else
+			critical = critical + n;
+	}
+
 	public void modMovement(int n)
 	{
 		movement = adjust(movement + n);
@@ -259,6 +284,26 @@ public abstract class Stats
 		this.currentMana = adjust(currentMana);
 		if(this.currentMana > this.maxMana)
 			this.currentMana = this.maxMana;
+	}
+
+	public void modCurrentMana(int n)
+	{
+		boolean tooLow, tooHigh;
+
+		tooLow = currentMana + n < 0;
+		tooHigh = currentMana + n > maxMana;
+
+		if(tooLow)
+		{
+			currentMana = 0;
+			return;
+		}
+		if(tooHigh)
+		{
+			currentMana = maxMana;
+			return;
+		}
+		
 	}
 
 	public void modSkillPoints(int n)

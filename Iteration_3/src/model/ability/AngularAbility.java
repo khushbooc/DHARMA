@@ -1,5 +1,5 @@
 package model.ability;
-public abstract class AngularAbility extends Ability
+public abstract class AngularAbility extends RadiusAbility
 {
 	private int degree;
 

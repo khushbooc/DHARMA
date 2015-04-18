@@ -1,27 +1,51 @@
 package model.ability;
+import model.entity.Entity;
 import java.util.Random;
+
 public abstract class Ability
 {
 	private String name;
+	private int base;
 	private int cost;
 	private int effect;
 	private int levelRequirement;
-	private int radius;
 
 	public Ability()
 	{
 		name = "";
+		base = 0;
 		cost = 0;
+		effect = 0;
 		levelRequirement = 0;
-		radius = 1;
 	}
 
-	public Ability(String name, int cost, int levelRequirement, int radius)
+	public Ability(String name, int cost, int levelRequirement, int base, int effect)
 	{
 		this.name = name;
 		this.cost = cost;
 		this.levelRequirement = levelRequirement;
-		this.radius = radius;
+		this.base = base;
+		this.effect = effect;
+	}
+
+	public int getBase()
+	{
+		return base;
+	}
+
+	public void setBase(int base)
+	{
+		this.base = base;
+	}
+
+	public String getEffect()
+	{
+		return effect;
+	}
+
+	public void setEffect(String effect)
+	{
+		this.effect = effect;
 	}
 
 	public String getName()
@@ -44,14 +68,14 @@ public abstract class Ability
 		this.cost = cost;
 	}
 
-	public int getEffect()
+	public int getBase()
 	{
-		return effect;
+		return base;
 	}
 
-	public void setEffect(int effect)
+	public void setBase(int base)
 	{
-		this.effect = effect;
+		this.base = base;
 	}
 
 	public int getLevelRequirement()
@@ -64,16 +88,6 @@ public abstract class Ability
 		this.levelRequirement = levelRequirement;
 	}
 
-	public int getRadius()
-	{
-		return radius;
-	}
-
-	public void setRadius(int radius)
-	{
-		this.radius = radius;
-	}
-
 	// random number generator for all abilities
 	// generate a random int within [min, max]
 	public static int random(int min, int max)
@@ -83,8 +97,4 @@ public abstract class Ability
 
 		return randomNumber;
 	}
-
-	public abstract boolean use();
-	public abstract boolean inRadius();
-	private abstract void scaleEffect(Entity entity);
 }
