@@ -86,5 +86,5 @@ public abstract class Ability
 
 	public abstract boolean use();
 	public abstract boolean inRadius();
-	private abstract void scaleEffect(Entity entity);
+	public abstract void scaleEffect(Entity entity);
 }

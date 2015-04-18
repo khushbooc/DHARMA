@@ -39,7 +39,7 @@ public class ConeOfCold extends AngularAbility
 	}
 
     @Override
-	public boolean use(Entity caster, Entity )
+	public boolean use(Entity caster, Entity)
 	{
         return true; //temporary
     }

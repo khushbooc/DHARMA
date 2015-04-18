@@ -1,5 +1,7 @@
 package model.entity;
 
+import model.ability.Ability;
+import model.ability.AbilityLibrary;
 import model.inventory.EquipableItem;
 import model.inventory.EquipmentContainer;
 import model.inventory.Inventory;
@@ -10,7 +12,7 @@ import model.statistics.Stats;
 /**
  * Created by giangnguyen on 4/16/15.
  */
-public class Entity {
+public abstract class Entity {
 	protected Occupation occupation;
 	protected Inventory inventory ;
 	protected EquipmentContainer equicontainer;
@@ -21,29 +23,15 @@ public class Entity {
 		this.inventory = inventory;
 		this.equicontainer= equicontainer;
 	}
-	public Occupation getOccupation()
-	{
-		return this.occupation;
-		
-	}
-	public Inventory getInventory(){
-		 return this.inventory;
-		 
-	}
-	public EquipmentContainer getEquipmentContainer()
-	{
-		return this.equicontainer;
-	}
+	public abstract Occupation getOccupation();
+	public abstract Inventory getInventory();
+	public abstract EquipmentContainer getEquipmentContainer();
 	
-	public void addToInventory(TakeableItem takeableitem){
-		inventory.add(takeableitem);
-		
-	}
+	public abstract void addToInventory(TakeableItem takeableitem);
 	
-	public void EquipItem(EquipableItem equiItem)
-	{
-		equicontainer.add(equiItem);
-		inventory.remove(equiItem);
-	}
+	public abstract void equipItem(EquipableItem equiItem);
+    public abstract void removeItem(TakeableItem ti);
+    public abstract void unequipItem(EquipableItem eqi);
+    public abstract void useAbility(Ability ability);
 }
 
