@@ -1,5 +1,6 @@
 package model.entity;
 
-public class Avatar {
+public class Avatar extends Entity {
+	
 
 }
