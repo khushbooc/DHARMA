@@ -4,7 +4,7 @@ public class ConeOfCold extends AngularAbility
 	private int damage;
 	// private String type;
 
-	public Frostbolt()
+	public ConeOfCold()
 	{
 		this.damage = 90;
 		this.setCost(1);
@@ -13,10 +13,10 @@ public class ConeOfCold extends AngularAbility
 		this.setRadius(3);
 	}
 
-	public Frostbolt(String name, int cost, int levelRequirement, int radius, int damage)
+	public ConeOfCold(String name, int cost, int levelRequirement, int radius, int damage)
 	{
         super(name, cost, levelRequirement, radius);
- 		setName(name);
+		setName(name);
 		setCost(cost);
 		setLevelRequirement(levelRequirement);
 		setRadius(radius);
