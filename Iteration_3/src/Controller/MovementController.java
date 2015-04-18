@@ -4,10 +4,6 @@ import java.awt.Point;
 
 import model.gameMap.GameMap;
 
-
-
-
-
 public abstract class MovementController {
 	public static final Point NORTH = new Point(0,-1);
 	public static final Point SOUTH = new Point(0,1);

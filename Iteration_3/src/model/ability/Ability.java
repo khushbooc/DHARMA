@@ -97,4 +97,11 @@ public abstract class Ability
 
 		return randomNumber;
 	}
+<<<<<<< HEAD
+=======
+
+	public abstract boolean use();
+	public abstract boolean inRadius();
+	public abstract void scaleEffect(Entity entity);
+>>>>>>> 7dea9ba790da6af52b98d8e84e5dfe9fe4e7c27a
 }
