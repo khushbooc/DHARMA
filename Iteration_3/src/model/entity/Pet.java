@@ -1,4 +1,4 @@
-import model.Entity;
+/*import model.Entity;
 
 public class Pet extends NPC {
 	
@@ -6,4 +6,4 @@ public class Pet extends NPC {
 		// TODO Auto-generated constructor stub
 	}
 
-}
+}*/

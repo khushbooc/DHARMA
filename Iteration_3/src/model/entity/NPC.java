@@ -1,4 +1,4 @@
-import model.entity;
+/*import model.entity;
 
 public class NPC {
 	public NPC(Occupation occupation, Inventory inventory,
@@ -6,4 +6,4 @@ public class NPC {
 		super(occupation, inventory, equicontainer);
 		
 
-}
+}*/
