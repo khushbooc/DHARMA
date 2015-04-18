@@ -1,9 +1,14 @@
-/*import model.Entity;
+package model.entity;
 
-public class Pet extends NPC {
-	
-		super(occupation, inventory, equicontainer);
-		// TODO Auto-generated constructor stub
-	}
+import model.entity.NPC;
+import model.inventory.EquipmentContainer;
+import model.inventory.Inventory;
+import model.occupation.Occupation;
 
-}*/
+public abstract class Pet extends NPC {
+
+    public Pet(Occupation oc, Inventory inv, EquipmentContainer eq) {
+        super(oc, inv, eq);
+    }
+
+}
