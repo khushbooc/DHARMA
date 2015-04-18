@@ -5,9 +5,11 @@ import model.statistics.Stats;
 import utilities.SpriteSheetUtility;
 
 public class Smasher extends Occupation {
+	private AbilityLibrary abl;
+	private Stats stat;
 
-	public Smasher(AbilityLibrary abilitylibrary, Stats stat) {
-		super(abilitylibrary, stat);
+	public Smasher() {
+		//super(this.abilitylibrary, this.stat);
 		// TODO Auto-generated constructor stub
 	}
 

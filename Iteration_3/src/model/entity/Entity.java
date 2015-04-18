@@ -17,6 +17,10 @@ public abstract class Entity {
 	protected Inventory inventory ;
 	protected EquipmentContainer equicontainer;
 	
+	public Entity(Occupation occupation){
+		this.occupation = occupation;
+	}
+	
 	
 	public Entity(Occupation occupation, Inventory inventory , EquipmentContainer equicontainer) {
 		this.occupation = occupation;

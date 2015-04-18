@@ -10,6 +10,11 @@ import utilities.SpriteSheetUtility;
 public abstract class Occupation {
 	 private AbilityLibrary abilitylibrary ;
 	 private Stats stat;
+	 protected SpriteSheetUtility spritesheet;
+	 public Occupation()
+	 {
+		 //To do Nothing will remove later when ability library is created
+	 }
 	 public Occupation (AbilityLibrary abilitylibrary, Stats stat)
 	 {
 		 this.abilitylibrary = abilitylibrary;
