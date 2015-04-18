@@ -1,4 +1,5 @@
 package model.ability;
+import java.util.Random;
 public abstract class Ability
 {
 	private String name;
