@@ -9,8 +9,9 @@ public class Tile extends MapObject{
     private Item item;
     private Entity entity;
 
-    public Tile(Location location){
+    public Tile(Location location,Terrain terrian){
         super(location);
+        this.terrain=terrian;
     }
 	public Tile(Location location, AreaEffect aoe, Terrain terrain, Item item, Entity entity){
         super(location);

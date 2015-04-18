@@ -97,26 +97,29 @@ public class GameMech
 		g2.drawPolygon(poly);
 	}
 
-	public static void fillHex(int i, int j, int n, Graphics2D g2) {
+	public static void fillHex(int i, int j, Tile tile, Graphics2D g2) {
 		char c='o';
 		int x = i * (s+t);
 		int y = j * h + (i%2) * h/2;
-		if (n < 0) {
-			g2.setColor(GameMap.COLOURONE);
-			g2.fillPolygon(hex(x,y));
-			g2.setColor(GameMap.COLOURONETXT);
-			c = (char)(-n);
-			g2.drawString(""+c, x+r+BORDERS, y+r+BORDERS+4); // handle XYVertex
+		BufferedImage cell=tile.getTerrain().getImage();
+		//if (i > 5 || j > 5) {
+			g2.drawImage(cell,x+10,y+10,x+GameMap.HEXSIZE+20,y+GameMap.HEXSIZE+10,0,0,cell.getWidth(),cell.getHeight(),null);
+			//g2.setColor(GameMap.COLOURONE);
+			//g2.fillPolygon(hex(x,y));
+			//g2.setColor(GameMap.COLOURONETXT);
+			//c = (char)(-n);
+			//g2.drawString(""+c, x+r+BORDERS, y+r+BORDERS+4); // handle XYVertex
 			//g2.drawString(x+","+y, x+r+BORDERS, y+r+BORDERS+4);
-		}
-		if (n > 0) {
+		//}
+		/*if (n > 0) {
 			g2.setColor(GameMap.COLOURTWO);
 			g2.fillPolygon(hex(x,y));
 			g2.setColor(GameMap.COLOURTWOTXT);
 			c = (char)n;
 			g2.drawString(""+c, x+r+BORDERS, y+r+BORDERS+4); // handle XYVertex
 			//g2.drawString(i+","+j, x+r+BORDERS, y+r+BORDERS+4);
-		}
+			 
+		}*/
 	}
  
 

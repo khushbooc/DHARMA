@@ -11,6 +11,11 @@ import java.io.IOException;
  
 public class GameMap
 {
+	
+	private DrawingPanel panel;
+	private JFrame frame; 
+	//private Terrain[][] terrain;
+	
   public GameMap() {
 		initGame();
 		createAndShowGUI();
@@ -33,17 +38,29 @@ public class GameMap
 	final static Color COLOURTWO = new Color(0,0,0,200);
 	final static Color COLOURTWOTXT = new Color(255,100,255);
 	final static int EMPTY = 0;
-	final static int BSIZE = 15; //board size.
+	final static int BSIZE = 30; //board size.
 	final static int HEXSIZE = 80;	//hex size in pixels
 	final static int BORDERS = 10;  
-	final static int SCRSIZE = HEXSIZE * (BSIZE + 1) + BORDERS*3; //screen size (vertical dimension).
- 
-	int[][] board = new int[BSIZE][BSIZE];
+	//final static int SCRSIZE = HEXSIZE * (BSIZE + 1) + BORDERS*3; //screen size (vertical dimension).
+	final static int WORLD_SIZE_X=1600;
+	final static int WORLD_SIZE_Y=1200;
+	final static int VIEWPORT_SIZE_X=800;
+	final static int VIEWPORT_SIZE_Y=600;
+	//int[][] board = new int[BSIZE][BSIZE];
 	private BufferedImage stone;
-	 Tile[][] map;
+	private BufferedImage grass;
+	private BufferedImage mountain;
+	private BufferedImage river;
+	 Tile[][] map=new Tile[BSIZE][BSIZE];
  
 	void initGame(){
-		
+		 try {
+			    grass = ImageIO.read(new File("src/res/grass.png"));
+			    mountain = ImageIO.read(new File("src/res/Geomorph.png"));
+			} catch (IOException e) {
+				System.out.println(e);
+			}
+		//terrain =new Terrain[BSIZE][BSIZE];
  
 		GameMech.setXYasVertex(false); //RECOMMENDED: leave this as FALSE.
  
@@ -52,14 +69,20 @@ public class GameMap
  
 		for (int i=0;i<BSIZE;i++) {
 			for (int j=0;j<BSIZE;j++) {
-				board[i][j]=EMPTY;
+				//board[i][j]=EMPTY;
+				Location loc=new Location(i,j);
+				if((i>1 && i<BSIZE-2) && (j>1&&j<BSIZE-2)){
+						
+						//terrain[i][j] = new Grass("Grass",grass);
+						map[i][j]=new Tile(loc, new Grass("Grass",grass));
+				}
+				else{
+					//terrain[i][j] = new Mountain("Mountain",mountain);
+					map[i][j]=new Tile(loc,new Mountain("Mountain",mountain));
+				}
 			}
 		}
-		try {
-		    stone = ImageIO.read(new File("src/res/Geomorph.png"));
-		} catch (IOException e) {
-			System.out.println(e);
-		}
+		
 		//set up board here
 		//board[3][3] =(int)'A' ;
 		//board[4][3] = (int)'Q';
@@ -68,17 +91,17 @@ public class GameMap
  
 	private void createAndShowGUI()
 	{
-		DrawingPanel panel = new DrawingPanel();
+		panel = new DrawingPanel();
  
  
 		//JFrame.setDefaultLookAndFeelDecorated(true);
-		JFrame frame = new JFrame("Hex Testing 4");
+		frame = new JFrame("Hex Testing 4");
 		frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
 		Container content = frame.getContentPane();
 		content.add(panel);
+		panel.setLocation(100,100);
 		
-		
-		frame.setSize( (int)(SCRSIZE/1.23), SCRSIZE);
+		frame.setSize( VIEWPORT_SIZE_X, VIEWPORT_SIZE_Y);
 		frame.setResizable(false);
 		frame.setLocationRelativeTo( null );
 		frame.setVisible(true);
@@ -111,7 +134,7 @@ public class GameMap
 			
 			for (int i=0;i<BSIZE;i++) {
 				for (int j=0;j<BSIZE;j++) {					
-					GameMech.fillHex(i,j,board[i][j],g2);
+					GameMech.fillHex(i,j,map[i][j],g2);
 				}
 			}
  
@@ -119,5 +142,9 @@ public class GameMap
 		}
  
 	
+	}
+	public JFrame getFrame()
+	{
+		return this.frame;
 	}
 }
