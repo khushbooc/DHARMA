@@ -4,6 +4,7 @@ package model;
 
 import java.util.Random;
 import java.lang.*;
+import static java.lang.Math.pow;
 
 public class DamageController
 {
@@ -19,25 +20,26 @@ public class DamageController
 
 	public static int damage()
 	{
-		int critical;
-		int damage;
-		double base, random, criticalStrike, modifier, offense, defense, level, skill;
+		int avatarCrit, damage;
+		double base, critical, random, criticalStrike, modifier, offense, defense, level, skill;
 
+		base = 90;
 		level = 100;
 		offense = 450;
-		defense = 300;
-		base = 90;
-		skill = 50;
+		defense = 325;
+		skill = 125;
+		avatarCrit = (int) (16 / Math.pow(2,0));
 
 		random = (double) random(85,100) / 100;
-		critical = random(1,16);
+		critical = random(1, avatarCrit);
 
 		if(critical == 1)
 			criticalStrike = 1.5;
 		else
 			criticalStrike = 1;
 
-		modifier = random * criticalStrike * (1 + 0.5 * skill/125);
+		modifier = random * criticalStrike * (1 + 0.5 * skill / 125);
+
 		damage = (int) Math.floor(((2 * level + 10) / 250 * offense / defense * base + 2) * modifier);
 
 		return damage;

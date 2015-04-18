@@ -3,6 +3,7 @@ public abstract class Ability
 {
 	private String name;
 	private int cost;
+	private int effect;
 	private int levelRequirement;
 	private int radius;
 
@@ -42,6 +43,16 @@ public abstract class Ability
 		this.cost = cost;
 	}
 
+	public int getEffect()
+	{
+		return effect;
+	}
+
+	public void setEffect(int effect)
+	{
+		this.effect = effect;
+	}
+
 	public int getLevelRequirement()
 	{
 		return levelRequirement;
@@ -74,4 +85,5 @@ public abstract class Ability
 
 	public abstract boolean use();
 	public abstract boolean inRadius();
+	private abstract void scaleEffect(Entity entity);
 }
