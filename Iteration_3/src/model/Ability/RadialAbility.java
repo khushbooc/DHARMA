@@ -1,3 +1,5 @@
+package model.ability;
+import model.entity.Entity;
 public abstract class RadialAbility extends Ability
 {
 	private int degree;
@@ -6,14 +8,14 @@ public abstract class RadialAbility extends Ability
 	{
 		super();
 		degree = 360;
-		radius = 1;
+//		radius = 1;
 	}
 
 	public RadialAbility(String name, int cost, int levelRequirement, int degree, int radius)
 	{
-		super(name, cost, levelRequirement);
+		super(name, cost, levelRequirement, radius);
 		this.degree = degree;
-		this.radius = radius;
+//		this.radius = radius;
 	}
 
 	public int getDegree()
@@ -30,17 +32,18 @@ public abstract class RadialAbility extends Ability
 	
 	public boolean inRadius(Entity avatar, Entity entity)
 	{
-		Location aLx = avatar.getLocation().getX();
-		Location eLx = entity.getLocation().getX();
+//		Location aLx = avatar.getLocation().getX();
+//		Location eLx = entity.getLocation().getX();
+//
+//		Location aLy = avatar.getLocation().getY();
+//		Location eLy = entity.getLocation().getY();
+//
+//		boolean inRadius = Math.pow(eLx - aLx,2) + Math.pow(eLy - aLy, 2) <= Math.pow(radius,2);
 
-		Location aLy = avatar.getLocation().getY();
-		Location eLy = entity.getLocation().getY();
-
-		boolean inRadius = Math.pow(eLx - aLx,2) + Math.pow(eLy - aLy, 2) <= Math.pow(radius,2);
-
-		if(inRadius)
-			return true;
-		else
-			return false;
+//		if(inRadius)
+//			return true;
+//		else
+//			return false;
+        return true; //temporaryly only
 	}
 }

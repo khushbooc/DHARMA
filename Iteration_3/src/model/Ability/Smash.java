@@ -1,3 +1,4 @@
+package model.ability;
 public class Smash extends LinearAbility
 {
 	private int damage;
@@ -13,14 +14,15 @@ public class Smash extends LinearAbility
 
 	public Smash(String name, int cost, int levelRequirement, int radius, int damage)
 	{
-		this.name = name;
-		this.cost = cost;
-		this.levelRequirement = levelRequirement;
-		this.radius = radius;
+        super(name, cost, levelRequirement, radius);
+//		this.name = name;
+//		this.cost = cost;
+//		this.levelRequirement = levelRequirement;
+//		this.radius = radius;
 		this.damage = damage;
 	}
 
-	public void getDamage()
+	public int getDamage()
 	{
 		return damage;
 	}
@@ -29,4 +31,16 @@ public class Smash extends LinearAbility
 	{
 		this.damage = damage;
 	}
+    @Override
+    public boolean use(){
+        //TODO
+        return true; //temporary only
+    }
+    @Override
+    public boolean inRadius(){
+        //TODO
+        return true; //temporary only
+    }
+
+
 }

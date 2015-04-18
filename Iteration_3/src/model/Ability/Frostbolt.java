@@ -1,3 +1,4 @@
+package model.ability;
 public class Frostbolt extends LinearAbility
 {
 	private int damage;
@@ -10,19 +11,24 @@ public class Frostbolt extends LinearAbility
 		this.setLevelRequirement(1);
 		this.setName("Frostbolt");
 		this.setRadius(100);
+<<<<<<< HEAD
 		// this.type = "bane";
+=======
+//		this.type = "bane";
+>>>>>>> 027242fe74ba4e996706abe045dedc5b4976b802
 	}
 
 	public Frostbolt(String name, int cost, int levelRequirement, int radius, int damage)
 	{
-		this.name = name;
-		this.cost = cost;
-		this.levelRequirement = levelRequirement;
-		this.radius = radius;
+        super(name, cost, levelRequirement, radius);
+//		this.name = name;
+//		this.cost = cost;
+//		this.levelRequirement = levelRequirement;
+//		this.radius = radius;
 		this.damage = damage;
 	}
 
-	public void getDamage()
+	public int getDamage()
 	{
 		return damage;
 	}
@@ -31,6 +37,24 @@ public class Frostbolt extends LinearAbility
 	{
 		this.damage = damage;
 	}
+<<<<<<< HEAD
 
 	public abstract boolean use()
+=======
+	/*
+	public String getType()
+	{
+		return type;
+	}
+	*/
+    @Override
+	public boolean use(){
+        return true; //temporary
+    }
+    @Override
+    public boolean inRadius(){
+        return true; //temporary
+    }
+
+>>>>>>> 027242fe74ba4e996706abe045dedc5b4976b802
 }
