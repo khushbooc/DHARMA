@@ -163,7 +163,7 @@ public class GameMap
 				}
 			}
  
-
+			//GameMech.fillHex(4,5,map[i][j],g2);
 		}
  
 	
