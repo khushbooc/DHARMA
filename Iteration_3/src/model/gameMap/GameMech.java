@@ -79,16 +79,12 @@ public class GameMech
 		 */
 	}
  
-	public static void drawHex(int i, int j, Graphics2D g2) {
+	public static void drawHex(int i, int j,Tile tile, Graphics2D g2) {
 		int x = i * (s+t);
 		int y = j * h + (i%2) * h/2;
 		Polygon poly = hex(x,y);
-		 BufferedImage cell = null;
-		 try {
-			    cell = ImageIO.read(new File("src/res/Geomorph.png"));
-			} catch (IOException e) {
-				System.out.println(e);
-			}
+		BufferedImage cell=tile.getTerrain().getImage();
+		
 		//g2.setColor(gameMap.COLOURCELL);
 		g2.drawImage(cell,x+10,y+10,x+GameMap.HEXSIZE+20,y+GameMap.HEXSIZE+10,0,0,cell.getWidth(),cell.getHeight(),null);
 		//g2.fillPolygon(GameMech.hex(x,y));
@@ -97,7 +93,7 @@ public class GameMech
 		g2.drawPolygon(poly);
 	}
 
-	public static void fillHex(int i, int j, Tile tile, Graphics2D g2) {
+	public static void fillHex(int i, int j,Tile tile, Graphics2D g2) {
 		char c='o';
 		int x = i * (s+t);
 		int y = j * h + (i%2) * h/2;

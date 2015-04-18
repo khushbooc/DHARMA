@@ -42,8 +42,7 @@ public class CharacterKeyboardController implements KeyListener{
 		}
 		
 		public void keyPressed(KeyEvent e) {
-			if(keyReleased == false) return;
-			keyReleased = false;
+			
 			//timer.start();
 			
 			int key = e.getKeyCode();
@@ -51,6 +50,7 @@ public class CharacterKeyboardController implements KeyListener{
 				return;
 			}
 			if(key == KeyEvent.VK_NUMPAD1){
+				
 			//	this.movement.move(MovementController.SOUTHWEST, Directions.SOUTHWEST);
 			}
 			else if(key == KeyEvent.VK_NUMPAD2){
@@ -69,6 +69,8 @@ public class CharacterKeyboardController implements KeyListener{
 			//	this.movement.move(MovementController.NORTH, Directions.NORTH);
 			}
 			else if(key==KeyEvent.VK_NUMPAD7){
+				map.setlocation();
+				map.createAndShowGUI();
 			//	this.movement.move(MovementController.NORTHWEST, Directions.NORTHWEST);
 			}
 			else if(key==KeyEvent.VK_NUMPAD4 ){
@@ -80,6 +82,7 @@ public class CharacterKeyboardController implements KeyListener{
 			else if(key==KeyEvent.VK_NUMPAD5){
 			//	this.movement.move(new Point(0,0), Directions.CENTRAL);
 			}
+			
 			
 		}
 
