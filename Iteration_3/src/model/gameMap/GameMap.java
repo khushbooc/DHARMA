@@ -3,6 +3,7 @@ import java.awt.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.text.View;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -16,11 +17,14 @@ public class GameMap
 	
 	private DrawingPanel panel;
 	private JFrame frame; 
-	private int lowx=3;
-	private int lowy=4;
+	private int min_x=3;
+	private int min_y=3;
+	private int max_x=3;
+	private int max_y=3;
 	//private Terrain[][] terrain;
 	
-  public GameMap() {
+  public GameMap(JFrame frame) {
+	  this.frame=frame;
 		initGame();
 		createAndShowGUI();
 	}
@@ -46,10 +50,10 @@ public class GameMap
 	final static int HEXSIZE = 80;	//hex size in pixels
 	final static int BORDERS = 10;  
 	//final static int SCRSIZE = HEXSIZE * (BSIZE + 1) + BORDERS*3; //screen size (vertical dimension).
-	final static int WORLD_SIZE_X=1600;
-	final static int WORLD_SIZE_Y=700;
-	final static int VIEWPORT_SIZE_X=800;
-	final static int VIEWPORT_SIZE_Y=600;
+	public final static int WORLD_SIZE_X=1600;
+	public final static int WORLD_SIZE_Y=700;
+	public final static int VIEWPORT_SIZE_X=800;
+	public final static int VIEWPORT_SIZE_Y=600;
 	//int[][] board = new int[BSIZE][BSIZE];
 	private BufferedImage stone;
 	private BufferedImage grass;
@@ -71,7 +75,7 @@ public class GameMap
 		GameMech.setHeight(HEXSIZE); //Either setHeight or setSize must be run to initialize the hex
 		GameMech.setBorders(BORDERS);
 		
-		frame = new JFrame("Hex Testing 4");
+		//frame = new JFrame("Hex Testing 4");
 		
 		//set up board here
 		//board[3][3] =(int)'A' ;
@@ -81,12 +85,11 @@ public class GameMap
  
 	public void createAndShowGUI()
 	{
-		
 		for (int i=0;i<BSIZE;i++) {
 			for (int j=0;j<BSIZE;j++) {
 				//board[i][j]=EMPTY;
 				Location loc=new Location(i,j);
-				if((i>=lowx && i<=BSIZE-lowx) && (j>=lowy&&j<=BSIZE-lowy)){
+				if(i>=min_x && j>=min_y){
 						
 						//terrain[i][j] = new Grass("Grass",grass);
 						map[i][j]=new Tile(loc, new Grass("Grass",grass));
@@ -99,8 +102,7 @@ public class GameMap
 		}
 		
 		panel = new DrawingPanel();
- 
- 
+		
 		//JFrame.setDefaultLookAndFeelDecorated(true);
 		
 		
@@ -115,6 +117,7 @@ public class GameMap
 		// setup our canvas size and put it into the content of the frame
 		//frame.setBounds(0,0,800,600);
 		//panel.add(this);
+		/*
 		frame.pack();
 		frame.setSize( VIEWPORT_SIZE_X, VIEWPORT_SIZE_Y);
 		frame.setResizable(false);
@@ -126,6 +129,7 @@ public class GameMap
         //frame.setExtendedState(Frame.MAXIMIZED_BOTH);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.repaint();
+        */
 	}
  
  
@@ -159,22 +163,44 @@ public class GameMap
 				}
 			}
  
-
+			//GameMech.fillHex(4,5,map[i][j],g2);
 		}
  
 	
 	}
-	public JFrame getFrame()
-	{
-		return this.frame;
+	public void update(Point step){
+		setLocation(step);
+		for (int i=0;i<BSIZE;i++) {
+			for (int j=0;j<BSIZE;j++) {
+				//board[i][j]=EMPTY;
+				Location loc=new Location(i,j);
+				if(i>=min_x  &&j >= min_y){
+						
+						//terrain[i][j] = new Grass("Grass",grass);
+						map[i][j]=new Tile(loc, new Grass("Grass",grass));
+				}
+				else{
+					//terrain[i][j] = new Mountain("Mountain",mountain);
+					map[i][j]=new Tile(loc,new Mountain("Mountain",mountain));
+				}
+			}
+		}
+		panel.repaint();
+		
 	}
-	public void setlocation(){
-		System.out.println("Location:"+lowx+","+lowy);
-		lowx=lowx-1;
-		lowy=lowy-1;
-		if(lowx<0)
-			lowx=0;
-		if(lowy<0)
-			lowy=0;
+	public void setLocation(Point step){
+		System.out.println("Location:"+min_x+","+min_y);
+		min_x=min_x+(int)step.getX();
+		min_y=min_y+(int)step.getY();
+		if(min_x<-24)
+			min_x=-24;
+		if(min_y<-24)
+			min_y=-24;
+		if(min_x>3)
+			min_x=3;
+		if(min_y>3)
+			min_y=3;
+		
+		
 	}
 }

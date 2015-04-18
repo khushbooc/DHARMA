@@ -1,5 +1,4 @@
 package model.statistics;
-// figure out experience and level system
 
 public abstract class Stats
 {
@@ -19,8 +18,8 @@ public abstract class Stats
 	private int maxMana;
 	private int currentMana;
 	private int maxExp;
-	private int currentExp;
-	private int remainderExp;
+	// private int currentExp;
+	// private int remainderExp;
 	private int offense;
 	private int defense;
 	private int armor;
@@ -139,8 +138,23 @@ public abstract class Stats
 
 	public void modExperience(int n)
 	{
-		experience = experience + n;
-		checkExp();
+		if(level == 100)
+			return;
+		else
+		{
+			experience = experience + n;
+			if(experience > 999)
+			{
+				int levelCount = experience / 999;
+				experience = experience % 999;
+				for(int i = 0; i < levelCount; ++i)
+				{
+					levelUp();
+					if(level == 100)
+						return;
+				}
+			}
+		}
 	}
 
 	public int getExperience()
@@ -329,9 +343,4 @@ public abstract class Stats
 
 	// to be overwritten
 	public abstract void levelUp();
-
-	public void checkExp()
-	{
-
-	}
 }

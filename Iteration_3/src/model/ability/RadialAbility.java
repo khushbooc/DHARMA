@@ -29,7 +29,9 @@ public abstract class RadialAbility extends Ability
 	}
 
 	public abstract boolean use();
-	
+
+	private abstract void scaleEffect(Entity entity);
+		
 	public boolean inRadius(Entity avatar, Entity entity)
 	{
 //		Location aLx = avatar.getLocation().getX();
@@ -44,6 +46,6 @@ public abstract class RadialAbility extends Ability
 //			return true;
 //		else
 //			return false;
-        return true; //temporaryly only
+        return true; //temporarily only
 	}
 }
