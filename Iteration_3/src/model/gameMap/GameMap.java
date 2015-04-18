@@ -17,8 +17,10 @@ public class GameMap
 	
 	private DrawingPanel panel;
 	private JFrame frame; 
-	private int lowx=3;
-	private int lowy=4;
+	private int min_x=3;
+	private int min_y=3;
+	private int max_x=3;
+	private int max_y=3;
 	//private Terrain[][] terrain;
 	
   public GameMap(JFrame frame) {
@@ -87,7 +89,7 @@ public class GameMap
 			for (int j=0;j<BSIZE;j++) {
 				//board[i][j]=EMPTY;
 				Location loc=new Location(i,j);
-				if((i>=lowx && i<=BSIZE-lowx) && (j>=lowy&&j<=BSIZE-lowy)){
+				if(i>=min_x && j>=min_y){
 						
 						//terrain[i][j] = new Grass("Grass",grass);
 						map[i][j]=new Tile(loc, new Grass("Grass",grass));
@@ -172,7 +174,7 @@ public class GameMap
 			for (int j=0;j<BSIZE;j++) {
 				//board[i][j]=EMPTY;
 				Location loc=new Location(i,j);
-				if((i>=lowx && i<=BSIZE-lowx) && (j>=lowy&&j<=BSIZE-lowy)){
+				if(i>=min_x  &&j >= min_y){
 						
 						//terrain[i][j] = new Grass("Grass",grass);
 						map[i][j]=new Tile(loc, new Grass("Grass",grass));
@@ -187,12 +189,18 @@ public class GameMap
 		
 	}
 	public void setLocation(Point step){
-		System.out.println("Location:"+lowx+","+lowy);
-		lowx=lowx-1;
-		lowy=lowy-1;
-		if(lowx<0)
-			lowx=0;
-		if(lowy<0)
-			lowy=0;
+		System.out.println("Location:"+min_x+","+min_y);
+		min_x=min_x+(int)step.getX();
+		min_y=min_y+(int)step.getY();
+		if(min_x<-24)
+			min_x=-24;
+		if(min_y<-24)
+			min_y=-24;
+		if(min_x>3)
+			min_x=3;
+		if(min_y>3)
+			min_y=3;
+		
+		
 	}
 }

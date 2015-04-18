@@ -7,8 +7,10 @@ import javax.swing.JFrame;
 
 import model.entity.Avatar;
 import model.gameMap.GameMap;
-
+// All controllers to be created over here and this is the main controller class
 public class ViewController {
+	private MainMenuController mmc;
+	private CreateCharacterController ccc;
 	private MapViewController  mvc;
 	private GameMap map;
 	private JFrame mainFrame;
