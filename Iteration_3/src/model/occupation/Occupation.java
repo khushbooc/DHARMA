@@ -1,6 +1,5 @@
 package model.occupation;
 
-import java.util.Map;
 
 import utilities.SpriteSheetUtility;
 import model.ability.AbilityLibrary;

@@ -1,36 +1,24 @@
+/* this class shouldn't exist
+
 package Controller;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
 import javax.swing.JFrame;
-import javax.swing.Timer;
-
 import utilities.Directions;
-import model.entity.Avatar;
 import model.gameMap.GameMap;
 
 public class MapViewController {
-	private GameMap map;
-	private boolean keyReleased;
-	private JFrame frame; 
 	private boolean active;
 	
 	public MapViewController(GameMap map,JFrame frame){
-		this.map=map;
-		keyReleased=true;
-		this.frame=frame;
 		active=true;
 		frame.addKeyListener(new CharacterKeyboardController(map));
 	}
 	
 public class CharacterKeyboardController implements KeyListener{
-		
-		private final int baseDelay = 5000;
-		private final int developmentDelay = 0;
-		private Timer timer;
+
 		private MovementController movement;
 		
 		public CharacterKeyboardController(GameMap map){
@@ -38,14 +26,7 @@ public class CharacterKeyboardController implements KeyListener{
 			
 		}
 		
-		public void SyncDelay(){
-			
-		}
-		
 		public void keyPressed(KeyEvent e) {
-			
-			//timer.start();
-			
 			int key = e.getKeyCode();
 			if(!active){
 				return;
@@ -83,3 +64,4 @@ public class CharacterKeyboardController implements KeyListener{
 	}
 
 }
+*/

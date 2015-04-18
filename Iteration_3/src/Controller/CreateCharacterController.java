@@ -2,11 +2,7 @@ package Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import model.occupation.Smasher;
-import model.occupation.Sneak;
-import model.occupation.Summoner;
-import model.occupation.Occupation;
+import model.occupation.*;
 import view.CreateCharacterView;
 import view.View;
 
@@ -15,7 +11,7 @@ public class CreateCharacterController {
 	
 	private CreateCharacterView charCreation = new CreateCharacterView(new BackButtonListener(),new SneakSelectListener(),new SummonerSelectListener(),new SmasherSelectListener());
 	private String name = "";
-	private Occupation occ = new Summoner();
+	private Occupation occ = (Occupation) new Summoner();
 	
 	public View getView(){
 		return charCreation;

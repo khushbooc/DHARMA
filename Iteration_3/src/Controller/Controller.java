@@ -1,8 +1,8 @@
-package controller;
+package Controller;
 
+import javax.swing.JFrame;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
 
 public class Controller implements KeyListener {
     private KeyListenerSet keyListenerSet;
@@ -34,4 +34,8 @@ public class Controller implements KeyListener {
         keyListenerSet = newKeySet;
     }
 
+
+    public void addKeyListenersToFrame(JFrame frame) {
+        frame.addKeyListener(this);
+    }
 }
