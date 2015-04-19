@@ -4,11 +4,11 @@ import model.entity.Entity;
 import java.util.Random;
 
 public abstract class Ability extends GameAbility{
-	private String name;
-	private int base;
-	private int cost;
-	private int effect;
-	private int levelRequirement;
+	protected String name;
+	protected int base;
+	protected int cost;
+	protected int effect;
+	protected int levelRequirement;
 
 	public Ability()
 	{
@@ -76,6 +76,14 @@ public abstract class Ability extends GameAbility{
 	public void setLevelRequirement(int levelRequirement)
 	{
 		this.levelRequirement = levelRequirement;
+	}
+
+	public boolean meetsLevelRequirements(Entity avatar)
+	{
+		if(avatar.getOccupation().getStats().getLevel() >= levelRequirement)
+			return true;
+		else
+			return false;
 	}
 
 	// random number generator for all abilities

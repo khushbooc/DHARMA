@@ -4,7 +4,7 @@ import model.entity.Entity;
 import java.util.Random;
 public abstract class RadiusAbility extends Ability
 {
-    private int radius;
+    protected int radius;
 
     public RadiusAbility()
     {

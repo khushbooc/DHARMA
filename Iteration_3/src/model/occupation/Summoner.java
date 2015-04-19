@@ -18,4 +18,9 @@ public class Summoner extends Occupation {
 		return new SpriteSheetUtility(this);
 }
 
+	Override
+	public Stats getStats()
+	{
+		return summonerStats;
+	}
 }

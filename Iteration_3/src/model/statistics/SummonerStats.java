@@ -35,12 +35,38 @@ public class SummonerStats extends Stats
 		++enchantment;
 	}
 
+	public int getEnchantment()
+	{
+		return enchantment;
+	}
+
+	public void setEnchanment(int enchantment)
+	{
+		if(enchantment < 0 || enchantment > 125)
+			return;
+		else
+			this.enchantment = enchantment;
+	}
+
 	public void modBoon()
 	{
 		if(getSkillPoints() <= 0 || boon == 125)
 			return;
 		modSkillPoints(-1);
 		++boon;
+	}
+
+	public int getBoon()
+	{
+		return boon;
+	}
+
+	public void setBoon(int boon)
+	{
+		if(boon < 0 || boon > 125)
+			return;
+		else
+			this.boon = boon;
 	}
 
 	public void modBane()
@@ -51,11 +77,37 @@ public class SummonerStats extends Stats
 		++bane;
 	}
 
+	public int getBane()
+	{
+		return bane;
+	}
+
+	public void setBane(int bane)
+	{
+		if(boon < 0 || boon > 125)
+			return;
+		else
+			this.bane = bane;
+	}
+
 	public void modStaff()
 	{
 		if(getSkillPoints() <= 0 || staff == 125)
 			return;
 		modSkillPoints(-1);
 		++staff;
+	}
+
+	public int getStaff()
+	{
+		return staff;
+	}
+
+	public void setStaff(int staff)
+	{
+		if(staff < 0 || staff > 125)
+			return;
+		else
+			this.staff = bane;
 	}
 }

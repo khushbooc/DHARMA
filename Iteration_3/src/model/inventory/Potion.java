@@ -13,7 +13,8 @@ public class Potion extends NonEquipableItem {
 
     @Override
     public void use(Entity e){
-        //TODO
+
+        e.getOccupation().getStats();
     }
 
 }

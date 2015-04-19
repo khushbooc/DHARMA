@@ -3,7 +3,7 @@ import model.entity.Entity;
 
 public abstract class AngularAbility extends RadiusAbility
 {
-	private int degree;
+	protected int degree;
 
 	public AngularAbility()
 	{

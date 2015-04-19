@@ -3,7 +3,7 @@ import model.entity.Entity;
 
 public abstract class RadialAbility extends RadiusAbility
 {
-	private int degree;
+	protected int degree;
 
 	public RadialAbility()
 	{
@@ -27,7 +27,7 @@ public abstract class RadialAbility extends RadiusAbility
 		this.degree = degree;
 	}
 
-	public abstract void use(Entity avatar, Entity entity);
+	public abstract void use(Entity avatar);
 
 	public abstract void scaleEffect(Entity entity, Entity avatar);
 	
