@@ -38,12 +38,12 @@ public abstract class Ability extends GameAbility{
 		this.base = base;
 	}
 
-	public String getEffect()
+	public int getEffect()
 	{
 		return effect;
 	}
 
-	public void setEffect(String effect)
+	public void setEffect(int effect)
 	{
 		this.effect = effect;
 	}
@@ -66,16 +66,6 @@ public abstract class Ability extends GameAbility{
 	public void setCost(int cost)
 	{
 		this.cost = cost;
-	}
-
-	public int getBase()
-	{
-		return base;
-	}
-
-	public void setBase(int base)
-	{
-		this.base = base;
 	}
 
 	public int getLevelRequirement()
