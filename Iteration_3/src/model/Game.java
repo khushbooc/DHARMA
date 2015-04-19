@@ -1,4 +1,4 @@
-package model.gameMap;
+package model;
 
 import model.entity.Avatar;
 import model.occupation.Occupation;
