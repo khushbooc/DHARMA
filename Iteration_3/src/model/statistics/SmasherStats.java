@@ -27,25 +27,40 @@ public class SmasherStats extends Stats
 
 	public void modOneHandedWeapon()
 	{
-		if(getSkillPoints() <= 0)
+		if(getSkillPoints() <= 0 || oneHandedWeapon == 125)
 			return;
-//		--skillPoints;
+		modSkillPoints(-1);
 		++oneHandedWeapon;
+	}
+
+	public int getOneHandedWeapon()
+	{
+		return oneHandedWeapon;
 	}
 
 	public void modTwoHandedWeapon()
 	{
-		if(getSkillPoints() <= 0)
+		if(getSkillPoints() <= 0 || twoHandedWeapon == 125)
 			return;
-//		--skillPoints;
+		modSkillPoints(-1);
 		++twoHandedWeapon;
+	}
+
+	public int getTwoHandedWeapon()
+	{
+		return twoHandedWeapon;
 	}
 
 	public void modBrawling()
 	{
-		if(getSkillPoints() <= 0)
+		if(getSkillPoints() <= 0 || brawling == 125)
 			return;
-//		--skillPoints;
+		modSkillPoints(-1);
 		++brawling;
+	}
+
+	public int getBrawling()
+	{
+		return brawling;
 	}
 }

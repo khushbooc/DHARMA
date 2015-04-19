@@ -3,20 +3,18 @@ import model.entity.Entity;
 
 public abstract class RadialAbility extends RadiusAbility
 {
-	private int degree;
+	protected int degree;
 
 	public RadialAbility()
 	{
 		super();
-		degree = 360;
-//		radius = 1;
+		this.degree = 360;
 	}
 
-	public RadialAbility(String name, int cost, int levelRequirement, int degree, int radius)
+	public RadialAbility(String name, int cost, int levelRequirement, int radius, int base, int degree)
 	{
-		super(name, cost, levelRequirement, radius);
+		super(name, cost, levelRequirement, radius, base);
 		this.degree = degree;
-//		this.radius = radius;
 	}
 
 	public int getDegree()
@@ -29,9 +27,9 @@ public abstract class RadialAbility extends RadiusAbility
 		this.degree = degree;
 	}
 
-	public abstract void use();
+	public abstract void use(Entity avatar);
 
-	public abstract void scaleEffect(Entity entity);
+	public abstract void scaleEffect(Entity entity, Entity avatar);
 	
 	@Override
 	public boolean inRadius(Entity avatar, Entity entity)

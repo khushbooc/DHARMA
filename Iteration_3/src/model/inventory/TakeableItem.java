@@ -21,7 +21,7 @@ public abstract class TakeableItem extends Item {
     @Override
     public void onTouch(Entity e)
     {
-	  //TODO
+        e.addToInventory(this);
     }
     public abstract void use (Entity e);
 }

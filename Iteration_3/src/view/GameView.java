@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 
 import model.gameMap.GameMap;
-import model.Location;
+import model.gameMap.Location;
 import model.entity.Avatar;
 
 public class GameView extends JPanel{
@@ -22,8 +22,8 @@ public class GameView extends JPanel{
 		entityView=new EntityView(avatar);
 		 this.mapView= new MapView(this.map,entityView,avatar);
 		add(this.mapView);
-		setView();
-		this.map.updateEntityLocation(avatar, location);// NOT NEEDED ANYMORE
+		//setView();
+		//this.map.updateEntityLocation(avatar, location);// NOT NEEDED ANYMORE
 		image=avatar.getImage();
 	}
 

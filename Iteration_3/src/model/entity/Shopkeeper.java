@@ -1,8 +1,55 @@
-/*import model.Entity;
+package model.entity;
 
-public class Shopkeeper extends Entity{
-	
-		super(occupation, inventory, equicontainer);
-		// TODO Auto-generated constructor stub
-	
-}*/
+import model.gameMap.Location;
+import model.inventory.EquipableItem;
+import model.inventory.EquipmentContainer;
+import model.inventory.Inventory;
+import model.inventory.TakeableItem;
+import model.occupation.Occupation;
+
+import java.util.Random;
+
+public class Shopkeeper extends FriendlyNPC{
+    private Gold gold;
+    public Shopkeeper(Location loc, Occupation oc, Inventory inv, EquipmentContainer eq){
+        super(loc, oc, inv, eq);
+        gold = new Gold(20); // shopkeeper initially has 20 golds
+    }
+    @Override
+    public void addToInventory(TakeableItem takeableitem){
+        inventory.add(takeableitem);
+    }
+    @Override
+    public void equipItem(EquipableItem equiItem){
+        equicontainer.add(equiItem);
+    }
+    @Override
+    public void removeItem(TakeableItem ti){
+        inventory.remove(ti);
+
+    }
+    @Override
+    public void unequipItem(EquipableItem eqi){
+        equicontainer.remove(eqi);
+    }
+    public Gold getGold(){
+        return this.gold;
+    }
+    public String dialogue(){
+        return "Hey! check out my gear";
+    }
+    public void trade(Avatar avatar){
+
+        Random numberGenerator = new Random();
+        int num1 = numberGenerator.nextInt(avatar.getGold().getCount()); //number of gold involved in trade
+        if(num1 == 0){
+            return; //decide not to trade
+        }
+        int num2 = numberGenerator.nextInt(getInventory().getCount());
+        avatar.getGold().increaseGoldCount(num1*(-1));
+        this.getGold().increaseGoldCount(num1);
+        TakeableItem ti = this.getInventory().getItem(num2);
+        this.getInventory().remove(ti);
+        avatar.getInventory().add(ti); // add to avatar's inventory
+    }
+}

@@ -1,6 +1,7 @@
 package model.ability;
 
 import model.entity.Entity;
+import model.statistics.SummonerStats;
 
 /**
  *
@@ -17,20 +18,22 @@ public class ManaTap extends SelfAbility
         setEffect(0);
     }
 
-    public ManaTap(String name, int cost, int levelRequirement, int effect)
+    public ManaTap(String name, int cost, int levelRequirement, int base, int effect)
     {
-        super(name, cost, levelRequirement, effect);
+        super(name, cost, levelRequirement, base, effect);
     }
 
     @Override
-    private void scaleEffect(Entity avatar)
+    public void scaleEffect(Entity avatar)
     {
         int randNum;
-        int damage;
-        double base, avatarCrit, criticalBonus, modifier, skill;
+        int avatarCrit, damage;
+        double base, criticalBonus, modifier, skill;
 
-        skill = avatar.getBoon();
-        avatarCrit = (int) Math.pow(2,avatar.getCritical());
+        SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
+
+        skill = stats.getBoon();
+        avatarCrit = (int) Math.pow(2,stats.getCritical());
 
         randNum = (int) random(1,16 / avatarCrit);
 
@@ -40,7 +43,7 @@ public class ManaTap extends SelfAbility
             criticalBonus = 1;
 
         modifier = criticalBonus * (1 + 0.5 * skill / 125);
-        damage = (int) Math.floor((avatar.getMaxMana() / 2) * modifier);
+        damage = (int) Math.floor((stats.getMaxMana() / 2) * modifier);
 
         setEffect(damage);
     }
@@ -49,17 +52,18 @@ public class ManaTap extends SelfAbility
     public void use(Entity avatar)
     {
         int cost = getCost();
-        cost = avatar.getMaxMana / 2;
+        SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
+        cost = stats.getMaxMana() / 2;
 
-        if(avatar.getCurrentMana() < cost)
+        if(stats.getCurrentMana() < cost)
             return;
 
         else
         {
             scaleEffect(avatar);
-            setCost((int) avatar.getMaxMana() / 2);
-            avatar.modCurrentMana(-cost);
-            avatar.modCurrentHealth(effect);
+            setCost((int) stats.getMaxMana() / 2);
+            stats.modCurrentMana(-cost);
+            stats.modCurrentHealth(effect);
         }
     }
 

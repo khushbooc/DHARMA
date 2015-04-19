@@ -1,11 +1,8 @@
-package model.ability;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import model.ability.Ability;
 import model.entity.Entity;
 
+import java.util.ArrayList;
+import java.util.List;
 /*
  * @author Aaron Iglesias
  */
@@ -18,7 +15,7 @@ public abstract class AbilityLibrary {
     public AbilityLibrary(Entity myEntity){
         learnedAbilities = new ArrayList<Ability>();
         unlearnedAbilities = new ArrayList<Ability>();
-        owner = myEntity;
+        Entity owner = myEntity;
         this.addToLibrary(new BasicAttack());
         this.addToLibrary(new HealAbility());
     }
@@ -45,10 +42,10 @@ public abstract class AbilityLibrary {
         return false;
     }
     
-    public boolean performActiveAbility(String abilityName, Entity callingEntity){
+    public boolean use(Ability ability, Entity avatar){
         for(Ability a : learnedAbilities) {
-            if (a.getName().equals(abilityName)) {
-                a.performAbility(callingEntity);
+            if (a == ability) {
+                a.use(avatar);
                 return true;
             }
         }

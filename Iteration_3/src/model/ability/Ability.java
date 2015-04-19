@@ -1,14 +1,14 @@
 package model.ability;
 import model.entity.Entity;
+
 import java.util.Random;
 
-public abstract class Ability
-{
-	private String name;
-	private int base;
-	private int cost;
-	private int effect;
-	private int levelRequirement;
+public abstract class Ability extends GameAbility{
+	protected String name;
+	protected int base;
+	protected int cost;
+	protected int effect;
+	protected int levelRequirement;
 
 	public Ability()
 	{
@@ -38,12 +38,12 @@ public abstract class Ability
 		this.base = base;
 	}
 
-	public String getEffect()
+	public int getEffect()
 	{
 		return effect;
 	}
 
-	public void setEffect(String effect)
+	public void setEffect(int effect)
 	{
 		this.effect = effect;
 	}
@@ -68,16 +68,6 @@ public abstract class Ability
 		this.cost = cost;
 	}
 
-	public int getBase()
-	{
-		return base;
-	}
-
-	public void setBase(int base)
-	{
-		this.base = base;
-	}
-
 	public int getLevelRequirement()
 	{
 		return levelRequirement;
@@ -86,6 +76,14 @@ public abstract class Ability
 	public void setLevelRequirement(int levelRequirement)
 	{
 		this.levelRequirement = levelRequirement;
+	}
+
+	public boolean meetsLevelRequirements(Entity avatar)
+	{
+		if(avatar.getOccupation().getStats().getLevel() >= levelRequirement)
+			return true;
+		else
+			return false;
 	}
 
 	// random number generator for all abilities
@@ -97,4 +95,6 @@ public abstract class Ability
 
 		return randomNumber;
 	}
+
+	public abstract void use(Entity avatar);
 }

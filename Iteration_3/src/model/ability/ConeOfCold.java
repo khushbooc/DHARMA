@@ -1,55 +1,78 @@
 package model.ability;
 
 import model.entity.Entity;
+import model.statistics.Stats;
+import model.statistics.SummonerStats;
 
-public class ConeOfCold extends AngularAbility
-{
-    private int damage;
-    // private String type;
+public class ConeOfCold extends RadialAbility {
 
     public ConeOfCold()
     {
-        this.damage = 90;
-        this.setCost(1);
-        this.setLevelRequirement(5);
-        this.setName("Frostbolt");
-        this.setRadius(3);
+        base = 90;
+        cost = 1;
+        levelRequirement = 2;
+        name = "Cone of Cold";
+        radius = 3;
+        degree = 90;
     }
 
-    public ConeOfCold(String name, int cost, int levelRequirement, int radius, int damage)
+    public ConeOfCold(String name, int cost, int levelRequirement, int radius, int base)
     {
-        super(name, cost, levelRequirement, radius);
         setName(name);
         setCost(cost);
         setLevelRequirement(levelRequirement);
         setRadius(radius);
-        setDamage(damage);
-    }
-
-    public int getDamage()
-    {
-        return damage;
-    }
-
-    public void setDamage(int damage)
-    {
-        this.damage = damage;
-    }
-
-    public String getType()
-    {
-        return type;
+        setBase(base);
     }
 
     @Override
-    public boolean use(Entity caster, Entity)
+    public void use(Entity avatar)
     {
-        return true; //temporary
+        SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
+        Stats entityStats;
+        if(stats.getCurrentMana() - this.cost < 0)
+            return;
+
+        // for(all entities on map)
+        if(!inRadius(avatar, entity) || avatar == entity)
+            continue; // do nothing
+        else // do damage
+        {
+            entityStats = entity.getOccupation().getStats();
+            scaleEffect(avatar, entity);
+            entityStats.modCurrentHealth(-effect);
+            entityStats.modCurrentMana(-cost);
+        }
     }
+
     @Override
-    public boolean inRadius(){
-        return true; //temporary
+    public void scaleEffect(Entity avatar, Entity entity)
+    {
+        int critical;
+        int avatarCrit, base, damage;
+        double random, criticalBonus, modifier, offense, defense, level, skill;
+
+        base = getBase();
+
+        SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
+
+        level = stats.getLevel();
+        offense = stats.getBoon();
+        defense = stats.getArmor();
+        skill = stats.getBoon();
+        avatarCrit = (int) Math.pow(2,stats.getCritical());
+
+        random = (double) random(85,100) / 100;
+        critical = (int) random(1,16 / avatarCrit);
+        if(critical == 1)
+            criticalBonus = 1.5;
+        else
+            criticalBonus = 1;
+
+        modifier = random * criticalBonus * (1 + 0.5 * skill / 125);
+
+        damage = (int) Math.floor(((2 * level + 10) / 250 * offense / defense * base + 2) * modifier);
+
+        setEffect(damage);
     }
-
-
 }

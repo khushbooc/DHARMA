@@ -1,3 +1,4 @@
+
 package controller;
 
 import java.awt.event.ActionEvent;
@@ -10,7 +11,7 @@ import java.util.Map.Entry;
 import javax.swing.Timer;
 
 import model.entity.Avatar;
-import model.gameMap.Game;
+import model.Game;
 import model.gameMap.GameMap;
 
 

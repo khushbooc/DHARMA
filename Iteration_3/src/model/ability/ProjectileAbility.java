@@ -2,7 +2,7 @@ package model.ability;
 import model.entity.Entity;
 
 import java.util.Random;
-public abstract class ProjectileAbility extends Ability
+public abstract class ProjectileAbility extends RadiusAbility
 {
     private int radius;
 
@@ -14,8 +14,7 @@ public abstract class ProjectileAbility extends Ability
 
     public ProjectileAbility(String name, int cost, int levelRequirement, int radius, int base)
     {
-        super(name, cost, levelRequirement);
-        this.radius = radius;
+        super(name, cost, levelRequirement, radius, base);
     }
 
     public int getRadius()
@@ -40,5 +39,5 @@ public abstract class ProjectileAbility extends Ability
 
     public abstract boolean inRadius(Entity avatar, Entity entity);
     public abstract void scaleEffect(Entity avatar, Entity entity);
-    public abstract void use(Entity avatar, Entity entity);
+    public abstract void use(Entity avatar);
 }

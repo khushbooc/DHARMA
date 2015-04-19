@@ -1,12 +1,13 @@
 package model.occupation;
 
 import model.ability.AbilityLibrary;
+import model.statistics.SmasherStats;
 import model.statistics.Stats;
 import utilities.SpriteSheetUtility;
 
 public class Smasher extends Occupation {
-	private AbilityLibrary abl;
-	private Stats stat;
+	//private SmasherLibrary smasherLibrary;
+	private SmasherStats smasherStats;
 
 	public Smasher() {
 		//super(this.abilitylibrary, this.stat);
@@ -17,5 +18,11 @@ public class Smasher extends Occupation {
 	public SpriteSheetUtility getSpriteSheet() {
 		return new SpriteSheetUtility(this);
 }
+
+	@Override
+	public SmasherStats getStats()
+	{
+		return smasherStats;
+	}
 	
 }

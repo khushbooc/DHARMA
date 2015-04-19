@@ -18,7 +18,7 @@ public abstract class Stats
 	private int currentHealth;
 	private int maxMana;
 	private int currentMana;
-	private int maxExp;
+	// private int maxExp;
 	// private int currentExp;
 	// private int remainderExp;
 	private int offense;
@@ -51,8 +51,7 @@ public abstract class Stats
 		maxMana = 5;
 		currentMana = 5;
 
-		maxExp = 1250000;
-		currentExp = 0;
+		// maxExp = 1250000;
 
 		offense = 1; // derived from strength and equipment
 		defense = 1; // derived from agility
@@ -151,8 +150,10 @@ public abstract class Stats
 				for(int i = 0; i < levelCount; ++i)
 				{
 					levelUp();
-					if(level == 100)
+					if(level == 100) {
+						experience = 0;
 						return;
+					}
 				}
 			}
 		}
@@ -323,7 +324,7 @@ public abstract class Stats
 
 	public void modBindWounds()
 	{
-		if(skillPoints <= 0 || bindWounds >= 999)
+		if(skillPoints <= 0 || bindWounds >= 125)
 			return;
 		++bindWounds;
 		--skillPoints;
@@ -341,7 +342,7 @@ public abstract class Stats
 
 	public void modBargain()
 	{
-		if(skillPoints <= 0 || bargain >= 999)
+		if(skillPoints <= 0 || bargain >= 125)
 			return;
 		++bargain;
 		--skillPoints;
@@ -359,7 +360,7 @@ public abstract class Stats
 
 	public void modObservation()
 	{
-		if(skillPoints <= 0 || observation >= 999)
+		if(skillPoints <= 0 || observation >= 125)
 			return;
 		++observation;
 		--skillPoints;

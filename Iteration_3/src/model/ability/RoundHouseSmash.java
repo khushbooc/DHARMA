@@ -1,70 +1,65 @@
 package model.ability;
 
 import model.entity.Entity;
+import model.statistics.SmasherStats;
+import model.statistics.Stats;
 
-public class RoundHouseSmash extends RadialAbility
-{
-    private int damage;
-    // private String type;
+public class RoundHouseSmash extends RadialAbility {
 
     public RoundHouseSmash()
     {
-        this.damage = 90;
-        this.setCost(1);
-        this.setLevelRequirement(10);
-        this.setName("Round House Smash");
-        this.setRadius(2);
+        base = 90;
+        cost = 1;
+        levelRequirement = 2;
+        name = "Roundhouse Smash";
+        radius = 3;
+        degree = 360;
     }
 
-    public RoundHouseSmash(String name, int cost, int levelRequirement, int radius, int damage)
+    public RoundHouseSmash(String name, int cost, int levelRequirement, int radius, int base, int degree)
     {
-        super(name, cost, levelRequirement, radius);
-        setName(name);
-        setCost(cost);
-        setLevelRequirement(levelRequirement);
-        setRadius(radius);
-        setDamage(damage);
-    }
-
-    public int getDamage()
-    {
-        return damage;
-    }
-
-    public void setDamage(int damage)
-    {
-        this.damage = damage;
+        super(name, cost, levelRequirement, radius, base, degree);
     }
 
     @Override
     public void use(Entity avatar, Entity entity)
     {
+        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
+        Stats entityStats;
+        if(stats.getCurrentMana() < this.cost)
+            return;
+
         // for(all entities on map)
         if(!inRadius(avatar, entity) || avatar == entity)
             continue; // do nothing
         else // do damage
         {
+            entityStats = entity.getOccupation().getStats();
             scaleEffect(avatar, entity);
-            entity.modHealth(-effect);
+            stats.modCurrentHealth(-effect);
+            stats.modCurrentMana(-cost);
         }
     }
 
     @Override
-    private void scaleEffect(Entity avatar, Entity entity)
+    public void scaleEffect(Entity avatar, Entity entity)
     {
         int critical;
-        int damage;
-        double base, avatarCrit, random, criticalBonus, modifier, offense, defense, level, skill;
+        int avatarCrit, base, damage;
+        double random, criticalBonus, modifier, offense, defense, level, skill;
 
-        level = avatar.getLevel();
-        offense = avatar.getBoon();
-        defense = entity.getArmor();
-        skill = avatar.getBoon();
-        avatarCrit = (int) Math.pow(2,avatar.getCritical());
+        base = getBase();
+
+        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
+
+        level = stats.getLevel();
+        offense = stats.getOffense();
+        defense = stats.getArmor();
+        skill = stats.getTwoHandedWeapon();
+        avatarCrit = (int) Math.pow(2,stats.getCritical());
 
         random = (double) random(85,100) / 100;
         critical = (int) random(1,16 / avatarCrit);
-
         if(critical == 1)
             criticalBonus = 1.5;
         else

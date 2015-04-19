@@ -1,71 +1,54 @@
 package model.entity;
 
 import model.ability.Ability;
-import model.inventory.EquipableItem;
-import model.inventory.EquipmentContainer;
-import model.inventory.Inventory;
-import model.inventory.TakeableItem;
+import model.gameMap.Location;
+import model.inventory.*;
 import model.occupation.Occupation;
 
 public class Avatar extends Entity {
-	
-	public Avatar(Occupation occupation){
-		super(occupation);
+    private Gold gold;
+    
+    public Avatar(Occupation occupation){
+    	super(occupation);
+        gold = new Gold(10);// avatar has 10 golds initially
+
+	}
+    
+	public Avatar(Location location, Occupation occupation, Inventory inventory, EquipmentContainer equipmentContainer){
+        super(location, occupation,inventory, equipmentContainer);
+        gold = new Gold(10);// avatar has 10 golds initially
+
 	}
 
-	public Avatar(Occupation occupation, Inventory inventory,
-			EquipmentContainer equicontainer) {
-		super(occupation, inventory, equicontainer);
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public Occupation getOccupation() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Inventory getInventory() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public EquipmentContainer getEquipmentContainer() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public Gold getGold(){
+        return this.gold;
+    }
 
 	@Override
 	public void addToInventory(TakeableItem takeableitem) {
-		// TODO Auto-generated method stub
+		this.getInventory().add(takeableitem);
 		
 	}
 
 	@Override
 	public void equipItem(EquipableItem equiItem) {
-		// TODO Auto-generated method stub
+		this.getEquipmentContainer().add(equiItem);
 		
 	}
 
 	@Override
 	public void removeItem(TakeableItem ti) {
-		// TODO Auto-generated method stub
+		this.getInventory().remove(ti);
 		
 	}
 
 	@Override
 	public void unequipItem(EquipableItem eqi) {
-		// TODO Auto-generated method stub
+		this.getEquipmentContainer().remove(eqi);
 		
 	}
 
-	@Override
-	public void useAbility(Ability ability) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 
 }
