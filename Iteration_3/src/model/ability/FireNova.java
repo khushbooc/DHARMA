@@ -2,6 +2,7 @@ package model.ability;
 
 import model.entity.Entity;
 import model.occupation.Summoner;
+import model.statistics.Stats;
 import model.statistics.SummonerStats;
 
 public class FireNova extends RadialAbility {
@@ -48,7 +49,7 @@ public class FireNova extends RadialAbility {
 
         base = getBase();
 
-        SummonerStats stats = summoner.getSummonerStats();
+        SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
 
         level = stats.getLevel();
         offense = stats.getBoon();

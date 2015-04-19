@@ -1,6 +1,7 @@
 package model.ability;
 
 import model.entity.Entity;
+import model.statistics.Stats;
 
 public class ConeOfCold extends RadialAbility {
 
@@ -49,7 +50,7 @@ public class ConeOfCold extends RadialAbility {
 
         base = getBase();
 
-        Stats stats = avatar.getSummonerStats();
+        Stats stats = avatar.getOccupation().getStats();
 
         level = stats.getLevel();
         offense = stats.getBoon();
