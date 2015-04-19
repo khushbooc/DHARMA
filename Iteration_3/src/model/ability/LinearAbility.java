@@ -4,7 +4,7 @@ import model.entity.Entity;
 
 public abstract class LinearAbility extends RadiusAbility
 {
-	private int radius;
+	protected int radius;
 
 	public LinearAbility()
 	{

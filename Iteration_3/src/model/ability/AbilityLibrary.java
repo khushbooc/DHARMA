@@ -1,11 +1,7 @@
-package model.ability;
+import model.ability.Ability;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import model.ability.Ability;
-import model.entity.Entity;
-
 /*
  * @author Aaron Iglesias
  */

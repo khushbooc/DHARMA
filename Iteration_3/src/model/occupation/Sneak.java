@@ -17,4 +17,10 @@ public class Sneak extends Occupation {
 		return new SpriteSheetUtility(this);
 	}
 
+	@Override
+	public Stats getStats()
+	{
+		return sneakStats;
+	}
+
 }

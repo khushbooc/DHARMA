@@ -1,35 +1,35 @@
 package model.ability;
 
 import model.entity.Entity;
+import model.occupation.Summoner;
+import model.statistics.SummonerStats;
 
 public class FireNova extends RadialAbility {
 
     public FireNova()
     {
-        this.setBase(90);
-        this.setCost(1);
-        this.setLevelRequirement(2);
-        this.setName("Fire Nova");
-        this.setRadius(3);
+        base = 90;
+        cost = 1;
+        levelRequirement = 2;
+        name = "Fire Nova";
+        radius = 3;
+        degree = 360;
     }
 
-    public FireNova(String name, int cost, int levelRequirement, int radius, int base)
+    public FireNova(String name, int cost, int levelRequirement, int radius, int base, int degree)
     {
-        setName(name);
-        setCost(cost);
-        setLevelRequirement(levelRequirement);
-        setRadius(radius);
-        setBase(base);
+        super(name, cost, levelRequirement, radius, base, degree);
     }
 
     @Override
-    public void use(Entity avatar, Entity entity)
+    public void use(Entity avatar)
     {
-        if(avatar.getMana() - this.cost < 0)
+        SummonerStats stats = summoner.getSummonerStats();
+        if(stats.getCurrentMana() - this.cost < 0)
             return;
 
         // for(all entities on map)
-        if(!inRadius(avatar, entity) || avatar == entity)
+        if(!inRadius(summoner, entity) || avatar == entity)
             continue; // do nothing
         else // do damage
         {
@@ -43,18 +43,18 @@ public class FireNova extends RadialAbility {
     public void scaleEffect(Entity avatar, Entity entity)
     {
         int critical;
-        int base, damage;
-        double avatarCrit, random, criticalBonus, modifier, offense, defense, level, skill;
+        int avatarCrit, base, damage;
+        double random, criticalBonus, modifier, offense, defense, level, skill;
 
         base = getBase();
 
-        Stats stats = avatar.getSummonerStats();
+        SummonerStats stats = summoner.getSummonerStats();
 
         level = stats.getLevel();
         offense = stats.getBoon();
         defense = stats.getArmor();
         skill = stats.getBoon();
-        avatarCrit = (int) Math.pow(2,avatar.getCritical());
+        avatarCrit = (int) Math.pow(2,stats.getCritical());
 
         random = (double) random(85,100) / 100;
         critical = (int) random(1,16 / avatarCrit);

@@ -6,11 +6,12 @@ public class ConeOfCold extends RadialAbility {
 
     public ConeOfCold()
     {
-        this.setBase(90);
-        this.setCost(1);
-        this.setLevelRequirement(2);
-        this.setName("Cone of Cold");
-        this.setRadius(3);
+        base = 90;
+        cost = 1;
+        levelRequirement = 2;
+        name = "Cone of Cold";
+        radius = 3;
+        degree = 90;
     }
 
     public ConeOfCold(String name, int cost, int levelRequirement, int radius, int base)
@@ -23,7 +24,7 @@ public class ConeOfCold extends RadialAbility {
     }
 
     @Override
-    public void use(Entity avatar, Entity entity)
+    public void use(Entity avatar)
     {
         if(avatar.getMana() - this.cost < 0)
             return;

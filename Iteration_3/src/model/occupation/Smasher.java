@@ -18,5 +18,11 @@ public class Smasher extends Occupation {
 	public SpriteSheetUtility getSpriteSheet() {
 		return new SpriteSheetUtility(this);
 }
+
+	@Override
+	public SmasherStats getStats()
+	{
+		return smasherStats;
+	}
 	
 }

@@ -6,20 +6,17 @@ public class RoundHouseSmash extends RadialAbility {
 
     public RoundHouseSmash()
     {
-        this.setBase(90);
-        this.setCost(1);
-        this.setLevelRequirement(2);
-        this.setName("Fire Nova");
-        this.setRadius(3);
+        base = 90;
+        cost = 1;
+        levelRequirement = 2;
+        name = "Roundhouse Smash";
+        radius = 3;
+        degree = 360;
     }
 
-    public RoundHouseSmash(String name, int cost, int levelRequirement, int radius, int base)
+    public RoundHouseSmash(String name, int cost, int levelRequirement, int radius, int base, int degree)
     {
-        setName(name);
-        setCost(cost);
-        setLevelRequirement(levelRequirement);
-        setRadius(radius);
-        setBase(base);
+        super(name, cost, levelRequirement, radius, base, degree);
     }
 
     @Override
