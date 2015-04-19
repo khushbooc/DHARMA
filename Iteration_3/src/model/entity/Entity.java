@@ -55,6 +55,5 @@ public abstract class Entity {
 	public abstract void equipItem(EquipableItem equiItem);
     public abstract void removeItem(TakeableItem ti);
     public abstract void unequipItem(EquipableItem eqi);
-    public abstract void useAbility(Ability ability);
 }
 

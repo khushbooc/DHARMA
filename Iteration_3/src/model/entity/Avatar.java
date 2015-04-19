@@ -1,54 +1,71 @@
 package model.entity;
 
 import model.ability.Ability;
-import model.gameMap.Location;
-import model.inventory.*;
+import model.inventory.EquipableItem;
+import model.inventory.EquipmentContainer;
+import model.inventory.Inventory;
+import model.inventory.TakeableItem;
 import model.occupation.Occupation;
 
 public class Avatar extends Entity {
-    private Gold gold;
-    
-    public Avatar(Occupation occupation){
-    	super(occupation);
-        gold = new Gold(10);// avatar has 10 golds initially
-
-	}
-    
-	public Avatar(Location location, Occupation occupation, Inventory inventory, EquipmentContainer equipmentContainer){
-        super(location, occupation,inventory, equipmentContainer);
-        gold = new Gold(10);// avatar has 10 golds initially
-
+	
+	public Avatar(Occupation occupation){
+		super(occupation);
 	}
 
-    public Gold getGold(){
-        return this.gold;
-    }
+	public Avatar(Occupation occupation, Inventory inventory,
+			EquipmentContainer equicontainer) {
+		super(occupation, inventory, equicontainer);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public Occupation getOccupation() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Inventory getInventory() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EquipmentContainer getEquipmentContainer() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	@Override
 	public void addToInventory(TakeableItem takeableitem) {
-		this.getInventory().add(takeableitem);
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void equipItem(EquipableItem equiItem) {
-		this.getEquipmentContainer().add(equiItem);
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void removeItem(TakeableItem ti) {
-		this.getInventory().remove(ti);
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void unequipItem(EquipableItem eqi) {
-		this.getEquipmentContainer().remove(eqi);
+		// TODO Auto-generated method stub
 		
 	}
 
-	
+	@Override
+	public void useAbility(Ability ability) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }
