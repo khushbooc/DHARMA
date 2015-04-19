@@ -1,6 +1,5 @@
 package model.entity;
 
-import model.ability.Ability;
 import model.inventory.EquipableItem;
 import model.inventory.EquipmentContainer;
 import model.inventory.Inventory;
@@ -57,12 +56,6 @@ public class Avatar extends Entity {
 
 	@Override
 	public void unequipItem(EquipableItem eqi) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void useAbility(Ability ability) {
 		// TODO Auto-generated method stub
 		
 	}
