@@ -25,19 +25,21 @@ public class FireNova extends RadialAbility {
     @Override
     public void use(Entity avatar)
     {
-        SummonerStats stats = summoner.getSummonerStats();
-        if(stats.getCurrentMana() - this.cost < 0)
-            return;
+//        SummonerStats stats = summoner.getSummonerStats();
+//        if(stats.getCurrentMana() - this.cost < 0)
+//            return;
+//
+//        // for(all entities on map)
+//        if(!inRadius(summoner, entity) || avatar == entity)
+//            continue; // do nothing
+//        else // do damage
+//        {
+//            scaleEffect(avatar, entity);
+//            entity.modHealth(-effect);
+//            entity.modMana(-cost);
+//        }
 
-        // for(all entities on map)
-        if(!inRadius(summoner, entity) || avatar == entity)
-            continue; // do nothing
-        else // do damage
-        {
-            scaleEffect(avatar, entity);
-            entity.modHealth(-effect);
-            entity.modMana(-cost);
-        }
+        return;
     }
 
     @Override
@@ -52,7 +54,7 @@ public class FireNova extends RadialAbility {
         SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
 
         level = stats.getLevel();
-        offense = stats.getBoon();
+        offense = stats.getSpellPower();
         defense = stats.getArmor();
         skill = stats.getBoon();
         avatarCrit = (int) Math.pow(2,stats.getCritical());
@@ -69,6 +71,12 @@ public class FireNova extends RadialAbility {
         damage = (int) Math.floor(((2 * level + 10) / 250 * offense / defense * base + 2) * modifier);
 
         setEffect(damage);
+    }
+
+    @Override
+    public void activate()
+    {
+        return;
     }
 
 }

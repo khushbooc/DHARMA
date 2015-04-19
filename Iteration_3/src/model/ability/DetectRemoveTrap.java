@@ -26,19 +26,20 @@ public class DetectRemoveTrap extends RadialAbility {
     @Override
     public void use(Entity avatar)
     {
-        SneakStats stats = (SneakStats) avatar.getOccupation().getStats();
-        if(stats.getCurrentMana() - this.cost < 0)
-            return;
-
-        // for(all entities on map)
-        if(!inRadius(avatar, entity) || avatar == entity)
-            continue; // do nothing
-        else // do damage
-        {
-            scaleEffect(avatar, entity);
-            entity.modHealth(-effect);
-            entity.modMana(-cost);
-        }
+//        SneakStats stats = (SneakStats) avatar.getOccupation().getStats();
+//        if(stats.getCurrentMana() - this.cost < 0)
+//            return;
+//
+//        // for(all entities on map)
+//        if(!inRadius(avatar, entity) || avatar == entity)
+//            continue; // do nothing
+//        else // do damage
+//        {
+//            scaleEffect(avatar, entity);
+//            entity.modHealth(-effect);
+//            entity.modMana(-cost);
+//        }
+        return;
     }
 
     @Override
@@ -50,12 +51,12 @@ public class DetectRemoveTrap extends RadialAbility {
 
         base = getBase();
 
-        SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
+        SneakStats stats = (SneakStats) avatar.getOccupation().getStats();
 
         level = stats.getLevel();
-        offense = stats.getBoon();
+        offense = stats.getOffense();
         defense = stats.getArmor();
-        skill = stats.getBoon();
+        skill = stats.getDetectRemoveTrap();
         avatarCrit = (int) Math.pow(2,stats.getCritical());
 
         random = (double) random(85,100) / 100;
@@ -70,6 +71,12 @@ public class DetectRemoveTrap extends RadialAbility {
         damage = (int) Math.floor(((2 * level + 10) / 250 * offense / defense * base + 2) * modifier);
 
         setEffect(damage);
+    }
+
+    @Override
+    public void activate()
+    {
+        return;
     }
 
 }

@@ -2,7 +2,7 @@ package model.ability;
 import model.entity.Entity;
 
 import java.util.Random;
-public abstract class ProjectileAbility extends RadiusAbility
+public abstract class ProjectileAbility extends Ability
 {
     private int radius;
 

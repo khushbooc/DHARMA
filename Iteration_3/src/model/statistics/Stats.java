@@ -21,7 +21,6 @@ public abstract class Stats
 	protected int offense;
 	protected int defense;
 	protected int armor;
-    protected int maxmana; //Giang: added to avoid compile error
 
 	// general skills
 	protected int bindWounds;
@@ -270,7 +269,7 @@ public abstract class Stats
 
 	public void setMaxMana(int maxMana)
 	{
-		this.maxmana = adjust(maxMana);
+		this.maxMana = adjust(maxMana);
 	}
 
 	public void currentMana(int n)
@@ -374,14 +373,29 @@ public abstract class Stats
 		return offense;
 	}
 
+	public void modOffense(int n)
+	{
+		offense = adjust(offense + n);
+	}
+
 	public int getDefense()
 	{
 		return defense;
 	}
 
+	public void modDefense(int n)
+	{
+		defense = adjust(defense + n);
+	}
+
 	public int getArmor()
 	{
 		return armor;
+	}
+
+	public void modArmor(int n)
+	{
+		armor = adjust(armor + n);
 	}
 
 	public int getObservation()
