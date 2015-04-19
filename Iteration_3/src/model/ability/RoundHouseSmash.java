@@ -1,6 +1,8 @@
 package model.ability;
 
 import model.entity.Entity;
+import model.statistics.SmasherStats;
+import model.statistics.Stats;
 
 public class RoundHouseSmash extends RadialAbility {
 
@@ -22,7 +24,9 @@ public class RoundHouseSmash extends RadialAbility {
     @Override
     public void use(Entity avatar, Entity entity)
     {
-        if(avatar.getMana() - this.cost < 0)
+        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
+        Stats entityStats;
+        if(stats.getCurrentMana() < this.cost)
             return;
 
         // for(all entities on map)
@@ -30,9 +34,10 @@ public class RoundHouseSmash extends RadialAbility {
             continue; // do nothing
         else // do damage
         {
+            entityStats = entity.getOccupation().getStats();
             scaleEffect(avatar, entity);
-            entity.modHealth(-effect);
-            entity.modMana(-cost);
+            stats.modCurrentHealth(-effect);
+            stats.modCurrentMana(-cost);
         }
     }
 
@@ -40,18 +45,18 @@ public class RoundHouseSmash extends RadialAbility {
     public void scaleEffect(Entity avatar, Entity entity)
     {
         int critical;
-        int base, damage;
-        double avatarCrit, random, criticalBonus, modifier, offense, defense, level, skill;
+        int avatarCrit, base, damage;
+        double random, criticalBonus, modifier, offense, defense, level, skill;
 
         base = getBase();
 
-        Stats stats = avatar.getSmasherStats();
+        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
 
         level = stats.getLevel();
-        offense = stats.getBoon();
+        offense = stats.getOffense();
         defense = stats.getArmor();
-        skill = stats.getBoon();
-        avatarCrit = (int) Math.pow(2,avatar.getCritical());
+        skill = stats.getTwoHandedWeapon();
+        avatarCrit = (int) Math.pow(2,stats.getCritical());
 
         random = (double) random(85,100) / 100;
         critical = (int) random(1,16 / avatarCrit);
