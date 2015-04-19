@@ -54,4 +54,19 @@ public class Shopkeeper extends FriendlyNPC{
         this.getInventory().remove(ti);
         avatar.getInventory().add(ti); // add to avatar's inventory
     }
+	@Override
+	public Occupation getOccupation() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Inventory getInventory() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public EquipmentContainer getEquipmentContainer() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

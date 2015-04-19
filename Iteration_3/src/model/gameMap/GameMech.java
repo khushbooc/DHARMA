@@ -90,6 +90,7 @@ public class GameMech
 		//g2.fillPolygon(GameMech.hex(x,y));
 		//g2.fillPolygon(poly);
 		//g2.setColor(gameMap.COLOURGRID);
+		//g2.fillpoly
 		g2.drawPolygon(poly);
 	}
 

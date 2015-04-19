@@ -75,6 +75,11 @@ public class EquipmentContainer extends Observable {
         return true;
     }
 
+	public void increaseGoldCount(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }
 
