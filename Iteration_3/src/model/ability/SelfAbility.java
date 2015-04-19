@@ -9,9 +9,9 @@ public abstract class SelfAbility extends Ability
         super();
     }
 
-    public SelfAbility(String name, int cost, int levelRequirement, int effect)
+    public SelfAbility(String name, int cost, int levelRequirement, int base, int effect)
     {
-        super(name, cost, levelRequirement, effect);
+        super(name, cost, levelRequirement, base, effect);
     }
 
     public abstract void scaleEffect(Entity avatar);

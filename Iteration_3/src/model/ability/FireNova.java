@@ -3,36 +3,23 @@ package model.ability;
 import model.entity.Entity;
 
 public class FireNova extends RadialAbility {
-    private int base;
-    // private String type;
 
     public FireNova()
     {
-        this.base = 90;
+        this.setBase(90);
         this.setCost(1);
         this.setLevelRequirement(2);
         this.setName("Fire Nova");
         this.setRadius(3);
     }
 
-    public FireNova(String name, int cost, int levelRequirement, int radius, int damage)
+    public FireNova(String name, int cost, int levelRequirement, int radius, int base)
     {
-        super(name, cost, levelRequirement, radius);
         setName(name);
         setCost(cost);
         setLevelRequirement(levelRequirement);
         setRadius(radius);
-        setBase(damage);
-    }
-
-    public int getBase();
-    {
-        return base;
-    }
-
-    public void setBase(int damage)
-    {
-        this.base = damage;
+        setBase(base);
     }
 
     @Override
@@ -53,11 +40,13 @@ public class FireNova extends RadialAbility {
     }
 
     @Override
-    private void scaleEffect(Entity avatar, Entity entity)
+    public void scaleEffect(Entity avatar, Entity entity)
     {
         int critical;
-        int damage;
-        double base, avatarCrit, random, criticalBonus, modifier, offense, defense, level, skill;
+        int base, damage;
+        double avatarCrit, random, criticalBonus, modifier, offense, defense, level, skill;
+
+        base = getBase();
 
         Stats stats = avatar.getSummonerStats();
 

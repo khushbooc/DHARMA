@@ -14,7 +14,7 @@ public abstract class RadiusAbility extends Ability
 
     public RadiusAbility(String name, int cost, int levelRequirement, int radius, int base)
     {
-        super(name, cost, levelRequirement);
+        super(name, cost, levelRequirement, radius, base);
         this.radius = radius;
     }
 
@@ -26,16 +26,6 @@ public abstract class RadiusAbility extends Ability
     public void setRadius(int radius)
     {
         this.radius = radius;
-    }
-
-    public int getBase()
-    {
-        return base;
-    }
-
-    public void setBase(int base)
-    {
-        this.base = base;
     }
 
     public abstract boolean inRadius(Entity avatar, Entity entity);

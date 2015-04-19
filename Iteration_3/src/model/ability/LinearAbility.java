@@ -1,9 +1,10 @@
 package model.ability;
+
+import model.entity.Entity;
+
 public abstract class LinearAbility extends RadiusAbility
 {
 	private int radius;
-    //add to avoid error
-    private int degree;
 
 	public LinearAbility()
 	{
@@ -11,21 +12,10 @@ public abstract class LinearAbility extends RadiusAbility
 		radius = 1;
 	}
 
-	public LinearAbility(String name, int cost, int levelRequirement, int radius)
+	public LinearAbility(String name, int cost, int levelRequirement, int radius, int base)
 	{
-		super(name, cost, levelRequirement, radius);
-//		this.radius = radius;
+		super(name, cost, levelRequirement, radius, base);
 	}
 
-	public int getDegree()
-	{
-		return degree;
-	}
-
-	public void setDegree(int degree)
-	{
-		this.degree = degree;
-	}
-
-	public abstract boolean use();
+	public abstract void use(Entity avatar, Entity entity);
 }

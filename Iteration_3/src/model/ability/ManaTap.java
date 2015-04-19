@@ -17,9 +17,9 @@ public class ManaTap extends SelfAbility
         setEffect(0);
     }
 
-    public ManaTap(String name, int cost, int levelRequirement, int effect)
+    public ManaTap(String name, int cost, int levelRequirement, int base, int effect)
     {
-        super(name, cost, levelRequirement, effect);
+        super(name, cost, levelRequirement, base, effect);
     }
 
     @Override

@@ -28,22 +28,12 @@ public abstract class Ability
 		this.effect = effect;
 	}
 
-	public int getBase()
-	{
-		return base;
-	}
-
-	public void setBase(int base)
-	{
-		this.base = base;
-	}
-
-	public String getEffect()
+	public int getEffect()
 	{
 		return effect;
 	}
 
-	public void setEffect(String effect)
+	public void setEffect(int effect)
 	{
 		this.effect = effect;
 	}
