@@ -1,4 +1,7 @@
+/* class is being considered for deletion
+
 package utilities;
+
 
 import java.awt.Point;
 
@@ -53,4 +56,4 @@ public class Directions {
 		return null;
 	}
 	
-}
+}*/

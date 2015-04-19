@@ -6,4 +6,5 @@ package model.states;
 
 //these are for model to know what state it is in - playing, paused, whatever
 public class State {
+
 }
