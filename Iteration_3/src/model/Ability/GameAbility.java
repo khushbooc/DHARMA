@@ -8,4 +8,5 @@ package model.ability;
 //Game abilities are functions like movement, pausing, and selection - not casting spells, sneaking, etc
 //this is what controller will use to activate stuff that isnt a normal ability
 public class GameAbility {
+
 }
