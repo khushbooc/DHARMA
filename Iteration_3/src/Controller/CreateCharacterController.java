@@ -60,6 +60,7 @@ public class CreateCharacterController {
 		
 		public void actionPerformed(ActionEvent e) {
 			occ = new Smasher();
+			System.out.println("Smasher");
 			name = charCreation.avatarName();
 			charCreation.setNext("New"); //Game View
 			//gameToCreate.getMap().updateEntityLocation(gameToCreate.getAvatar(), new Location(STARTINGX,STARTINGY));

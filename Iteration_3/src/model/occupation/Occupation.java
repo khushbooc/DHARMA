@@ -8,7 +8,7 @@ import utilities.SpriteSheetUtility;
 
 public abstract class Occupation {
 	 private AbilityLibrary abilitylibrary ;
-	 private Stats stat;
+	 protected Stats stat;
 	 protected SpriteSheetUtility spritesheet;
 	 public Occupation()
 	 {
@@ -27,8 +27,4 @@ public abstract class Occupation {
 		 return stat;
 	 }
 		public abstract SpriteSheetUtility getSpriteSheet();
-	 
-	
-	
-
 }

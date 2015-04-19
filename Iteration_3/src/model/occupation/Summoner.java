@@ -7,6 +7,10 @@ import utilities.SpriteSheetUtility;
 public class Summoner extends Occupation {
 	private AbilityLibrary abl;
 	private Stats stat;
+	
+	public Summoner(){
+		
+	}
 
 
     public Summoner(AbilityLibrary abilitylibrary, Stats stat) {
@@ -14,7 +18,7 @@ public class Summoner extends Occupation {
         // TODO
     }
 		
-	}
+	
 	public SpriteSheetUtility getSpriteSheet() {
 		return new SpriteSheetUtility(this);
 }

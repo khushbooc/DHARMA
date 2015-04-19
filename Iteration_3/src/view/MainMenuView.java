@@ -13,8 +13,8 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class MainMenuView extends View{
-	private Font titleFont = new Font("serif", Font.PLAIN, 24);
-	private Font buttonFont = new Font("serif", Font.PLAIN, 24);
+	private Font titleFont = new Font("serif", Font.PLAIN, 20);
+	private Font buttonFont = new Font("serif", Font.PLAIN, 18);
 	
 	private JButton startGameButton;
 	private JButton loadGameButton;
@@ -39,10 +39,10 @@ public class MainMenuView extends View{
 
 		
 		title = new JLabel("The Melting Point");
-		title.setFont(titleFont.deriveFont(100f));
+		title.setFont(titleFont.deriveFont(80f));
 		
 		JPanel backGroundPanel = new ImagePanel("src/res/main_menu.gif");
-		backGroundPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 700, 5));
+		backGroundPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 600, 5));
 		// Insets insets = backGroundPanel.getInsets();
 		// Dimension size = backGroundPanel.getPreferredSize();
 		
@@ -51,12 +51,12 @@ public class MainMenuView extends View{
 		ghost.setContentAreaFilled(false);
 		ghost.setBorderPainted(false);
 		
-		setPreferredSize(new Dimension(800,600));
+		setPreferredSize(new Dimension(600,600));
 		setLayout(new BorderLayout());
 		
-		startGameButton.setMaximumSize(new Dimension(200,50));
-		loadGameButton.setMaximumSize(new Dimension(200,50));
-		quitGameButton.setMaximumSize(new Dimension(200,50));
+		startGameButton.setMaximumSize(new Dimension(150,50));
+		loadGameButton.setMaximumSize(new Dimension(150,50));
+		quitGameButton.setMaximumSize(new Dimension(150,50));
 		
 		backGroundPanel.add(title);
 		backGroundPanel.add(ghost);

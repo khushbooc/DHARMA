@@ -7,8 +7,8 @@ import javax.swing.JButton;
 
 @SuppressWarnings("serial")
 public class CharacterButton extends JButton {
-	public CharacterButton() {
-		super();
+	public CharacterButton(String text) {
+		super(text);
 		customFeel();
 	}
 	

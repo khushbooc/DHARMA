@@ -16,8 +16,8 @@ public class SpriteSheetUtility {
 	private String imagePath="";
 	private BufferedImage image;
 	private BufferedImage[] spriteArray = new BufferedImage[10];
-	private final int width = 50;
-	private final int height = 50;
+	private final int width = 32;
+	private final int height = 32;
 	private int offsetX, offsetY;
 
 	public SpriteSheetUtility() {
@@ -32,7 +32,7 @@ public class SpriteSheetUtility {
 	}
 	
 	public SpriteSheetUtility(Sneak sn) {
-		imagePath = "src/res/sneak.png";
+		imagePath = "src/res/summoner.gif";
 		initialize();
 	}
 	public SpriteSheetUtility(Smasher s) {
@@ -63,31 +63,33 @@ public class SpriteSheetUtility {
 		}
 	}
 	private BufferedImage getSpriteDirection(int direction) {
+		System.out.println("Working"+direction);
 		switch (direction) {
 		
+		
 		case 0: { //DANCING PART 1
-			return getSprite(142,781);
+			return getSprite(0,64);
 		}
 		case 1: { //SOUTH_WEST
-			return getSprite(13,332);
+			return getSprite(0,64);
 		}
 		case 2: { //SOUTH
-			return getSprite(13,140);
+			return getSprite(0,64);
 		}
 		case 3: { //SOUTH_EAST
-			return getSprite(13,460);
+			return getSprite(0,64);
 		}
 		case 4: { //WEST
-			return getSprite(332,588);
+			return getSprite(0,96);
 		}
 		case 5: { //DANCING PART 2
-			return getSprite(270,781);
+			return getSprite(0,64);
 		}
 		case 6: { //EAST
-			return getSprite(332,716);
+			return getSprite(0,160);
 		}
 		case 7: { //NORTH_WEST
-			BufferedImage temp = getSprite(140,1038);
+			BufferedImage temp = getSprite(0,128);
 			
 			AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
 		    tx.translate(-temp.getWidth(null), 0);
@@ -96,13 +98,14 @@ public class SpriteSheetUtility {
 		    return op.filter(temp, null);
 		}
 		case 8: { //NORTH
-			return getSprite(13,13);
+			return getSprite(0,128);
 		}
 		case 9: { //NORTH_EAST
-			return getSprite(140,1038);
+			return getSprite(0,128);
 		}
-		default: {//NORTH??
-			return getSprite(13,13);
+		default: {//south??
+			System.out.println("Working");
+			return getSprite(0,64);
 		}
 		}
 	}

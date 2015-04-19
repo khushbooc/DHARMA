@@ -3,7 +3,11 @@ import java.awt.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.text.View;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Position.Bias;
+
+import model.entity.Avatar;
+import view.View;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -12,10 +16,11 @@ import java.io.File;
 import java.io.IOException;
  
  
-public class GameMap
+public class GameMap extends View
 {
 	
 	private DrawingPanel panel;
+	private Avatar avatar;
 	private JFrame frame; 
 	private int min_x=3;
 	private int min_y=3;
@@ -23,7 +28,8 @@ public class GameMap
 	private int max_y=3;
 	//private Terrain[][] terrain;
 	
-  public GameMap(JFrame frame) {
+  public GameMap(Avatar avatar,JFrame frame) {
+	  this.avatar=avatar;
 	  this.frame=frame;
 		initGame();
 		createAndShowGUI();
@@ -69,7 +75,7 @@ public class GameMap
 				System.out.println(e);
 			}
 		//terrain =new Terrain[BSIZE][BSIZE];
- 
+		 
 		GameMech.setXYasVertex(false); //RECOMMENDED: leave this as FALSE.
  
 		GameMech.setHeight(HEXSIZE); //Either setHeight or setSize must be run to initialize the hex
@@ -163,7 +169,7 @@ public class GameMap
 				}
 			}
  
-			//GameMech.fillHex(4,5,map[i][j],g2);
+			GameMech.fillHex(3,3,avatar.getImage(),g2);
 		}
  
 	
@@ -190,8 +196,8 @@ public class GameMap
 	}
 	public void setLocation(Point step){
 		System.out.println("Location:"+min_x+","+min_y);
-		min_x=min_x+(int)step.getX();
-		min_y=min_y+(int)step.getY();
+		min_x=min_x-(int)step.getX();
+		min_y=min_y-(int)step.getY();
 		if(min_x<-24)
 			min_x=-24;
 		if(min_y<-24)
@@ -203,4 +209,5 @@ public class GameMap
 		
 		
 	}
+
 }

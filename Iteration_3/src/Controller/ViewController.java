@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.JFrame;
+import javax.swing.Timer;
 
 import view.View;
 import model.gameMap.Game;
@@ -23,7 +24,7 @@ public class ViewController {
 	private CreateCharacterController ccc;
 	private MapViewController  mvc;
 	private GameMap map;
-	private JFrame mainFrame;
+	//private JFrame mainFrame;
 	
 	 private View previous;
      private View current;
@@ -33,6 +34,7 @@ public class ViewController {
 	
 	public ViewController(){
 		
+		this.display();
 		frame = new JFrame();
         //instantiate the main menu controller + view
         mmc = new MainMenuController();
@@ -53,7 +55,7 @@ public class ViewController {
         
         gc = new GameController();
         views.put("Game", ccc.getView());
-		
+		/*
 		mainFrame=new JFrame("Hex Board");
 		map=new GameMap(mainFrame);
 		mainFrame.pack();
@@ -68,6 +70,7 @@ public class ViewController {
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mainFrame.repaint();
 		mvc=new MapViewController(map,mainFrame);
+		*/
 		
 	}
 	public void changePanel(){
@@ -84,7 +87,7 @@ public class ViewController {
             else{
                 current = views.get(current.getNext());
             }
-            current.reset();
+            //current.reset();
             frame.remove(previous);
             frame.add(current);
             frame.revalidate();
@@ -92,6 +95,11 @@ public class ViewController {
         }
         
 }
+	
+	public void display(){
+    	Timer timer = new Timer(20, new RunGameTimer());
+		timer.start();
+    }
 /**
  * Reloads game variables and their associated views.
  */
@@ -106,9 +114,11 @@ public void reLoad(String command){
 	}else{
 		game = new Game();
 	}
-    gc = new GameController(game);
+    //gc = new GameController(game);
    // views.put("Game");
-    mvc= new MapViewController(map,frame);
+	
+    mvc= new MapViewController(game.getAvatar(),map,frame);
+    views.put("Game", mvc.getView());
     //gc.stopReset();
     frame.revalidate();
     frame.repaint();
@@ -124,6 +134,7 @@ public class RunGameTimer implements ActionListener {
 		if(current.getRedraw()){
 			changePanel();
 		}
+		
 	}
 }
 

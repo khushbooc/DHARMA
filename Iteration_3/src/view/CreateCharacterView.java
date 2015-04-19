@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+@SuppressWarnings("serial")
 public class CreateCharacterView extends View {
 	private JButton backGameButton;
 	private JButton startsneakButton;
@@ -36,33 +37,38 @@ public class CreateCharacterView extends View {
 		
 		
 		title = new JLabel("CHARACTER CREATION");
-		title.setFont(titleFont.deriveFont(100f));
+		title.setFont(titleFont.deriveFont(40f));
 		
 		backgroundPanel = new ImagePanel("src/res/main_menu.gif");
 		
 		backgroundPanel.setLayout(new GridBagLayout());//(FlowLayout.CENTER, 350, 5));
 		GridBagConstraints c = new GridBagConstraints();
 		
-		ImageIcon summonerButton = new ImageIcon("src/res/sumlogo.png");
-		ImageIcon sneakButton = new ImageIcon("src/res/sneaklogo.png");
-		ImageIcon smasherButton = new ImageIcon("src/res/smasherlogo.png");
+		ImageIcon summonerButton = new ImageIcon("src/res/sumlog.png");
+		ImageIcon sneakButton = new ImageIcon("src/res/sneaklog.png");
+		ImageIcon smasherButton = new ImageIcon("src/res/smasherlog.png");
+		//smasherButton.
 		
 		backGameButton = new MainMenuButton("       <Back>", labelFont);
 		
-		startsneakButton = new CharacterButton(sneakButton);
-		startsummonerButton = new CharacterButton(summonerButton);
-		startsmasherButton = new CharacterButton(smasherButton);
+		//startsneakButton = new CharacterButton(sneakButton);
+		//startsummonerButton = new CharacterButton(summonerButton);
+		//startsmasherButton = new CharacterButton(smasherButton);
 		
-		JLabel summonerLabel = new JLabel("  Summoner");
+		startsneakButton = new CharacterButton("Sneak");
+		startsummonerButton = new CharacterButton("Summoner");
+		startsmasherButton = new CharacterButton("Smasher");
+		
+		JLabel summonerLabel = new JLabel("Summoner");
 		summonerLabel.setForeground(Color.WHITE);
-		Font labelFontRedux = labelFont.deriveFont(40f);
+		Font labelFontRedux = labelFont.deriveFont(20f);
 		summonerLabel.setFont(labelFontRedux);
 		
-		JLabel sneakLabel = new JLabel("   Sneak");
+		JLabel sneakLabel = new JLabel("Sneak");
 		sneakLabel.setForeground(Color.WHITE);
 		sneakLabel.setFont(labelFontRedux);
 		
-		JLabel smasherLabel = new JLabel("        Smasher");
+		JLabel smasherLabel = new JLabel("Smasher");
 		smasherLabel.setForeground(Color.WHITE);
 		smasherLabel.setFont(labelFontRedux);
 		

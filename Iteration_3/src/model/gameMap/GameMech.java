@@ -93,11 +93,11 @@ public class GameMech
 		g2.drawPolygon(poly);
 	}
 
-	public static void fillHex(int i, int j,Tile tile, Graphics2D g2) {
+	public static void fillHex(int i, int j,BufferedImage cell, Graphics2D g2) {
 		char c='o';
 		int x = i * (s+t);
 		int y = j * h + (i%2) * h/2;
-		BufferedImage cell=tile.getTerrain().getImage();
+		//BufferedImage cell=tile.getTerrain().getImage();
 		//if (i > 5 || j > 5) {
 			g2.drawImage(cell,x+10,y+10,x+GameMap.HEXSIZE+20,y+GameMap.HEXSIZE+10,0,0,cell.getWidth(),cell.getHeight(),null);
 			//g2.setColor(GameMap.COLOURONE);
