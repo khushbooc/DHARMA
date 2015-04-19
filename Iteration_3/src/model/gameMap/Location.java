@@ -3,21 +3,20 @@ package model.gameMap;
 import java.awt.Point;
 
 @SuppressWarnings("serial")
-public class Location extends Point{
+public class Location{
+    int x;
+    int y;
 
 	public Location(int x,int y){
-		super(x,y);
+		this.x = x;
+        this.y = y;
 	}
-	
-	public Location(Point point){
-		super(point);
-	}
-	
-	public double getX() {
+
+	public int getX() {
 		return x;
 	}
 	
-	public double getY() {
+	public int getY() {
 		return y;
 	}
 	
@@ -39,13 +38,4 @@ public class Location extends Point{
 		this.y+=y;
 		return this;
 	}
-	
-	public Location addLocation(Point point) {
-		this.x += point.getX();
-		this.y += point.getY();
-		return this;
-	}
-	
-	
-
 }
