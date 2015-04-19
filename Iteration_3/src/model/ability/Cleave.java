@@ -1,6 +1,7 @@
 package model.ability;
 
 import model.entity.Entity;
+import model.statistics.SmasherStats;
 import model.statistics.Stats;
 import model.statistics.SummonerStats;
 
@@ -28,21 +29,22 @@ public class Cleave extends RadialAbility {
     @Override
     public void use(Entity avatar)
     {
-        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
-        Stats entityStats;
-        if(stats.getCurrentMana() - this.cost < 0)
-            return;
-
-        // for(all entities on map)
-        if(!inRadius(avatar, entity) || avatar == entity)
-            continue; // do nothing
-        else // do damage
-        {
-            entityStats = entity.getOccupation().getStats();
-            scaleEffect(avatar, entity);
-            entityStats.modCurrentHealth(-effect);
-            entityStats.modCurrentMana(-cost);
-        }
+//        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
+//        Stats entityStats;
+//        if(stats.getCurrentMana() - this.cost < 0)
+//            return;
+//
+//        // for(all entities on map)
+//        if(!inRadius(avatar, entity) || avatar == entity)
+//            continue; // do nothing
+//        else // do damage
+//        {
+//            entityStats = entity.getOccupation().getStats();
+//            scaleEffect(avatar, entity);
+//            entityStats.modCurrentHealth(-effect);
+//            entityStats.modCurrentMana(-cost);
+//        }
+        return;
     }
 
     @Override
@@ -57,9 +59,9 @@ public class Cleave extends RadialAbility {
         SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
 
         level = stats.getLevel();
-        offense = stats.getBoon();
+        offense = stats.getOffense();
         defense = stats.getArmor();
-        skill = stats.getBoon();
+        skill = stats.getTwoHandedWeapon(); // fix this later
         avatarCrit = (int) Math.pow(2,stats.getCritical());
 
         random = (double) random(85,100) / 100;
@@ -74,5 +76,11 @@ public class Cleave extends RadialAbility {
         damage = (int) Math.floor(((2 * level + 10) / 250 * offense / defense * base + 2) * modifier);
 
         setEffect(damage);
+    }
+
+    @Override
+    public void activate()
+    {
+        return;
     }
 }

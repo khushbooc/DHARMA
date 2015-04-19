@@ -4,14 +4,9 @@ public class SneakLibrary extends AbilityLibrary
 {
     public void SneakLibrary()
     {
-        ConeOfCold coneOfCold = new ConeOfCold();
-        FireNova fireNova = new FireNova();
-        Frostbolt frostbolt = new Frostbolt();
-        ManaTap manaTap = new ManaTap();
+        DetectRemoveTrap detectRemoveTrap = new DetectRemoveTrap();
 
-        addAbility(coneOfCold, abilities);
-        addAbility(fireNova, abilities);
-        addAbility(frostbolt, abilities);
-        addAbility(manaTap, abilities);
+        addAbility(detectRemoveTrap, abilities);
+        addAbility(detectRemoveTrap, learnedAbilities);
     }
 }

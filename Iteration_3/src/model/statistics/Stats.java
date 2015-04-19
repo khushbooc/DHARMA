@@ -3,28 +3,25 @@ package model.statistics;
 public abstract class Stats
 {
 	// primary stats
-	private int lives;
-	private int strength;
-	private int agility;
-	private int intellect;
-	private int hardiness;
-	private int movement;
-    private int experience; // Giang added to avoid compile error
-    private int critical;
+	protected int lives;
+	protected int strength;
+	protected int agility;
+	protected int intellect;
+	protected int hardiness;
+	protected int movement;
+    protected int experience; // Giang added to avoid compile error
+    protected int critical;
 
 	// derived stats
-	private int level;
-	private int maxHealth;
-	private int currentHealth;
-	private int maxMana;
-	private int currentMana;
-	// private int maxExp;
-	// private int currentExp;
-	// private int remainderExp;
-	private int offense;
-	private int defense;
-	private int armor;
-    private int maxmana; //Giang: added to avoid compile error
+	protected int level;
+	protected int maxHealth;
+	protected int currentHealth;
+	protected int maxMana;
+	protected int currentMana;
+	protected int offense;
+	protected int defense;
+	protected int armor;
+    protected int maxmana; //Giang: added to avoid compile error
 
 	// general skills
 	protected int bindWounds;
@@ -32,7 +29,7 @@ public abstract class Stats
 	protected int observation;
 
 	// skill points to spend on level up
-	private int skillPoints;
+	protected int skillPoints;
 
 	public Stats()
 	{
@@ -86,7 +83,9 @@ public abstract class Stats
 
 	public void setStrength(int strength)
 	{
+		int difference = strength - this.strength;
 		this.strength = adjust(strength);
+		offense = offense + difference;
 	}
 
 	public void modAgility(int n)
@@ -102,7 +101,9 @@ public abstract class Stats
 
 	public void setAgility(int agility)
 	{
+		int difference = agility - this.agility;
 		this.agility = adjust(agility);
+		defense = defense + difference;
 	}
 
 	public void modIntellect(int n)
@@ -133,7 +134,9 @@ public abstract class Stats
 
 	public void setHardiness(int hardiness)
 	{
+		int difference = hardiness - this.hardiness;
 		this.hardiness = adjust(hardiness);
+		armor = armor + difference;
 	}
 
 	public void modExperience(int n)
@@ -364,6 +367,21 @@ public abstract class Stats
 			return;
 		++observation;
 		--skillPoints;
+	}
+
+	public int getOffense()
+	{
+		return offense;
+	}
+
+	public int getDefense()
+	{
+		return defense;
+	}
+
+	public int getArmor()
+	{
+		return armor;
 	}
 
 	public int getObservation()

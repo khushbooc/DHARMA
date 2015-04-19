@@ -17,5 +17,5 @@ public abstract class LinearAbility extends RadiusAbility
 		super(name, cost, levelRequirement, radius, base);
 	}
 
-	public abstract void use(Entity avatar, Entity entity);
+	public abstract void use(Entity avatar);
 }

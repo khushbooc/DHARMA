@@ -1,5 +1,6 @@
 package model.ability;
-public class Frostbolt extends LinearAbility
+
+public class Frostbolt extends ProjectileAbility
 {
 	private int damage;
 	// private String type;
@@ -20,13 +21,7 @@ public class Frostbolt extends LinearAbility
 
 	public Frostbolt(String name, int cost, int levelRequirement, int radius, int damage)
 	{
-        super(name, cost, levelRequirement, radius);
-        setName(name);
-        setCost(cost);
-        setLevelRequirement(levelRequirement);
-        setRadius(radius);
-        setDamage(damage);
-		this.damage = damage;
+        super(name, cost, levelRequirement, radius, damage);
 	}
 
 	public int getDamage()
@@ -48,13 +43,18 @@ public class Frostbolt extends LinearAbility
 	}
 	*/
     @Override
-	public boolean use(){
+	public void use(){
         return true; //temporary
     }
+
     @Override
     public boolean inRadius(){
         return true; //temporary
     }
 
-
+	@Override
+	public void activate()
+	{
+		return;
+	}
 }

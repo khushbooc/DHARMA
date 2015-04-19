@@ -1,49 +1,44 @@
 package model.ability;
 
 import model.entity.Entity;
+import model.occupation.Summoner;
+import model.statistics.SneakStats;
 import model.statistics.Stats;
 import model.statistics.SummonerStats;
 
-public class ConeOfCold extends RadialAbility {
+public class DetectRemoveTrap extends RadialAbility {
 
-    public ConeOfCold()
+    public DetectRemoveTrap()
     {
-        base = 90;
+        base = 0;
         cost = 1;
-        levelRequirement = 2;
-        name = "Cone of Cold";
-        radius = 3;
-        degree = 90;
+        levelRequirement = 1;
+        name = "Detect and Remove Trap";
+        radius = 4;
+        degree = 360;
     }
 
-    public ConeOfCold(String name, int cost, int levelRequirement, int radius, int base)
+    public DetectRemoveTrap(String name, int cost, int levelRequirement, int radius, int base, int degree)
     {
-        setName(name);
-        setCost(cost);
-        setLevelRequirement(levelRequirement);
-        setRadius(radius);
-        setBase(base);
+        super(name, cost, levelRequirement, radius, base, degree);
     }
 
     @Override
     public void use(Entity avatar)
     {
-//        SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
-//        Stats entityStats;
-//        if(stats.getCurrentMana() - this.cost < 0)
-//            return;
-//
-//        // for(all entities on map)
-//        if(!inRadius(avatar, entity) || avatar == entity)
-//            continue; // do nothing
-//        else // do damage
-//        {
-//            entityStats = entity.getOccupation().getStats();
-//            scaleEffect(avatar, entity);
-//            entityStats.modCurrentHealth(-effect);
-//            entityStats.modCurrentMana(-cost);
-//        }
-        return;
+        SneakStats stats = (SneakStats) avatar.getOccupation().getStats();
+        if(stats.getCurrentMana() - this.cost < 0)
+            return;
+
+        // for(all entities on map)
+        if(!inRadius(avatar, entity) || avatar == entity)
+            continue; // do nothing
+        else // do damage
+        {
+            scaleEffect(avatar, entity);
+            entity.modHealth(-effect);
+            entity.modMana(-cost);
+        }
     }
 
     @Override
@@ -76,4 +71,5 @@ public class ConeOfCold extends RadialAbility {
 
         setEffect(damage);
     }
+
 }

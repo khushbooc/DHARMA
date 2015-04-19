@@ -110,4 +110,6 @@ public class SummonerStats extends Stats
 		else
 			this.staff = bane;
 	}
+
+	
 }

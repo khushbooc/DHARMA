@@ -25,23 +25,29 @@ public class Attack extends LinearAbility {
     }
 
     @Override
+    public boolean inRadius(Entity avatar, Entity entity) {
+        return false;
+    }
+
+    @Override
     public void use(Entity avatar)
     {
-        Stats stats = (Stats) avatar.getOccupation().getStats();
-        Stats entityStats;
-        if(stats.getCurrentMana() - this.cost < 0)
-            return;
-
-        // for(all entities on map)
-        if(!inRadius(avatar, entity) || avatar == entity)
-            continue; // do nothing
-        else // do damage
-        {
-            entityStats = entity.getOccupation().getStats();
-            scaleEffect(avatar, entity);
-            entityStats.modCurrentHealth(-effect);
-            entityStats.modCurrentMana(-cost);
-        }
+//        Stats stats = (Stats) avatar.getOccupation().getStats();
+//        Stats entityStats;
+//        if(stats.getCurrentMana() - this.cost < 0)
+//            return;
+//
+//        // for(all entities on map)
+//        if(!inRadius(avatar, entity) || avatar == entity)
+//            continue; // do nothing
+//        else // do damage
+//        {
+//            entityStats = entity.getOccupation().getStats();
+//            scaleEffect(avatar, entity);
+//            entityStats.modCurrentHealth(-effect);
+//            entityStats.modCurrentMana(-cost);
+//        }
+        return;
     }
 
     @Override
@@ -57,7 +63,7 @@ public class Attack extends LinearAbility {
 
         level = stats.getLevel();
         offense = stats.getOffense();
-        defense = stats.getDefense();
+        defense = stats.getArmor();
         skill = 0;
         avatarCrit = (int) Math.pow(2,stats.getCritical());
 
@@ -73,5 +79,11 @@ public class Attack extends LinearAbility {
         damage = (int) Math.floor(((2 * level + 10) / 250 * offense / defense * base + 2) * modifier);
 
         setEffect(damage);
+    }
+
+    @Override
+    public void activate()
+    {
+        return;
     }
 }
