@@ -15,6 +15,7 @@ public abstract class HostileNPC extends NPC {
     public HostileNPC(Location loc, Occupation oc, Inventory in, EquipmentContainer eq){
         super(loc, oc, in, eq);
     }
+    public abstract void attack(Avatar avatar);
     @Override
     public abstract void addToInventory(TakeableItem takeableitem);
     @Override
@@ -23,6 +24,7 @@ public abstract class HostileNPC extends NPC {
     public abstract void removeItem(TakeableItem ti);
     @Override
     public abstract void unequipItem(EquipableItem eqi);
+
 
 
 }

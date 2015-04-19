@@ -18,7 +18,7 @@ public class Obstable extends Item {
 
     @Override
     public void onTouch(Entity e){
-        //TODO
+        return;
     }
 
 }

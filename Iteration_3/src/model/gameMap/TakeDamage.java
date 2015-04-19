@@ -10,6 +10,8 @@ public class TakeDamage extends AreaEffect {
 
     @Override
     public void applyEffect(Entity e){
-        //TODO: apply effect when other class are ready
+        e.getOccupation().getStats().modCurrentHealth(-5);
+        e.getOccupation().getStats().modStrength(-2);
+        e.getOccupation().getStats().modHardiness(-2);
     }
 }

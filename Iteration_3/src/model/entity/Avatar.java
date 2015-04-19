@@ -26,7 +26,7 @@ public class Avatar extends Entity {
 	@Override
 	public void equipItem(EquipableItem equiItem) {
 		this.getEquipmentContainer().add(equiItem);
-		
+        this.getInventory().remove(equiItem);
 	}
 
 	@Override
@@ -34,18 +34,12 @@ public class Avatar extends Entity {
 		this.getInventory().remove(ti);
 		
 	}
-
 	@Override
 	public void unequipItem(EquipableItem eqi) {
 		this.getEquipmentContainer().remove(eqi);
+        this.getInventory().add(eqi);
 		
 	}
 
-	@Override
-	public void useAbility(Ability ability) {
-		return;
-		
-	}
-	
 
 }

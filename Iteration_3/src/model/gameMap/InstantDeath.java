@@ -10,7 +10,8 @@ public class InstantDeath extends AreaEffect{
 
     @Override
     public void applyEffect(Entity e){
-        //TOD0: wait for entity to be created
+        int lives = e.getOccupation().getStats().getLives();
+        e.getOccupation().getStats().modLives(lives * (-1));
     }
     public String getName(){
         return name;

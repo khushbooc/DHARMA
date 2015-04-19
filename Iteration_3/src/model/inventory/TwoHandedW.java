@@ -11,7 +11,8 @@ public class TwoHandedW extends EquipableItem{
 
     @Override
     public void use(Entity e){
-        e.addToInventory(this);
+        e.equipItem(this);
+        e.getOccupation().getStats().modStrength(15);
     }
 
 }
