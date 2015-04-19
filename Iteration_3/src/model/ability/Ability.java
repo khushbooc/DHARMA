@@ -1,9 +1,9 @@
 package model.ability;
 import model.entity.Entity;
+
 import java.util.Random;
 
-public abstract class Ability
-{
+public abstract class Ability extends GameAbility{
 	private String name;
 	private int base;
 	private int cost;
