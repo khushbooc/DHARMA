@@ -2,7 +2,7 @@ package utilities;
 
 import java.awt.Point;
 
-import Controller.MovementController;
+import controller.MovementController;
 
 public class Directions {
 	
