@@ -2,6 +2,7 @@ package model.ability;
 
 import model.entity.Entity;
 import model.statistics.SmasherStats;
+import model.statistics.Stats;
 
 public class RoundHouseSmash extends RadialAbility {
 
@@ -23,7 +24,9 @@ public class RoundHouseSmash extends RadialAbility {
     @Override
     public void use(Entity avatar, Entity entity)
     {
-        if(avatar.getMana() - this.cost < 0)
+        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
+        Stats entityStats;
+        if(stats.getCurrentMana() < this.cost)
             return;
 
         // for(all entities on map)
@@ -31,9 +34,10 @@ public class RoundHouseSmash extends RadialAbility {
             continue; // do nothing
         else // do damage
         {
+            entityStats = entity.getOccupation().getStats();
             scaleEffect(avatar, entity);
-            entity.modHealth(-effect);
-            entity.modMana(-cost);
+            stats.modCurrentHealth(-effect);
+            stats.modCurrentMana(-cost);
         }
     }
 

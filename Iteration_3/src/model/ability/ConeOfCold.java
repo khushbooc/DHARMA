@@ -2,6 +2,7 @@ package model.ability;
 
 import model.entity.Entity;
 import model.statistics.Stats;
+import model.statistics.SummonerStats;
 
 public class ConeOfCold extends RadialAbility {
 
@@ -27,7 +28,9 @@ public class ConeOfCold extends RadialAbility {
     @Override
     public void use(Entity avatar)
     {
-        if(avatar.getMana() - this.cost < 0)
+        SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
+        Stats entityStats;
+        if(stats.getCurrentMana() - this.cost < 0)
             return;
 
         // for(all entities on map)
@@ -35,9 +38,10 @@ public class ConeOfCold extends RadialAbility {
             continue; // do nothing
         else // do damage
         {
+            entityStats = entity.getOccupation().getStats();
             scaleEffect(avatar, entity);
-            entity.modHealth(-effect);
-            entity.modMana(-cost);
+            entityStats.modCurrentHealth(-effect);
+            entityStats.modCurrentMana(-cost);
         }
     }
 
@@ -45,18 +49,18 @@ public class ConeOfCold extends RadialAbility {
     public void scaleEffect(Entity avatar, Entity entity)
     {
         int critical;
-        int base, damage;
-        double avatarCrit, random, criticalBonus, modifier, offense, defense, level, skill;
+        int avatarCrit, base, damage;
+        double random, criticalBonus, modifier, offense, defense, level, skill;
 
         base = getBase();
 
-        Stats stats = avatar.getOccupation().getStats();
+        SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
 
         level = stats.getLevel();
         offense = stats.getBoon();
         defense = stats.getArmor();
         skill = stats.getBoon();
-        avatarCrit = (int) Math.pow(2,avatar.getCritical());
+        avatarCrit = (int) Math.pow(2,stats.getCritical());
 
         random = (double) random(85,100) / 100;
         critical = (int) random(1,16 / avatarCrit);
@@ -71,5 +75,4 @@ public class ConeOfCold extends RadialAbility {
 
         setEffect(damage);
     }
-
 }

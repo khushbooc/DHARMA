@@ -1,4 +1,5 @@
 import model.ability.Ability;
+import model.entity.Entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,10 +42,10 @@ public abstract class AbilityLibrary {
         return false;
     }
     
-    public boolean performActiveAbility(String abilityName, Entity callingEntity){
+    public boolean use(Ability ability, Entity avatar){
         for(Ability a : learnedAbilities) {
-            if (a.getName().equals(abilityName)) {
-                a.performAbility(callingEntity);
+            if (a == ability) {
+                a.use(avatar);
                 return true;
             }
         }
