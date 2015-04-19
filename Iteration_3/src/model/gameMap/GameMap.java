@@ -70,7 +70,7 @@ public class GameMap extends View
 	void initGame(){
 		 try {
 			    grass = ImageIO.read(new File("src/res/grass.png"));
-			    mountain = ImageIO.read(new File("src/res/Geomorph.png"));
+			    mountain = ImageIO.read(new File("src/res/custom_mountain.png"));
 			} catch (IOException e) {
 				System.out.println(e);
 			}
