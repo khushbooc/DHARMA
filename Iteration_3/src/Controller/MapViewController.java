@@ -18,7 +18,7 @@ public class MapViewController {
 	private boolean active;
 	
 	public MapViewController(Avatar avatar,GameMap map,JFrame frame){
-		this.avatar=avatar;
+		this.setAvatar(avatar);
 		map=new GameMap(avatar,frame);
 		active=true;
 		frame.addKeyListener(new CharacterKeyboardController(avatar,map));
@@ -28,6 +28,14 @@ public class MapViewController {
 		return map;
 	}
 	
+public Avatar getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(Avatar avatar) {
+		this.avatar = avatar;
+	}
+
 public class CharacterKeyboardController implements KeyListener{
 
 		private MovementController movement;

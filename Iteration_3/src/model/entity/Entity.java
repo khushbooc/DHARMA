@@ -5,8 +5,6 @@ import java.awt.image.BufferedImage;
 import utilities.ImageProcessing;
 import utilities.ShapeAdjust;
 import utilities.SpriteSheetUtility;
-import model.ability.Ability;
-import model.ability.AbilityLibrary;
 import model.inventory.EquipableItem;
 import model.inventory.EquipmentContainer;
 import model.inventory.Inventory;
