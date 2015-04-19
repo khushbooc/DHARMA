@@ -1,47 +1,55 @@
 package model.ability;
-public class FireNova extends RadialAbility
-{
-	private int damage;
+
+import model.entity.Entity;
+
+public class FireNova extends RadialAbility {
+	private int base;
 	// private String type;
 
 	public FireNova()
 	{
-		this.damage = 90;
+		this.base = 90;
 		this.setCost(1);
-		this.setLevelRequirement(10);
+		this.setLevelRequirement(2);
 		this.setName("Fire Nova");
 		this.setRadius(3);
 	}
 
-	public Frostbolt(String name, int cost, int levelRequirement, int radius, int damage)
+	public FireNova(String name, int cost, int levelRequirement, int radius, int damage)
 	{
         super(name, cost, levelRequirement, radius);
 		setName(name);
 		setCost(cost);
 		setLevelRequirement(levelRequirement);
 		setRadius(radius);
-		setDamage(damage);
+		setBase(damage);
 	}
 
-	public int getDamage()
+	public int getBase();
 	{
-		return damage;
+		return base;
 	}
 
-	public void setDamage(int damage)
+	public void setBase(int damage)
 	{
-		this.damage = damage;
+		this.base = damage;
 	}
 	
     @Override
-	public boolean use(Entity caster, Entity )
+	public void use(Entity avatar, Entity entity)
 	{
-        return true; //temporary
-    }
+		if(avatar.getMana() - this.cost < 0)
+			return;
 
-    @Override
-    public boolean inRadius(){
-        return true; //temporary
+		// for(all entities on map)
+			if(!inRadius(avatar, entity) || avatar == entity)
+        		continue; // do nothing
+        	else // do damage
+        	{
+        		scaleEffect(avatar, entity);
+        		entity.modHealth(-effect);
+        		entity.modMana(-cost);
+        	}
     }
 
     @Override
@@ -49,23 +57,24 @@ public class FireNova extends RadialAbility
     {
     	int critical;
 		int damage;
-		double base, avatarCrit, random, criticalStrike, modifier, offense, defense, level, skill;
+		double base, avatarCrit, random, criticalBonus, modifier, offense, defense, level, skill;
 
-		level = avatar.getLevel();
-		offense = avatar.getBoon();
-		defense = entity.getArmor();
-		skill = avatar.getBoon();
-		avatarCrit = Math.pow(2,avatar.getCritical());
+		Stats stats = avatar.getSummonerStats();
+
+		level = stats.getLevel();
+		offense = stats.getBoon();
+		defense = stats.getArmor();
+		skill = stats.getBoon();
+		avatarCrit = (int) Math.pow(2,avatar.getCritical());
 
 		random = (double) random(85,100) / 100;
-		critical = random(1,16 / avatarCrit);
-
+		critical = (int) random(1,16 / avatarCrit);
 		if(critical == 1)
-			criticalStrike = 1.5;
+			criticalBonus = 1.5;
 		else
-			criticalStrike = 1;
+			criticalBonus = 1;
 
-		modifier = random * criticalStrike * (1 + 0.5 * skill / 125);
+		modifier = random * criticalBonus * (1 + 0.5 * skill / 125);
 
 		damage = (int) Math.floor(((2 * level + 10) / 250 * offense / defense * base + 2) * modifier);
 

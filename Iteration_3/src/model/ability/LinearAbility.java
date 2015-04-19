@@ -1,5 +1,5 @@
 package model.ability;
-public abstract class LinearAbility extends Ability
+public abstract class LinearAbility extends RadiusAbility
 {
 	private int radius;
     //add to avoid error

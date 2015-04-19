@@ -7,7 +7,6 @@ import model.inventory.EquipmentContainer;
 import model.inventory.Inventory;
 import model.inventory.TakeableItem;
 import model.occupation.Occupation;
-import model.statistics.Stats;
 
 /**
  * Created by giangnguyen on 4/16/15.
@@ -16,6 +15,10 @@ public abstract class Entity {
 	protected Occupation occupation;
 	protected Inventory inventory ;
 	protected EquipmentContainer equicontainer;
+	
+	public Entity(Occupation occupation){
+		this.occupation = occupation;
+	}
 	
 	
 	public Entity(Occupation occupation, Inventory inventory , EquipmentContainer equicontainer) {

@@ -15,8 +15,7 @@ public class AvatarMovementController extends MovementController {
 	}
 	public void move(Point step, int direction) {
 		mapView.update(step);
-		
-		
+
 	}
 
 }

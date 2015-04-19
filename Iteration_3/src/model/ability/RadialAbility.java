@@ -1,6 +1,7 @@
 package model.ability;
 import model.entity.Entity;
-public abstract class RadialAbility extends Ability
+
+public abstract class RadialAbility extends RadiusAbility
 {
 	private int degree;
 
@@ -28,10 +29,11 @@ public abstract class RadialAbility extends Ability
 		this.degree = degree;
 	}
 
-	public abstract boolean use();
+	public abstract void use();
 
-	private abstract void scaleEffect(Entity entity);
-		
+	public abstract void scaleEffect(Entity entity);
+	
+	@Override
 	public boolean inRadius(Entity avatar, Entity entity)
 	{
 //		Location aLx = avatar.getLocation().getX();

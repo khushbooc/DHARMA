@@ -38,7 +38,7 @@ public class MainMenuView extends View{
 		quitGameButton = new MainMenuButton("Quit Game", buttonFont);
 
 		
-		title = new JLabel("THE DAVE AFTER TOMORROW");
+		title = new JLabel("The Melting Point");
 		title.setFont(titleFont.deriveFont(100f));
 		
 		JPanel backGroundPanel = new ImagePanel("src/res/main_menu.gif");
@@ -51,7 +51,7 @@ public class MainMenuView extends View{
 		ghost.setContentAreaFilled(false);
 		ghost.setBorderPainted(false);
 		
-		setPreferredSize(new Dimension(500,500));
+		setPreferredSize(new Dimension(800,600));
 		setLayout(new BorderLayout());
 		
 		startGameButton.setMaximumSize(new Dimension(200,50));

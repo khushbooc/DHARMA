@@ -5,12 +5,18 @@ import model.statistics.Stats;
 import utilities.SpriteSheetUtility;
 
 public class Summoner extends Occupation {
-	public SpriteSheetUtility getSpriteSheet() {
-		return new SpriteSheetUtility(this);
-}
+	private AbilityLibrary abl;
+	private Stats stat;
+
 
     public Summoner(AbilityLibrary abilitylibrary, Stats stat) {
         super(abilitylibrary, stat);
         // TODO
     }
+		
+	}
+	public SpriteSheetUtility getSpriteSheet() {
+		return new SpriteSheetUtility(this);
+}
+
 }
