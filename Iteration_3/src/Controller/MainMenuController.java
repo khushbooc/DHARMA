@@ -1,4 +1,4 @@
-package Controller;
+/* class being considered for deletion package Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,4 +38,4 @@ private MainMenuView mainMenu = new MainMenuView(new StartButtonListener(),new L
 		}
 	}
 
-}
+}*/
