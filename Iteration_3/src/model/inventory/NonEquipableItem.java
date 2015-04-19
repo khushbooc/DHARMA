@@ -18,12 +18,12 @@ public abstract class NonEquipableItem extends TakeableItem {
 
     @Override
     public void onTouch(Entity e){
-        //TODO
+        e.addToInventory(this);
     }
 
     @Override
     public void use(Entity e){
-        //TODO: affect entity stats
+        e.getOccupation().getStats();
     }
 
 
