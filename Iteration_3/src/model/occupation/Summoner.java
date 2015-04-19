@@ -13,8 +13,6 @@ public class Summoner extends Occupation {
         super(abilitylibrary, stat);
         // TODO
     }
-		
-	}
 	public SpriteSheetUtility getSpriteSheet() {
 		return new SpriteSheetUtility(this);
 }

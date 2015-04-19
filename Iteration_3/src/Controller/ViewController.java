@@ -1,4 +1,6 @@
-package controller;
+/* class being considered for deletion
+
+package Controller;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -15,6 +17,7 @@ import javax.swing.JFrame;
 
 import view.View;
 import model.gameMap.Game;
+import model.entity.Avatar;
 import model.gameMap.GameMap;
 // All controllers to be created over here and this is the main controller class
 public class ViewController {
@@ -95,6 +98,7 @@ public class ViewController {
 /**
  * Reloads game variables and their associated views.
  */
+/*
 public void reLoad(String command){
 	// the game only needs to be instantiated once, or we will loose information
 	Game game = null;
@@ -112,10 +116,11 @@ public void reLoad(String command){
     //gc.stopReset();
     frame.revalidate();
     frame.repaint();
-}
+}*/
 /**
  * Timer used to initiate changing views and reloading the game state.
  */
+/*
 public class RunGameTimer implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(current.nextStateEquals("Quit")){
@@ -129,4 +134,4 @@ public class RunGameTimer implements ActionListener {
 
 	
 
-}
+}*/

@@ -18,7 +18,7 @@ public abstract class AbilityLibrary {
     public AbilityLibrary(Entity myEntity){
         learnedAbilities = new ArrayList<Ability>();
         unlearnedAbilities = new ArrayList<Ability>();
-        owner = myEntity;
+        Entity owner = myEntity;
         this.addToLibrary(new BasicAttack());
         this.addToLibrary(new HealAbility());
     }

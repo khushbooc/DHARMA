@@ -30,5 +30,5 @@ public abstract class RadiusAbility extends Ability
 
     public abstract boolean inRadius(Entity avatar, Entity entity);
     public abstract void scaleEffect(Entity avatar, Entity entity);
-    public abstract void use(Entity avatar, Entity entity);
+    public abstract void use(Entity avatar);
 }

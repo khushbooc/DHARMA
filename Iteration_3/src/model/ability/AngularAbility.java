@@ -27,7 +27,7 @@ public abstract class AngularAbility extends RadiusAbility
 		this.degree = degree;
 	}
 
-	public abstract void use(Entity avatar, Entity entity);
+	public abstract void use(Entity avatar);
 
 	public abstract void scaleEffect(Entity entity, Entity avatar);
 

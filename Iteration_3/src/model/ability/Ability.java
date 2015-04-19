@@ -1,9 +1,9 @@
 package model.ability;
 import model.entity.Entity;
+
 import java.util.Random;
 
-public abstract class Ability
-{
+public abstract class Ability extends GameAbility{
 	private String name;
 	private int base;
 	private int cost;
@@ -26,6 +26,16 @@ public abstract class Ability
 		this.levelRequirement = levelRequirement;
 		this.base = base;
 		this.effect = effect;
+	}
+
+	public int getBase()
+	{
+		return base;
+	}
+
+	public void setBase(int base)
+	{
+		this.base = base;
 	}
 
 	public int getEffect()
@@ -58,16 +68,6 @@ public abstract class Ability
 		this.cost = cost;
 	}
 
-	public int getBase()
-	{
-		return base;
-	}
-
-	public void setBase(int base)
-	{
-		this.base = base;
-	}
-
 	public int getLevelRequirement()
 	{
 		return levelRequirement;
@@ -87,4 +87,6 @@ public abstract class Ability
 
 		return randomNumber;
 	}
+
+	public abstract void use(Entity avatar);
 }
