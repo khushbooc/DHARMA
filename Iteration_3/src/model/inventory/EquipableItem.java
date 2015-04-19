@@ -17,10 +17,14 @@ public abstract class EquipableItem extends TakeableItem{
 
     @Override
     public void onTouch(Entity e){
-        //TODO:
+        e.equipItem(this);
     }
 
     @Override
     public abstract void use(Entity e);
+    {
+
+
+    }
 
 }

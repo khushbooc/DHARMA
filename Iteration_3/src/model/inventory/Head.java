@@ -12,7 +12,7 @@ public class Head extends EquipableItem{
 
     @Override
     public void use (Entity e){
-        //TODO
+        e.addToInventory(this);
     }
 
 
