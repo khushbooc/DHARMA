@@ -1,4 +1,4 @@
-package Controller;
+package controller;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -15,7 +15,6 @@ import javax.swing.JFrame;
 
 import view.View;
 import model.gameMap.Game;
-import model.entity.Avatar;
 import model.gameMap.GameMap;
 // All controllers to be created over here and this is the main controller class
 public class ViewController {

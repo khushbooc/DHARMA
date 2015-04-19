@@ -1,8 +1,8 @@
-package Create;
+package create;
 
 import javax.swing.*;
 
-import Controller.ViewController;
+import controller.ViewController;
 
 public class RunGame {
     public static void main(String[] args){

@@ -1,4 +1,4 @@
-package Controller;
+package controller;
 
 import java.awt.Point;
 
@@ -6,7 +6,6 @@ import java.awt.Point;
 
 import model.entity.Avatar;
 import model.gameMap.GameMap;
-import model.gameMap.Location;
 
 public class AvatarMovementController extends MovementController {
 	private Avatar avatar;
