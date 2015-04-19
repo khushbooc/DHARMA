@@ -22,10 +22,5 @@ public abstract class NonEquipableItem extends TakeableItem {
     }
 
     @Override
-    public void use(Entity e){
-        e.getOccupation().getStats();
-    }
-
-
-
+    public abstract void use(Entity e);
 }

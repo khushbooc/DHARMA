@@ -5,6 +5,7 @@ public class SummonerStats extends Stats
 	private int boon;
 	private int bane;
 	private int staff;
+	private int spellPower;
 
 	public SummonerStats()
 	{
@@ -13,6 +14,7 @@ public class SummonerStats extends Stats
 		boon = 1;
 		bane = 1;
 		staff = 1;
+		spellPower = 1;
 	}
 
 	@Override
@@ -109,5 +111,31 @@ public class SummonerStats extends Stats
 			return;
 		else
 			this.staff = bane;
+	}
+
+	@Override
+	public void modIntellect(int n)
+	{
+		intellect = adjust(intellect + n);
+		spellPower = spellPower + n;
+	}
+
+
+	@Override
+	public void setIntellect(int intellect)
+	{
+		int difference = intellect - this.intellect;
+		this.intellect = adjust(intellect);
+		spellPower = spellPower + difference;
+	}
+
+	public int getSpellPower()
+	{
+		return spellPower;
+	}
+
+	public void modSpellPower(int n)
+	{
+		spellPower = adjust(spellPower + n);
 	}
 }

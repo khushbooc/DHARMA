@@ -10,7 +10,7 @@ public class LevelUp extends AreaEffect {
     }
     @Override
     public void applyEffect(Entity e){
-        //TODO:
+        e.getOccupation().getStats().levelUp();
     }
     public String getName(){
         return name;

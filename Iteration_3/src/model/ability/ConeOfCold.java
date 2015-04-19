@@ -28,21 +28,22 @@ public class ConeOfCold extends RadialAbility {
     @Override
     public void use(Entity avatar)
     {
-        SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
-        Stats entityStats;
-        if(stats.getCurrentMana() - this.cost < 0)
-            return;
-
-        // for(all entities on map)
-        if(!inRadius(avatar, entity) || avatar == entity)
-            continue; // do nothing
-        else // do damage
-        {
-            entityStats = entity.getOccupation().getStats();
-            scaleEffect(avatar, entity);
-            entityStats.modCurrentHealth(-effect);
-            entityStats.modCurrentMana(-cost);
-        }
+//        SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
+//        Stats entityStats;
+//        if(stats.getCurrentMana() - this.cost < 0)
+//            return;
+//
+//        // for(all entities on map)
+//        if(!inRadius(avatar, entity) || avatar == entity)
+//            continue; // do nothing
+//        else // do damage
+//        {
+//            entityStats = entity.getOccupation().getStats();
+//            scaleEffect(avatar, entity);
+//            entityStats.modCurrentHealth(-effect);
+//            entityStats.modCurrentMana(-cost);
+//        }
+        return;
     }
 
     @Override
@@ -57,7 +58,7 @@ public class ConeOfCold extends RadialAbility {
         SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
 
         level = stats.getLevel();
-        offense = stats.getBoon();
+        offense = stats.getSpellPower();
         defense = stats.getArmor();
         skill = stats.getBoon();
         avatarCrit = (int) Math.pow(2,stats.getCritical());
@@ -74,5 +75,11 @@ public class ConeOfCold extends RadialAbility {
         damage = (int) Math.floor(((2 * level + 10) / 250 * offense / defense * base + 2) * modifier);
 
         setEffect(damage);
+    }
+
+    @Override
+    public void activate()
+    {
+        return;
     }
 }

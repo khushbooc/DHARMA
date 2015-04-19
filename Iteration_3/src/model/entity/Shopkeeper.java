@@ -17,20 +17,22 @@ public class Shopkeeper extends FriendlyNPC{
     }
     @Override
     public void addToInventory(TakeableItem takeableitem){
-        inventory.add(takeableitem);
+       this.getInventory().add(takeableitem);
     }
     @Override
     public void equipItem(EquipableItem equiItem){
-        equicontainer.add(equiItem);
+        this.getEquipmentContainer().add(equiItem);
+        this.getInventory().remove(equiItem);
     }
     @Override
     public void removeItem(TakeableItem ti){
-        inventory.remove(ti);
+        this.getInventory().remove(ti);
 
     }
     @Override
     public void unequipItem(EquipableItem eqi){
-        equicontainer.remove(eqi);
+        this.getEquipmentContainer().remove(eqi);
+        this.getInventory().add(eqi);
     }
     public Gold getGold(){
         return this.gold;

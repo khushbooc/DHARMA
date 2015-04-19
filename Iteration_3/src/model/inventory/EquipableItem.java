@@ -22,9 +22,5 @@ public abstract class EquipableItem extends TakeableItem{
 
     @Override
     public abstract void use(Entity e);
-    {
-
-
-    }
 
 }

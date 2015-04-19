@@ -11,7 +11,8 @@ public class Trap extends AreaEffect{
 
     @Override
     public void applyEffect(Entity e){
-        //TODO
+        int movement = e.getOccupation().getStats().getMovement();
+        e.getOccupation().getStats().modMovement(movement*(-1));
     }
     public String getName(){
         return name;

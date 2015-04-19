@@ -1,44 +1,49 @@
 package model.ability;
 
 import model.entity.Entity;
-import model.occupation.Summoner;
+import model.statistics.SmasherStats;
 import model.statistics.Stats;
 import model.statistics.SummonerStats;
 
-public class FireNova extends RadialAbility {
+public class Cleave extends RadialAbility {
 
-    public FireNova()
+    public Cleave()
     {
-        base = 90;
-        cost = 1;
+        base = 110;
+        cost = 3;
         levelRequirement = 2;
-        name = "Fire Nova";
-        radius = 3;
-        degree = 360;
+        name = "Cleave";
+        radius = 2;
+        degree = 120;
     }
 
-    public FireNova(String name, int cost, int levelRequirement, int radius, int base, int degree)
+    public Cleave(String name, int cost, int levelRequirement, int radius, int base)
     {
-        super(name, cost, levelRequirement, radius, base, degree);
+        setName(name);
+        setCost(cost);
+        setLevelRequirement(levelRequirement);
+        setRadius(radius);
+        setBase(base);
     }
 
     @Override
     public void use(Entity avatar)
     {
-//        SummonerStats stats = summoner.getSummonerStats();
+//        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
+//        Stats entityStats;
 //        if(stats.getCurrentMana() - this.cost < 0)
 //            return;
 //
 //        // for(all entities on map)
-//        if(!inRadius(summoner, entity) || avatar == entity)
+//        if(!inRadius(avatar, entity) || avatar == entity)
 //            continue; // do nothing
 //        else // do damage
 //        {
+//            entityStats = entity.getOccupation().getStats();
 //            scaleEffect(avatar, entity);
-//            entity.modHealth(-effect);
-//            entity.modMana(-cost);
+//            entityStats.modCurrentHealth(-effect);
+//            entityStats.modCurrentMana(-cost);
 //        }
-
         return;
     }
 
@@ -51,12 +56,12 @@ public class FireNova extends RadialAbility {
 
         base = getBase();
 
-        SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
+        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
 
         level = stats.getLevel();
-        offense = stats.getSpellPower();
+        offense = stats.getOffense();
         defense = stats.getArmor();
-        skill = stats.getBoon();
+        skill = stats.getTwoHandedWeapon(); // fix this later
         avatarCrit = (int) Math.pow(2,stats.getCritical());
 
         random = (double) random(85,100) / 100;
@@ -78,5 +83,4 @@ public class FireNova extends RadialAbility {
     {
         return;
     }
-
 }

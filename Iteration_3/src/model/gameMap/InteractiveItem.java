@@ -5,7 +5,7 @@ import model.entity.Entity;
 /**
  * Created by giangnguyen on 4/16/15.
  */
-public class InteractiveItem extends Item {
+public abstract class InteractiveItem extends Item {
     public InteractiveItem(Location location, String name){
         super(location, name);
     }
@@ -16,7 +16,5 @@ public class InteractiveItem extends Item {
     }
 
     @Override
-    public void onTouch(Entity e){
-        //TODO
-    }
+    public abstract void onTouch(Entity e);
 }

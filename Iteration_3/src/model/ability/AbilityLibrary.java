@@ -1,3 +1,5 @@
+package model.ability;
+
 import model.ability.Ability;
 import model.entity.Entity;
 
@@ -7,68 +9,34 @@ import java.util.List;
  * @author Aaron Iglesias
  */
 public abstract class AbilityLibrary {
-    private ArrayList<Ability> learnedAbilities;
-    private ArrayList<Ability> unlearnedAbilities;
+    protected ArrayList<Ability> learnedAbilities;
+    protected ArrayList<Ability> abilities;
 
-    private Entity avatar;
-
-    public AbilityLibrary(Entity myEntity){
-        learnedAbilities = new ArrayList<Ability>();
-        unlearnedAbilities = new ArrayList<Ability>();
-        Entity owner = myEntity;
-        this.addToLibrary(new BasicAttack());
-        this.addToLibrary(new HealAbility());
+    public AbilityLibrary()
+    {
+        Attack attack = new Attack();
+        addAbility(attack, abilities);
+        addAbility(attack, learnedAbilities);
     }
 
-    protected void addAbility(Ability ability){
-        learnedAbilities.add(ability);
-        unlearnedAbilities.remove(ability);
+    public void addAbility(Ability ability, ArrayList<Ability> list)
+    {
+        list.add(ability);
     }
 
-    protected void addToLibrary(Ability ability){
-        learnedAbilities.add(ability);
+    public void removeAbility(Ability ability, ArrayList<Ability> list)
+    {
+        learnedAbilities.remove(ability);
     }
 
-    protected boolean removeFromLibrary(Ability ability){
-        return (learnedAbilities.remove(ability) || unlearnedAbilities.remove(ability));
-    }
+    public void update(Entity avatar)
+    {
+        int level = avatar.getOccupation().getStats().getLevel();
 
-    public boolean hasAbility(String abilityName){
-        for(Ability s : learnedAbilities) {
-            if (abilityName.equals(s.getName())) {
-                return true;
-            }
+        for(int i = 0; i < abilities.size(); ++i)
+        {
+            if(abilities.get(i).getLevelRequirement() == level)
+                learnedAbilities.add(abilities.get(i));
         }
-        return false;
-    }
-    
-    public boolean use(Ability ability, Entity avatar){
-        for(Ability a : learnedAbilities) {
-            if (a == ability) {
-                a.use(avatar);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public void update(){
-        for (Ability ability : unlearnedAbilities){
-            if (ability.meetsStatRequirements(owner)){
-                addAbility(ability);
-            }
-        }
-    }
-
-    public boolean performActiveAbility(int position, Entity callingEntity){
-        position = position -1;
-        if(position >= learnedAbilities.size())
-            return false;
-        learnedAbilities.get(position).performAbility(callingEntity);
-        return true;
-    }
-
-    public List<Ability> getAbilities() {
-        return this.learnedAbilities;
     }
 }

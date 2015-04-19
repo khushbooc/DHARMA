@@ -35,12 +35,22 @@ public class SneakStats extends Stats
 		++pickPocket;
 	}
 
+	public int getPickPocket()
+	{
+		return pickPocket;
+	}
+
 	public void modDetectRemoveTrap()
 	{
 		if(getSkillPoints() <= 0 || detectRemoveTrap == 125)
 			return;
 		modSkillPoints(-1);
 		++detectRemoveTrap;
+	}
+
+	public int getDetectRemoveTrap()
+	{
+		return detectRemoveTrap;
 	}
 
 	public void modCreep()
@@ -51,11 +61,21 @@ public class SneakStats extends Stats
 		++creep;
 	}
 
+	public int getCreep()
+	{
+		return creep;
+	}
+
 	public void modRangedWeapon()
 	{
 		if(getSkillPoints() <= 0 || rangedWeapon == 125)
 			return;
 		modSkillPoints(-1);
 		++rangedWeapon;
+	}
+
+	public int getRangedWeapon()
+	{
+		return rangedWeapon;
 	}
 }

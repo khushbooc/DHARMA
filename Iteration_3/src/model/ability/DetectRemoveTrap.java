@@ -2,22 +2,23 @@ package model.ability;
 
 import model.entity.Entity;
 import model.occupation.Summoner;
+import model.statistics.SneakStats;
 import model.statistics.Stats;
 import model.statistics.SummonerStats;
 
-public class FireNova extends RadialAbility {
+public class DetectRemoveTrap extends RadialAbility {
 
-    public FireNova()
+    public DetectRemoveTrap()
     {
-        base = 90;
+        base = 0;
         cost = 1;
-        levelRequirement = 2;
-        name = "Fire Nova";
-        radius = 3;
+        levelRequirement = 1;
+        name = "Detect and Remove Trap";
+        radius = 4;
         degree = 360;
     }
 
-    public FireNova(String name, int cost, int levelRequirement, int radius, int base, int degree)
+    public DetectRemoveTrap(String name, int cost, int levelRequirement, int radius, int base, int degree)
     {
         super(name, cost, levelRequirement, radius, base, degree);
     }
@@ -25,12 +26,12 @@ public class FireNova extends RadialAbility {
     @Override
     public void use(Entity avatar)
     {
-//        SummonerStats stats = summoner.getSummonerStats();
+//        SneakStats stats = (SneakStats) avatar.getOccupation().getStats();
 //        if(stats.getCurrentMana() - this.cost < 0)
 //            return;
 //
 //        // for(all entities on map)
-//        if(!inRadius(summoner, entity) || avatar == entity)
+//        if(!inRadius(avatar, entity) || avatar == entity)
 //            continue; // do nothing
 //        else // do damage
 //        {
@@ -38,7 +39,6 @@ public class FireNova extends RadialAbility {
 //            entity.modHealth(-effect);
 //            entity.modMana(-cost);
 //        }
-
         return;
     }
 
@@ -51,12 +51,12 @@ public class FireNova extends RadialAbility {
 
         base = getBase();
 
-        SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
+        SneakStats stats = (SneakStats) avatar.getOccupation().getStats();
 
         level = stats.getLevel();
-        offense = stats.getSpellPower();
+        offense = stats.getOffense();
         defense = stats.getArmor();
-        skill = stats.getBoon();
+        skill = stats.getDetectRemoveTrap();
         avatarCrit = (int) Math.pow(2,stats.getCritical());
 
         random = (double) random(85,100) / 100;

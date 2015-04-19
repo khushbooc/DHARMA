@@ -11,11 +11,11 @@ public class ManaTap extends SelfAbility
 {
     public ManaTap()
     {
-        setName("Mana Tap");
-        setBase(0);
-        setCost(0);
-        setLevelRequirement(2);
-        setEffect(0);
+        name = "Mana Tap";
+        base = 0;
+        cost = 0;
+        levelRequirement = 2;
+        effect = 0;
     }
 
     public ManaTap(String name, int cost, int levelRequirement, int base, int effect)
@@ -65,6 +65,12 @@ public class ManaTap extends SelfAbility
             stats.modCurrentMana(-cost);
             stats.modCurrentHealth(effect);
         }
+    }
+
+    @Override
+    public void activate()
+    {
+        return;
     }
 
 }

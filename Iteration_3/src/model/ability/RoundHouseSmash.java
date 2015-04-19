@@ -2,7 +2,6 @@ package model.ability;
 
 import model.entity.Entity;
 import model.statistics.SmasherStats;
-import model.statistics.Stats;
 
 public class RoundHouseSmash extends RadialAbility {
 
@@ -22,23 +21,24 @@ public class RoundHouseSmash extends RadialAbility {
     }
 
     @Override
-    public void use(Entity avatar, Entity entity)
+    public void use(Entity avatar)
     {
-        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
-        Stats entityStats;
-        if(stats.getCurrentMana() < this.cost)
-            return;
-
-        // for(all entities on map)
-        if(!inRadius(avatar, entity) || avatar == entity)
-            continue; // do nothing
-        else // do damage
-        {
-            entityStats = entity.getOccupation().getStats();
-            scaleEffect(avatar, entity);
-            stats.modCurrentHealth(-effect);
-            stats.modCurrentMana(-cost);
-        }
+//        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
+//        Stats entityStats;
+//        if(stats.getCurrentMana() < this.cost)
+//            return;
+//
+//        // for(all entities on map)
+//        if(!inRadius(avatar, entity) || avatar == entity)
+//            continue; // do nothing
+//        else // do damage
+//        {
+//            entityStats = entity.getOccupation().getStats();
+//            scaleEffect(avatar, entity);
+//            stats.modCurrentHealth(-effect);
+//            stats.modCurrentMana(-cost);
+//        }
+        return;
     }
 
     @Override
@@ -70,6 +70,12 @@ public class RoundHouseSmash extends RadialAbility {
         damage = (int) Math.floor(((2 * level + 10) / 250 * offense / defense * base + 2) * modifier);
 
         setEffect(damage);
+    }
+
+    @Override
+    public void activate()
+    {
+        return;
     }
 
 }

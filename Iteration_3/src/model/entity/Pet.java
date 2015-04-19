@@ -11,7 +11,7 @@ import model.occupation.Occupation;
 
 public abstract class Pet extends HostileNPC {
     private Avatar owner;
-    private Attack attack;
+    //private Attack attack;
 
     public Pet(Occupation oc, Inventory inv, EquipmentContainer eq, Avatar owner) {
         super(null, oc, inv, eq);
@@ -26,7 +26,8 @@ public abstract class Pet extends HostileNPC {
     }
     @Override
     public void equipItem(EquipableItem equiItem){
-        equicontainer.add(equiItem);
+        this.getEquipmentContainer().add(equiItem);
+        this.getInventory().remove(equiItem);
     }
     @Override
     public void removeItem(TakeableItem ti){ //remove Item from Inventory
@@ -34,7 +35,8 @@ public abstract class Pet extends HostileNPC {
     }
     @Override
     public void unequipItem(EquipableItem eqi){
-        equicontainer.remove(eqi);
+        this.getEquipmentContainer().remove(eqi);
+        this.getInventory().add(eqi);
     }
     public void steal(Entity e){
         TakeableItem ti = e.getInventory().getItem(0);
@@ -47,7 +49,14 @@ public abstract class Pet extends HostileNPC {
         this.setLocation(x, y);
     }
     public void attack(Entity e){
-       //
+        e.getOccupation().getStats().modAgility(-2);
+        e.getOccupation().getStats().modHardiness(-2);
+        e.getOccupation().getStats().modIntellect(-2);
+        e.getOccupation().getStats().currentMana(-2);
+        owner.getOccupation().getStats().modAgility(2);
+        owner.getOccupation().getStats().modHardiness(2);
+        owner.getOccupation().getStats().modIntellect(2);
+        owner.getOccupation().getStats().currentMana(2);
     }
 
 

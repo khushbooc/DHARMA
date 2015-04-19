@@ -13,8 +13,9 @@ public class Potion extends NonEquipableItem {
 
     @Override
     public void use(Entity e){
-
-        e.getOccupation().getStats();
+        e.getOccupation().getStats().modHardiness(5);
+        e.getOccupation().getStats().modCurrentHealth(5);
+        e.getOccupation().getStats().modCurrentMana(5);
     }
 
 }
