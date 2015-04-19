@@ -29,33 +29,33 @@ public class SummonerStats extends Stats
 
 	public void modEnchantment()
 	{
-//		if(skillPoints <= 0)
-//			return;
-//		--skillPoints;
-//		++enchantment;
+		if(getSkillPoints() <= 0 || enchantment == 125)
+			return;
+		modSkillPoints(-1);
+		++enchantment;
 	}
 
 	public void modBoon()
 	{
-//		if(skillPoints <= 0)
-//			return;
-//		--skillPoints;
-//		++boon;
+		if(getSkillPoints() <= 0 || boon == 125)
+			return;
+		modSkillPoints(-1);
+		++boon;
 	}
 
 	public void modBane()
 	{
-//		if(skillPoints <= 0)
-//			return;
-//		--skillPoints;
-//		++bane;
+		if(getSkillPoints() <= 0 || bane == 125)
+			return;
+		modSkillPoints(-1);
+		++bane;
 	}
 
 	public void modStaff()
 	{
-//		if(skillPoints <= 0)
-//			return;
-//		--skillPoints;
-//		++staff;
+		if(getSkillPoints() <= 0 || staff == 125)
+			return;
+		modSkillPoints(-1);
+		++staff;
 	}
 }

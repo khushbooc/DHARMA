@@ -29,33 +29,33 @@ public class SneakStats extends Stats
 
 	public void modPickPocket()
 	{
-//		if(skillPoints <= 0)
-//			return;
-//		--skillPoints;
-//		++oneHandedWeapon;
+		if(getSkillPoints() <= 0 || pickPocket == 125)
+			return;
+		modSkillPoints(-1);
+		++pickPocket;
 	}
 
 	public void modDetectRemoveTrap()
 	{
-//		if(skillPoints <= 0)
-//			return;
-//		--skillPoints;
-//		++twoHandedWeapon;
+		if(getSkillPoints() <= 0 || detectRemoveTrap == 125)
+			return;
+		modSkillPoints(-1);
+		++detectRemoveTrap;
 	}
 
 	public void modCreep()
     {
-//		if(skillPoints <= 0)
-//			return;
-//		--skillPoints;
-//		++brawling;
+		if(getSkillPoints() <= 0 || creep == 125)
+			return;
+		modSkillPoints(-1);
+		++creep;
 	}
 
 	public void modRangedWeapon()
 	{
-//		if(skillPoints <= 0)
-//			return;
-//		--skillPoints;
-//		++rangedWeapon;
+		if(getSkillPoints() <= 0 || rangedWeapon == 125)
+			return;
+		modSkillPoints(-1);
+		++rangedWeapon;
 	}
 }
