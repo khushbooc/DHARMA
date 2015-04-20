@@ -4,6 +4,8 @@ import model.entity.Entity;
 import model.statistics.Stats;
 import model.statistics.SummonerStats;
 
+import java.util.ArrayList;
+
 /*
  * @author Aaron Iglesias
  */
@@ -27,20 +29,24 @@ public class FireNova extends RadialAbility {
     @Override
     public void use()
     {
-//        SummonerStats stats = summoner.getSummonerStats();
-//        if(stats.getCurrentMana() - this.cost < 0)
-//            return;
-//
-//        // for(all entities on map)
-//        if(!inRadius(summoner, entity) || avatar == entity)
-//            continue; // do nothing
-//        else // do damage
-//        {
-//            scaleEffect(avatar, entity);
-//            entity.modHealth(-effect);
-//            entity.modMana(-cost);
-//        }
+        ArrayList<Entity> entityList = gameMap.getMapObjectList();
+        SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
+        Stats entityStats;
+        if(stats.getCurrentMana() - this.cost < 0)
+            return;
 
+        for(Entity entity : entityList) {
+
+            if (!inRadius(entity) || avatar == entity)
+                continue; // do nothing
+            else // do damage
+            {
+                entityStats = entity.getOccupation().getStats();
+                scaleEffect(entity);
+                entityStats.modCurrentHealth(-effect);
+                entityStats.modCurrentMana(-cost);
+            }
+        }
         return;
     }
 

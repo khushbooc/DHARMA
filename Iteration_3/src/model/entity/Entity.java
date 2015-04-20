@@ -20,6 +20,7 @@ public abstract class Entity extends MapObject{
     protected Inventory inventory ;
     protected EquipmentContainer equicontainer;
     protected int direction;
+    private Gold gold;
 
     public Entity(Location location, Occupation occupation, Inventory inventory , EquipmentContainer equicontainer) {
         this(occupation);
@@ -27,6 +28,7 @@ public abstract class Entity extends MapObject{
         this.inventory = inventory;
         this.equicontainer= equicontainer;
         this.location = location;
+        gold = new Gold(10);// entity has 10 golds initially
     }
     public Entity(Occupation oc){
         super();
@@ -38,11 +40,14 @@ public abstract class Entity extends MapObject{
         for(Ability a : abilities) {
             a.setAvatar(this);
         }
+        gold = new Gold(10);// entity has 10 golds initially
     }
 
 
 
-
+    public Gold getGold(){
+        return this.gold;
+    }
     public Occupation getOccupation(){
         return this.occupation;
     }

@@ -13,6 +13,6 @@ public class ExitingState extends GameState{
     }
 
     public void update() {
-        //TODO
+        //do nothing cuz the game is ending :'(
     }
 }

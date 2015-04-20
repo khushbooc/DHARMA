@@ -3,17 +3,23 @@ package view;
 
 
 import controller.Controller;
+import model.Game;
 
 
 public class View {
     private AbstractView currentView;
+    private Game game;
 
     public View(){
         setMainMenuState();
     }
 
+    public void setGameParent(Game game) {
+        this.game = game;
+    }
+
     public void setMainMenuState() {
-        currentView = new MainMenuView();
+        currentView = new MainMenuView(this);
     }
     public void render(){
         currentView.render();
@@ -40,5 +46,21 @@ public class View {
     public AbstractView getCurrentView() {
         //forgive me father for I have sinned :(
         return this.currentView;
+    }
+
+    public void onSelection() {
+        currentView.onSelection();
+    }
+
+    protected void advanceViewState(AbstractView next_view) {
+        currentView = next_view;
+    }
+
+    protected void exitGame() {
+        this.game.exitGame();
+    }
+
+    public void killWindow() {
+        this.currentView.killWindow();
     }
 }

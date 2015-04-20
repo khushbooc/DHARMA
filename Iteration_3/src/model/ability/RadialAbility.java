@@ -1,5 +1,6 @@
 package model.ability;
 import model.entity.Entity;
+import model.gameMap.Location;
 
 /*
  * @author Aaron Iglesias
@@ -33,22 +34,4 @@ public abstract class RadialAbility extends RadiusAbility
 	public abstract void use();
 
 	protected abstract void scaleEffect(Entity avatar);
-	
-	@Override
-	protected boolean inRadius(Entity entity)
-	{
-//		Location aLx = avatar.getLocation().getX();
-//		Location eLx = entity.getLocation().getX();
-//
-//		Location aLy = avatar.getLocation().getY();
-//		Location eLy = entity.getLocation().getY();
-//
-//		boolean inRadius = Math.pow(eLx - aLx,2) + Math.pow(eLy - aLy, 2) <= Math.pow(radius,2);
-
-//		if(inRadius)
-//			return true;
-//		else
-//			return false;
-        return true; //temporarily only
-	}
 }

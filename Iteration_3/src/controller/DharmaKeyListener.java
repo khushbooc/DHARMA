@@ -55,4 +55,6 @@ public class DharmaKeyListener {
     public static int getJavaKeyCodeForKeyBoardRight() {
         return KeyEvent.VK_RIGHT;
     }
+
+    public static int getJavaKeyCodeForKeyBoardEnter() { return KeyEvent.VK_ENTER;}
 }

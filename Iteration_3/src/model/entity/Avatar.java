@@ -7,7 +7,6 @@ import model.occupation.Occupation;
 import java.awt.*;
 
 public class Avatar extends Entity {
-    private Gold gold;
 
     public Avatar(Occupation oc){
         super(oc);
@@ -15,12 +14,7 @@ public class Avatar extends Entity {
 
     public Avatar(Location location, Occupation occupation, Inventory inventory, EquipmentContainer equipmentContainer){
         super(location, occupation,inventory, equipmentContainer);
-        gold = new Gold(10);// avatar has 10 golds initially
 
-    }
-
-    public Gold getGold(){
-        return this.gold;
     }
 
     @Override

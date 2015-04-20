@@ -17,6 +17,7 @@ public class Game {
 	public Game(Controller controller, View view) {
         this.controller = controller;
         this.view = view;
+        this.view.setGameParent(this);
         setNewGameState();
 
         this.game_logger = GameLogger.getInstance();
@@ -73,6 +74,22 @@ public class Game {
 
     public void updateView() {
         this.view.updateView();
+    }
+
+    public void onSelection() {
+        this.view.onSelection();
+    }
+
+    public void exitGame() {
+        setExitingState();
+    }
+
+    private void setExitingState() {
+        this.game_state = new ExitingState(this);
+    }
+
+    public void kill() {
+        this.view.killWindow();
     }
 }
 

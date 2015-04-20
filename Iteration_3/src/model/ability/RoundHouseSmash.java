@@ -4,6 +4,8 @@ import model.entity.Entity;
 import model.statistics.SmasherStats;
 import model.statistics.Stats;
 
+import java.util.ArrayList;
+
 /*
  * @author Aaron Iglesias
  */
@@ -27,21 +29,24 @@ public class RoundHouseSmash extends RadialAbility {
     @Override
     public void use()
     {
-//        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
-//        Stats entityStats;
-//        if(stats.getCurrentMana() < this.cost)
-//            return;
-//
-//        // for(all entities on map)
-//        if(!inRadius(avatar, entity) || avatar == entity)
-//            continue; // do nothing
-//        else // do damage
-//        {
-//            entityStats = entity.getOccupation().getStats();
-//            scaleEffect(avatar, entity);
-//            stats.modCurrentHealth(-effect);
-//            stats.modCurrentMana(-cost);
-//        }
+        ArrayList<Entity> entityList = gameMap.getMapObjectList();
+        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
+        Stats entityStats;
+        if(stats.getCurrentMana() - this.cost < 0)
+            return;
+
+        for(Entity entity : entityList) {
+
+            if (!inRadius(entity) || avatar == entity)
+                continue; // do nothing
+            else // do damage
+            {
+                entityStats = entity.getOccupation().getStats();
+                scaleEffect(entity);
+                entityStats.modCurrentHealth(-effect);
+                entityStats.modCurrentMana(-cost);
+            }
+        }
         return;
     }
 

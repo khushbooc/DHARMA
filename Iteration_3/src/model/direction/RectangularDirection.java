@@ -7,8 +7,8 @@ package model.direction;
 //Direction enum for rectangular direction, based on cartesian coordinate system
 public enum RectangularDirection {
 
-    WEST(-1, 0, "LEFT"), NORTH(0, 1, "UP"),
-    EAST(1, 0, "RIGHT"), SOUTH(0, -1, "DOWN");
+    WEST(-1, 0, "LEFT"), NORTH(0, -1, "UP"),
+    EAST(1, 0, "RIGHT"), SOUTH(0, 1, "DOWN");
 
     /*
     NORTHWEST(-1, 1), NORTHEAST(1, 1),
