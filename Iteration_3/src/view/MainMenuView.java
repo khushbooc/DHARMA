@@ -10,7 +10,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-
 @SuppressWarnings("serial")
 public class MainMenuView extends View{
 	private Font titleFont = new Font("serif", Font.PLAIN, 20);
@@ -37,7 +36,6 @@ public class MainMenuView extends View{
 		loadGameButton = new MainMenuButton("Load Game", buttonFont);
 		quitGameButton = new MainMenuButton("Quit Game", buttonFont);
 
-		
 		title = new JLabel("The Melting Point");
 		title.setFont(titleFont.deriveFont(80f));
 		
@@ -71,5 +69,4 @@ public class MainMenuView extends View{
 		quitGameButton.addActionListener(quitAction);
 		loadGameButton.addActionListener(loadAction);
 	}
-
 }
