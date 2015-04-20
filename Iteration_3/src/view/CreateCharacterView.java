@@ -2,164 +2,90 @@ package view;
 
 import controller.Controller;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
 @SuppressWarnings("serial")
 public class CreateCharacterView extends AbstractView {
-	private JButton backGameButton;
-	private JButton startsneakButton;
-	private JButton startsmasherButton;
-	private JButton startsummonerButton;
-	private JLabel enterNameLabel;
-	private JTextField enterNameField;
-	private JLabel title;
-	private JPanel backgroundPanel;
-	// private final int STARTINGX=3;
-	// private final int STARTINGY=3;
+    private JLabel backLabel;
+    private JLabel sneakLabel;
+    private JLabel smasherLabel;
+    private JLabel summonerLabel;
+    private JLabel enterNameLabel;
+    private JTextField enterNameField;
+    private JLabel title;
+    private JPanel backgroundPanel;
+    private JFrame frame;
 
-	public CreateCharacterView( ActionListener backAction, ActionListener sneakAction, ActionListener summonerAction, ActionListener smasherAction ){
-		setPreferredSize(new Dimension(500,500));
-		//canvas.setBorder(new LineBorder(Color.black, 5));
-		setLayout(new BorderLayout());
-		
-		Font titleFont = new Font("serif", Font.PLAIN, 24);
-		Font labelFont = new Font("serif", Font.PLAIN, 24);
-		
-		
-		title = new JLabel("CHARACTER CREATION");
-		title.setFont(titleFont.deriveFont(40f));
-		
-		backgroundPanel = new ImagePanel("src/res/main_menu.gif");
-		
-		backgroundPanel.setLayout(new GridBagLayout());//(FlowLayout.CENTER, 350, 5));
-		GridBagConstraints c = new GridBagConstraints();
-		
-		ImageIcon summonerButton = new ImageIcon("src/res/sumlog.png");
-		ImageIcon sneakButton = new ImageIcon("src/res/sneaklog.png");
-		ImageIcon smasherButton = new ImageIcon("src/res/smasherlog.png");
-		//smasherButton.
-		
-		backGameButton = new MainMenuButton("       <Back>", labelFont);
-		
-		//startsneakButton = new CharacterButton(sneakButton);
-		//startsummonerButton = new CharacterButton(summonerButton);
-		//startsmasherButton = new CharacterButton(smasherButton);
-		
-		startsneakButton = new CharacterButton("Sneak");
-		startsummonerButton = new CharacterButton("Summoner");
-		startsmasherButton = new CharacterButton("Smasher");
-		
-		JLabel summonerLabel = new JLabel("Summoner");
-		summonerLabel.setForeground(Color.WHITE);
-		Font labelFontRedux = labelFont.deriveFont(20f);
-		summonerLabel.setFont(labelFontRedux);
-		
-		JLabel sneakLabel = new JLabel("Sneak");
-		sneakLabel.setForeground(Color.WHITE);
-		sneakLabel.setFont(labelFontRedux);
-		
-		JLabel smasherLabel = new JLabel("Smasher");
-		smasherLabel.setForeground(Color.WHITE);
-		smasherLabel.setFont(labelFontRedux);
-		
-		
-		enterNameLabel = new JLabel("Character Name");
-		enterNameLabel.setFont(labelFontRedux);
-		enterNameLabel.setForeground(Color.WHITE);
-		
-		enterNameField = new JTextField("Khushboo");
-		enterNameField.setHorizontalAlignment(JTextField.CENTER);
-		enterNameField.setFont(labelFontRedux);
-		enterNameField.setBackground(new Color(255,255,255,130));
-		
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 0;
-		c.gridy = 0;
-		c.ipady = 30;
-		c.gridwidth = 3;
-		backgroundPanel.add(title, c);
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 0;
-		c.gridy = 1;
-		c.gridwidth = 2;
-		backgroundPanel.add(enterNameLabel, c);
-		c.gridx = 2;
-		c.gridy = 1;
-		c.gridwidth = 1;
-		backgroundPanel.add(backGameButton, c);
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 0;
-		c.gridy = 2;
-		c.gridwidth = 3;
-		backgroundPanel.add(enterNameField, c);
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 0;
-		c.gridy = 3;
-		c.gridwidth = 1;
-		backgroundPanel.add(startsummonerButton, c);
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 1;
-		c.gridy = 3;
-		c.gridwidth = 1;
-		backgroundPanel.add(startsneakButton, c);
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 2;
-		c.gridy = 3;
-		c.gridwidth = 1;
-		backgroundPanel.add(startsmasherButton, c);
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 0;
-		c.gridy = 4;
-		c.gridwidth = 1;
-		//c.ipady = -20;
-		//backgroundPanel.add(summonerLabel, c);
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 1;
-		c.gridy = 4;
-		c.gridwidth = 1;
-		//c.ipady = -20;
-		//backgroundPanel.add(sneakLabel, c);
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 2;
-		c.gridy = 4;
-		c.gridwidth = 1;
-		//c.ipady = -20;
-		//backgroundPanel.add(smasherLabel, c);
-		c.fill = GridBagConstraints.HORIZONTAL;
 
-		
-		//back.add(backGameButton);
-		
-		
-		//canvas.add(main, BorderLayout.CENTER);
-		
-		add(backgroundPanel);
-		
-		backGameButton.addActionListener(backAction);
-		startsneakButton.addActionListener(sneakAction);
-		startsummonerButton.addActionListener(summonerAction);
-		startsmasherButton.addActionListener(smasherAction);
-	}
-	
-	public String avatarName(){
-		return enterNameField.getText();
-	}
+    public CreateCharacterView(){
+        frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(true);
+        frame.setFocusable(true);
+        frame.setPreferredSize(new Dimension(1280, 800));
+        frame.setLayout(new FlowLayout(FlowLayout.CENTER));
+
+        backgroundPanel = new ImagePanel("src/res/main_menu.gif");
+        backgroundPanel.setPreferredSize(new Dimension(600, 600));
+        Container content = frame.getContentPane();
+        backgroundPanel.setLayout(new BorderLayout());
+        content.add(backgroundPanel);
+
+
+        JPanel topPanel = new JPanel();
+        topPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        topPanel.setPreferredSize(new Dimension(600, 100));
+        title =  new JLabel("PICK YOUR AVATAR");
+        title.setFont(new Font("serif", Font.PLAIN, 24).deriveFont(40f));
+        topPanel.add(title);
+
+        JPanel center = new JPanel();
+        center.setLayout(new FlowLayout(FlowLayout.CENTER));
+        center.setPreferredSize(new Dimension(600, 100));
+        summonerLabel = new JLabel("SUMMONER");
+        summonerLabel.setFont(new Font("serif", Font.PLAIN, 24).deriveFont(40f));
+        center.add(summonerLabel);
+
+        JPanel west = new JPanel();
+        west.setLayout(new FlowLayout(FlowLayout.CENTER));
+        sneakLabel = new JLabel("SNEAK");
+        sneakLabel.setFont(new Font("serif", Font.PLAIN, 24).deriveFont(40f));
+        setForeground(Color.BLACK);
+        west.add(sneakLabel);
+
+        JPanel east = new JPanel();
+        east.setLayout(new FlowLayout(FlowLayout.CENTER));
+        smasherLabel = new JLabel("SMASHER");
+        smasherLabel.setFont(new Font("serif", Font.PLAIN, 24).deriveFont(40f));
+        east.add(smasherLabel);
+
+        JPanel bottom = new JPanel();
+        bottom.setLayout(new FlowLayout(FlowLayout.CENTER));
+        backLabel = new JLabel("BACK");
+        backLabel.setFont(new Font("serif", Font.PLAIN, 24).deriveFont(40f));
+        bottom.add(backLabel);
+
+        backgroundPanel.add(topPanel, BorderLayout.PAGE_START);
+        backgroundPanel.add(center, BorderLayout.CENTER);
+        backgroundPanel.add(west, BorderLayout.LINE_START);
+        backgroundPanel.add(east, BorderLayout.LINE_END);
+        backgroundPanel.add(bottom, BorderLayout.PAGE_END);
+        frame.pack();
+    }
+
+    public String avatarName(){
+        return enterNameField.getText();
+    }
 
     @Override
     public void render() {
-        //TODO
+        frame.setVisible(true);
     }
 
     @Override
@@ -176,9 +102,8 @@ public class CreateCharacterView extends AbstractView {
     public void prevView() {
         //TODO
     }
-
     @Override
-    public void onSelection() {
+    public void onSelection(){
         //TODO
     }
 }
