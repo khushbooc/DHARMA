@@ -25,7 +25,7 @@ public class RoundHouseSmash extends RadialAbility {
     }
 
     @Override
-    public void use(Entity avatar)
+    public void use()
     {
 //        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
 //        Stats entityStats;
@@ -46,7 +46,7 @@ public class RoundHouseSmash extends RadialAbility {
     }
 
     @Override
-    protected void scaleEffect(Entity avatar, Entity entity)
+    protected void scaleEffect(Entity entity)
     {
         int critical;
         int avatarCrit, base, damage;

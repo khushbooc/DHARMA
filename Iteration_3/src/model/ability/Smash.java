@@ -24,7 +24,7 @@ public class Smash extends LinearAbility
 	}
 
 	@Override
-	protected void scaleEffect(Entity avatar, Entity entity)
+	protected void scaleEffect(Entity entity)
 	{
 		int critical;
 		int avatarCrit, base, damage;
@@ -56,13 +56,13 @@ public class Smash extends LinearAbility
 	}
 
 	@Override
-	protected boolean inRadius(Entity avatar, Entity entity)
+	protected boolean inRadius(Entity entity)
 	{
 		return false;
 	}
 
 	@Override
-	public void use(Entity avatar)
+	public void use()
 	{
 		return;
 	}

@@ -32,7 +32,7 @@ public abstract class RadiusAbility extends Ability
         this.radius = radius;
     }
 
-    protected abstract boolean inRadius(Entity avatar, Entity entity);
-    protected abstract void scaleEffect(Entity avatar, Entity entity);
-    public abstract void use(Entity avatar);
+    protected abstract boolean inRadius(Entity entity);
+    protected abstract void scaleEffect(Entity entity);
+    public abstract void use();
 }
