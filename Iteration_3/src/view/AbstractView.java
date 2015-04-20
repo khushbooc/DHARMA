@@ -12,37 +12,19 @@ import javax.swing.JLayeredPane;
 public abstract class AbstractView extends JLayeredPane {
 
     private boolean redraw;
-    private String next;
+    protected View parent_view;
 
-    public AbstractView(){
+    public AbstractView(View view) {
+        this.parent_view  = view;
         setRedraw(false);
-        next = "";
         setBackground(Color.BLACK);
         setPreferredSize(Toolkit.getDefaultToolkit().getScreenSize());
         setFocusable(true);
         setVisible(true);
     }
 
-
-    /**
-     * Gets the next state.
-     * @return The "next state"
-     */
-    public String getNext() {
-        return next;
-    }
-    public void setNext(String next) {
-        this.next = next;
-    }
-    /**
-     * Resets the state variables: <br>
-     * redraw = false <br>
-     * next = ""
-     * @return The "next state"
-     */
     public void reset(){
         setRedraw(false);
-        next = "";
     }
     public boolean getRedraw() {
         return redraw;
@@ -53,21 +35,13 @@ public abstract class AbstractView extends JLayeredPane {
     public void setBackground(String s) {
         add(new ImagePanel(s));
     }
-    /**
-     * @param s -String to compare with the next state
-     * @return -boolean indicating if String s is equal to "next state"
-     */
-    public boolean nextStateEquals(String s){
-        if(next.equals(s)){
-            return true;
-        }
-        return false;
-    }
+
 
     public abstract void render();
     public abstract void addKeyListenerToCurrentView(Controller controller);
     public abstract void nextView();
     public abstract void prevView();
     public abstract void onSelection();
+    public abstract void killWindow();
 }
 

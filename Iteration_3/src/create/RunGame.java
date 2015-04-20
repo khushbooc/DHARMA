@@ -34,6 +34,8 @@ public class RunGame {
             if(!game_logger.isEmpty())
                 System.out.println(game_logger.getMessage());
         }
+
+        game.kill();
     }
 
 

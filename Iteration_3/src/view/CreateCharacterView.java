@@ -29,7 +29,8 @@ public class CreateCharacterView extends AbstractView {
 	// private final int STARTINGX=3;
 	// private final int STARTINGY=3;
 
-	public CreateCharacterView( ActionListener backAction, ActionListener sneakAction, ActionListener summonerAction, ActionListener smasherAction ){
+	public CreateCharacterView(View view){
+        super(view);
 		setPreferredSize(new Dimension(500,500));
 		//canvas.setBorder(new LineBorder(Color.black, 5));
 		setLayout(new BorderLayout());
@@ -146,11 +147,7 @@ public class CreateCharacterView extends AbstractView {
 		//canvas.add(main, BorderLayout.CENTER);
 		
 		add(backgroundPanel);
-		
-		backGameButton.addActionListener(backAction);
-		startsneakButton.addActionListener(sneakAction);
-		startsummonerButton.addActionListener(summonerAction);
-		startsmasherButton.addActionListener(smasherAction);
+
 	}
 	
 	public String avatarName(){
@@ -179,6 +176,11 @@ public class CreateCharacterView extends AbstractView {
 
     @Override
     public void onSelection() {
+        //TODO
+    }
+
+    @Override
+    public void killWindow() {
         //TODO
     }
 }

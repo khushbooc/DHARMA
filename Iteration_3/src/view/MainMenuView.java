@@ -1,7 +1,6 @@
 package view;
 
 import controller.Controller;
-import model.Game;
 import model.GameLogger;
 
 import java.awt.*;
@@ -14,26 +13,26 @@ public class MainMenuView extends AbstractView{
     private Font titleFont = new Font("serif", Font.PLAIN, 20);
     private Font buttonFont = new Font("serif", Font.PLAIN, 18);
 
-    private JLabel startGameLabel;
-    private JLabel loadGameLabel;
-    private JLabel quitGameLabel;
-    private JLabel currentSelection;
+    private GameLabel startGameLabel;
+    private GameLabel loadGameLabel;
+    private GameLabel quitGameLabel;
+    private GameLabel currentSelection;
     // private JLabel background;
     private JLabel title;
-    private Game game;
+
 
     private JPanel backGroundPanel;
     private JFrame frame;
 
-    private ArrayList<JLabel> labels;
+    private ArrayList<GameLabel> labels;
 
 
-    public MainMenuView(){
-        super();
+    public MainMenuView(View parent_view){
+        super(parent_view);
         frame = new JFrame();
-        startGameLabel = new NewGameLabel("New Game", buttonFont);
-        loadGameLabel = new LoadGameLabel("Load Game", buttonFont);
-        quitGameLabel = new ExitGameLabel("Quit Game", buttonFont);
+        startGameLabel = new NewGameLabel("New Game", buttonFont, this);
+        loadGameLabel = new LoadGameLabel("Load Game", buttonFont, this);
+        quitGameLabel = new ExitGameLabel("Quit Game", buttonFont, this);
 
 
         title = new JLabel("DHARMA");
@@ -51,7 +50,7 @@ public class MainMenuView extends AbstractView{
         loadGameLabel.setMaximumSize(new Dimension(150,50));
         quitGameLabel.setMaximumSize(new Dimension(150,50));
 
-        labels = new ArrayList<JLabel>();
+        labels = new ArrayList<GameLabel>();
         labels.add(startGameLabel);
         labels.add(loadGameLabel);
         labels.add(quitGameLabel);
@@ -67,32 +66,53 @@ public class MainMenuView extends AbstractView{
         frame.setVisible(true);
         frame.repaint();
     }
-    private class NewGameLabel extends JLabel{
 
-        public NewGameLabel(String str, Font font){
+    private abstract class GameLabel extends JLabel {
+        protected MainMenuView parent_view;
+
+        public GameLabel(String str, MainMenuView view) {
             super(str);
+            this.parent_view = view;
+        }
+
+        public abstract void onSelection();
+    }
+
+    private class NewGameLabel extends GameLabel{
+
+        public NewGameLabel(String str, Font font, MainMenuView parent_view){
+            super(str, parent_view);
             setForeground(Color.BLACK);
             setFont(font.deriveFont(40f));
 
         }
-        public void activate(){
-
+        public void onSelection(){
+            parent_view.advanceToAvatarCreation();
         }
 
     }
-    private class LoadGameLabel extends JLabel{
-        public LoadGameLabel(String str, Font font){
-            super(str);
+    private class LoadGameLabel extends GameLabel{
+        public LoadGameLabel(String str, Font font, MainMenuView parent_view){
+            super(str, parent_view);
             setForeground(Color.BLACK);
             setFont(font.deriveFont(40f));
+        }
+
+        public void onSelection() {
+            //TODO
         }
     }
-    private class ExitGameLabel extends JLabel{
-        public ExitGameLabel(String str, Font font){
-            super(str);
+    private class ExitGameLabel extends GameLabel{
+        public ExitGameLabel(String str, Font font, MainMenuView parent_view){
+            super(str, parent_view);
             setForeground(Color.BLACK);
             setFont(font.deriveFont(40f));
         }
+
+        public void onSelection() {
+            parent_view.exitGame();
+        }
+
     }
 
     public void highlightLabel(int y_toHighlight) {
@@ -106,10 +126,10 @@ public class MainMenuView extends AbstractView{
             //getting the highlighter to wrap properly
             y_toHighlight = Math.abs(Math.abs(y_toHighlight) - length);
 
-        setSelected(labels.get(y_toHighlight%length));
+        setSelected(labels.get(y_toHighlight % length));
     }
 
-    private void setSelected(JLabel select) {
+    private void setSelected(GameLabel select) {
         select.setForeground(Color.red);
         this.currentSelection = select;
     }
@@ -127,6 +147,14 @@ public class MainMenuView extends AbstractView{
         GameLogger.getInstance().logMessage("added controller to the views");
     }
 
+    private void advanceToAvatarCreation() {
+        parent_view.advanceViewState(new CreateCharacterView(parent_view));
+    }
+
+    private void exitGame() {
+        parent_view.exitGame();
+    }
+
     @Override
     public void nextView() {
         //advance to avatar selection
@@ -139,7 +167,12 @@ public class MainMenuView extends AbstractView{
 
     @Override
     public void onSelection() {
+        this.currentSelection.onSelection();
+    }
 
+    @Override
+    public void killWindow() {
+        this.frame.dispose();
     }
 
 }
