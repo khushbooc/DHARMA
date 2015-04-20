@@ -33,7 +33,7 @@ public class MainMenuState extends GameState {
 
     public void update() {
         //I can't think of a better (OOP) way :(
-        ((MainMenuView) game.getView().getCurrentView()).highlightLabel(cursor.getLocation().getY());
+        ((MainMenuView) game.getView().getCurrentView()).highlightLabel(Math.abs(cursor.getLocation().getY()));
         game.updateView();
     }
 

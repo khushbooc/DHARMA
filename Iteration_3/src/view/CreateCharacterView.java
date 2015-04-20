@@ -1,5 +1,7 @@
 package view;
 
+import controller.Controller;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -154,4 +156,24 @@ public class CreateCharacterView extends AbstractView {
 	public String avatarName(){
 		return enterNameField.getText();
 	}
+
+    @Override
+    public void render() {
+        //TODO
+    }
+
+    @Override
+    public void addKeyListenerToCurrentView(Controller controller) {
+        //TODO
+    }
+
+    @Override
+    public void nextView() {
+        //TODO
+    }
+
+    @Override
+    public void prevView() {
+        //TODO
+    }
 }

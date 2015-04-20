@@ -5,15 +5,8 @@ import model.Game;
 import model.GameLogger;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.util.ArrayList;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.plaf.synth.ColorType;
 
 
 @SuppressWarnings("serial")
@@ -56,6 +49,11 @@ public class MainMenuView extends AbstractView{
         startGameLabel.setMaximumSize(new Dimension(150,50));
         loadGameLabel.setMaximumSize(new Dimension(150,50));
         quitGameLabel.setMaximumSize(new Dimension(150,50));
+
+        labels = new ArrayList<JLabel>();
+        labels.add(startGameLabel);
+        labels.add(loadGameLabel);
+        labels.add(quitGameLabel);
 
         backGroundPanel.add(title);
         backGroundPanel.add(startGameLabel);
@@ -100,7 +98,10 @@ public class MainMenuView extends AbstractView{
         for(JLabel l : labels) {
             l.setForeground(Color.black);
         }
-        labels.get(y_toHighlight).setForeground(Color.red);
+        int length = labels.size();
+        //GameLogger.getInstance().logMessage("length is " + length);
+        //GameLogger.getInstance().logMessage("y is " + y_toHighlight);
+        labels.get(y_toHighlight%length).setForeground(Color.red);
     }
 
 
