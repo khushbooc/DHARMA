@@ -126,8 +126,12 @@ public class CreateCharacterView extends AbstractView {
         }
 
         public void onSelection() {
-            //TODO
+            ((CreateCharacterView) this.parent_view).advanceToMainMenu();
         }
+    }
+
+    public void advanceToMainMenu() {
+        parent_view.advanceViewState(new MainMenuView(parent_view));
     }
 
     public String avatarName(){
@@ -169,11 +173,11 @@ public class CreateCharacterView extends AbstractView {
 
     @Override
     public void onSelection() {
-        //TODO
+        this.selected.onSelection();
     }
 
     @Override
     public void killWindow() {
-        //TODO
+        this.frame.dispose();
     }
 }
