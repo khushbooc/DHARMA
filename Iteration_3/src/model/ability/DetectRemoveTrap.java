@@ -76,10 +76,5 @@ public class DetectRemoveTrap extends RadialAbility {
         setEffect(damage);
     }
 
-    @Override
-    public void activate()
-    {
-        return;
-    }
 
 }

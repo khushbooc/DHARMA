@@ -13,5 +13,5 @@ public abstract class GameAbility {
 
     protected DharmaKeyListener keyListener;
 
-    public abstract void activate();
+    public abstract void use();
 }

@@ -67,9 +67,4 @@ public class Smash extends LinearAbility
 		return;
 	}
 
-	@Override
-	public void activate()
-	{
-		return;
-	}
 }

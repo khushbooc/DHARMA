@@ -89,9 +89,4 @@ public class Frostbolt extends ProjectileAbility
 	}
 	*/
 
-	@Override
-	public void activate()
-	{
-		return;
-	}
 }

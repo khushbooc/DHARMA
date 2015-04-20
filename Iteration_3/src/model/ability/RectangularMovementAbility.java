@@ -19,8 +19,5 @@ public class RectangularMovementAbility extends GameAbility{
     }
 
     @Override
-    public void activate() {
-        //execute movement
-
-    }
+    public void use(){}
 }

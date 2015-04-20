@@ -77,10 +77,5 @@ public class RoundHouseSmash extends RadialAbility {
         setEffect(damage);
     }
 
-    @Override
-    public void activate()
-    {
-        return;
-    }
 
 }
