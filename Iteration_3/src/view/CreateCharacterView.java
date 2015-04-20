@@ -6,21 +6,25 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
 @SuppressWarnings("serial")
 public class CreateCharacterView extends AbstractView {
-    private JLabel backLabel;
-    private JLabel sneakLabel;
-    private JLabel smasherLabel;
-    private JLabel summonerLabel;
+    private GameLabel backLabel;
+    private GameLabel sneakLabel;
+    private GameLabel smasherLabel;
+    private GameLabel summonerLabel;
     private JLabel enterNameLabel;
     private JTextField enterNameField;
     private JLabel title;
     private JPanel backgroundPanel;
     private JFrame frame;
+
+    private ArrayList<GameLabel> labels;
+    private GameLabel selected;
 
 
     public CreateCharacterView(View view){
@@ -32,7 +36,7 @@ public class CreateCharacterView extends AbstractView {
         frame.setPreferredSize(new Dimension(1280, 800));
         frame.setLayout(new FlowLayout(FlowLayout.CENTER));
 
-        backgroundPanel = new ImagePanel("src/res/main_menu.gif");
+        backgroundPanel = new ImagePanel("Iteration_3/src/res/main_menu.gif");
         backgroundPanel.setPreferredSize(new Dimension(600, 600));
         Container content = frame.getContentPane();
         backgroundPanel.setLayout(new BorderLayout());
@@ -49,28 +53,34 @@ public class CreateCharacterView extends AbstractView {
         JPanel center = new JPanel();
         center.setLayout(new FlowLayout(FlowLayout.CENTER));
         center.setPreferredSize(new Dimension(600, 100));
-        summonerLabel = new JLabel("SUMMONER");
+        summonerLabel = new SummonerLabel("SUMMONER", this);
         summonerLabel.setFont(new Font("serif", Font.PLAIN, 24).deriveFont(40f));
         center.add(summonerLabel);
 
         JPanel west = new JPanel();
         west.setLayout(new FlowLayout(FlowLayout.CENTER));
-        sneakLabel = new JLabel("SNEAK");
+        sneakLabel = new SneakLabel("SNEAK", this);
         sneakLabel.setFont(new Font("serif", Font.PLAIN, 24).deriveFont(40f));
         setForeground(Color.BLACK);
         west.add(sneakLabel);
 
         JPanel east = new JPanel();
         east.setLayout(new FlowLayout(FlowLayout.CENTER));
-        smasherLabel = new JLabel("SMASHER");
+        smasherLabel = new SmasherLabel("SMASHER", this);
         smasherLabel.setFont(new Font("serif", Font.PLAIN, 24).deriveFont(40f));
         east.add(smasherLabel);
 
         JPanel bottom = new JPanel();
         bottom.setLayout(new FlowLayout(FlowLayout.CENTER));
-        backLabel = new JLabel("BACK");
+        backLabel = new BackLabel("BACK", this);
         backLabel.setFont(new Font("serif", Font.PLAIN, 24).deriveFont(40f));
         bottom.add(backLabel);
+
+        labels = new ArrayList<GameLabel>();
+        labels.add(summonerLabel);
+        labels.add(smasherLabel);
+        labels.add(sneakLabel);
+        labels.add(backLabel);
 
         backgroundPanel.add(topPanel, BorderLayout.PAGE_START);
         backgroundPanel.add(center, BorderLayout.CENTER);
@@ -78,6 +88,46 @@ public class CreateCharacterView extends AbstractView {
         backgroundPanel.add(east, BorderLayout.LINE_END);
         backgroundPanel.add(bottom, BorderLayout.PAGE_END);
         frame.pack();
+    }
+
+    private class SummonerLabel extends GameLabel {
+        public SummonerLabel(String str, CreateCharacterView view) {
+            super(str, view);
+        }
+
+        public void onSelection() {
+            //TODO
+        }
+    }
+
+    private class SneakLabel extends GameLabel {
+        public SneakLabel(String str, CreateCharacterView view) {
+            super(str, view);
+        }
+
+        public void onSelection() {
+            //TODO
+        }
+    }
+
+    private class SmasherLabel extends GameLabel {
+        public SmasherLabel(String str, CreateCharacterView view) {
+            super(str, view);
+        }
+
+        public void onSelection() {
+            //TODO
+        }
+    }
+
+    private class BackLabel extends GameLabel {
+        public BackLabel(String str, CreateCharacterView view) {
+            super(str, view);
+        }
+
+        public void onSelection() {
+            //TODO
+        }
     }
 
     public String avatarName(){
@@ -91,18 +141,32 @@ public class CreateCharacterView extends AbstractView {
 
     @Override
     public void addKeyListenerToCurrentView(Controller controller) {
-        //TODO
+        frame.addKeyListener(controller);
+        backgroundPanel.addKeyListener(controller);
     }
 
     @Override
-    public void nextView() {
-        //TODO
+    public void highlightLabel(int x, int y) {
+        for(JLabel l : labels) {
+            l.setForeground(Color.black);
+        }
+        int x_length = 3;
+        int y_length = 2;
+        y = Math.abs(y)%y_length;
+        x = Math.abs(x)%x_length;
+
+        if(y == 1) {
+            setSelected(labels.get(labels.indexOf(backLabel)));
+        }
+        else
+            setSelected(labels.get(x));
     }
 
-    @Override
-    public void prevView() {
-        //TODO
+    private void setSelected(GameLabel selected) {
+        selected.setForeground(Color.red);
+        this.selected =  selected;
     }
+
     @Override
     public void onSelection() {
         //TODO

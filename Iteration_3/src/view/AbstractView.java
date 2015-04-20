@@ -39,8 +39,7 @@ public abstract class AbstractView extends JLayeredPane {
 
     public abstract void render();
     public abstract void addKeyListenerToCurrentView(Controller controller);
-    public abstract void nextView();
-    public abstract void prevView();
+    public abstract void highlightLabel(int x, int y);
     public abstract void onSelection();
     public abstract void killWindow();
 }
