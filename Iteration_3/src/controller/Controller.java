@@ -7,8 +7,8 @@ import java.awt.event.KeyListener;
 public class Controller implements KeyListener {
     private KeyListenerSet keyListenerSet;
 
-    public Controller(KeyListenerSet keys) {
-        keyListenerSet = keys;
+    public Controller() {
+        keyListenerSet = new KeyListenerSet();
     }
 
     @Override
@@ -32,6 +32,10 @@ public class Controller implements KeyListener {
 
     public void setKeyListenerSet(KeyListenerSet newKeySet) {
         keyListenerSet = newKeySet;
+    }
+
+    public void addKeyListenerToSet(DharmaKeyListener keyListener) {
+        keyListenerSet.addKeyListener(keyListener);
     }
 
 

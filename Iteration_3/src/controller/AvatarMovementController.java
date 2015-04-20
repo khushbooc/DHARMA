@@ -1,3 +1,5 @@
+/*
+
 package controller;
 
 import java.awt.Point;
@@ -20,3 +22,4 @@ public class AvatarMovementController extends MovementController {
 	}
 
 }
+*/

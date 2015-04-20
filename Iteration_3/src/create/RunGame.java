@@ -1,24 +1,29 @@
 package create;
 
-import javax.swing.SwingUtilities;
-
-import controller.ViewController;
+import controller.Controller;
+import model.Game;
+import view.View;
 
 public class RunGame {
     public static void main(String[] args){
-    	
-    	SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                //new GameMap();
-            	new ViewController();
-            }
-        });
-    	
-    
+        RunGame run_game = new RunGame();
+        run_game.run();
     }
 
-    protected RunGame() {
-       new ViewController();
+    private Controller controller; //The Controller
+    private Game game; //The 'Model'
+    // private View viewClass; //is this the right one?
+
+    private RunGame() {
+        //TODO: make Game(Controller, View)
+        this.game = new Game(controller);
+        this.controller = new Controller();
+        // this.view = new View();
     }
 
+    protected void run() {
+        while(game.isRunning()) {
+            game.update();
+        }
+    }
 }

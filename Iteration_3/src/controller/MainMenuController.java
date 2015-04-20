@@ -1,3 +1,5 @@
+/*
+
 package controller;
 
 import java.awt.event.ActionEvent;
@@ -38,4 +40,4 @@ private MainMenuView mainMenu = new MainMenuView(new StartButtonListener(),new L
 		}
 	}
 
-}
+}*/

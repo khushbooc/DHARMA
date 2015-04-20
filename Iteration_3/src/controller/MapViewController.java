@@ -1,3 +1,5 @@
+/*
+
 package controller;
 //this class shouldn't exist
 
@@ -83,5 +85,5 @@ public class CharacterKeyboardController implements KeyListener{
 		
 	}
 
-}
+}*/
 
