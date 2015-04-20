@@ -16,7 +16,7 @@ public class MapView extends JComponent implements Observer{
 	private EntityView entityView;
 	private TileView[][] tiles;
 	 public void setMap(GameMap map){
-     	this.map=map;
+     	this.map = map;
      	//this.setTileComponents();
      	this.repaint();
      }
