@@ -67,10 +67,5 @@ public class ManaTap extends SelfAbility
         }
     }
 
-    @Override
-    public void activate()
-    {
-        return;
-    }
 
 }

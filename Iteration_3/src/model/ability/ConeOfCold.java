@@ -81,9 +81,5 @@ public class ConeOfCold extends RadialAbility {
         setEffect(damage);
     }
 
-    @Override
-    public void activate()
-    {
-        return;
-    }
+
 }

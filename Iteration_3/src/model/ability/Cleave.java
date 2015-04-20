@@ -82,9 +82,5 @@ public class Cleave extends RadialAbility {
         setEffect(damage);
     }
 
-    @Override
-    public void activate()
-    {
-        return;
-    }
+
 }

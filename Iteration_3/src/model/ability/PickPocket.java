@@ -78,10 +78,5 @@ public class PickPocket extends RadialAbility {
         setEffect(moneyStolen);
     }
 
-    @Override
-    public void activate()
-    {
-        return;
-    }
 
 }

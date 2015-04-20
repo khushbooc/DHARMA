@@ -84,9 +84,5 @@ public class Attack extends LinearAbility {
         setEffect(damage);
     }
 
-    @Override
-    public void activate()
-    {
-        return;
-    }
+
 }
