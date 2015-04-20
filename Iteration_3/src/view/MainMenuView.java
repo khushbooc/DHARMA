@@ -2,10 +2,7 @@ package view;
 
 import model.Game;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -30,9 +27,9 @@ public class MainMenuView extends AbstractView{
 
     public MainMenuView(){
         super();
-        startGameButton = new MainMenuButton("New Game", buttonFont);
-        loadGameButton = new MainMenuButton("Load Game", buttonFont);
-        quitGameButton = new MainMenuButton("Quit Game", buttonFont);
+        startGameButton = new NewGameButton("New Game", buttonFont);
+        loadGameButton = new LoadGameButton("Load Game", buttonFont);
+        quitGameButton = new ExitGameButton("Quit Game", buttonFont);
 
 
         title = new JLabel("The Melting Point");
@@ -48,7 +45,7 @@ public class MainMenuView extends AbstractView{
 		ghost.setContentAreaFilled(false);
 		ghost.setBorderPainted(false);*/
 
-        setPreferredSize(new Dimension(600,600));
+        setPreferredSize(new Dimension(1280,800));
         setLayout(new BorderLayout());
 
         startGameButton.setMaximumSize(new Dimension(150,50));
@@ -64,28 +61,41 @@ public class MainMenuView extends AbstractView{
 
         add(backGroundPanel);
 
-        startGameButton.addActionListener(new ActionListener()
-        {
-            public void actionPerformed(ActionEvent e)
-            {
-                game.setNewGameState();
-            }
-        });
+    }
+//    public void render(){
+//        JFram
+//    }
+    private class NewGameButton extends JButton{
 
-        quitGameButton.addActionListener(new ActionListener()
-        {
-            public void actionPerformed(ActionEvent e)
-            {
-                //TODO: call game quit
-            }
-        });
-        loadGameButton.addActionListener(new ActionListener()
-        {
-            public void actionPerformed(ActionEvent e)
-            {
-                //TODO: call game load
-            }
-        });
+        public NewGameButton(String str, Font font){
+            super();
+            setForeground(Color.WHITE);
+            setFont(font.deriveFont(40f));
+            setContentAreaFilled(false);
+            setBorderPainted(false);
+        }
+        public void activate(){
+
+        }
+
+    }
+    private class LoadGameButton extends JButton{
+        public LoadGameButton(String str, Font font){
+            super();
+            setForeground(Color.WHITE);
+            setFont(font.deriveFont(40f));
+            setContentAreaFilled(false);
+            setBorderPainted(false);
+        }
+    }
+    private class ExitGameButton extends JButton{
+        public ExitGameButton(String str, Font font){
+            super();
+            setForeground(Color.WHITE);
+            setFont(font.deriveFont(40f));
+            setContentAreaFilled(false);
+            setBorderPainted(false);
+        }
     }
 
 }
