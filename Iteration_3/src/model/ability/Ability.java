@@ -91,7 +91,7 @@ public abstract class Ability extends GameAbility{
 
 	// random number generator for all abilities
 	// generate a random int within [min, max]
-	public static int random(int min, int max)
+	protected static int random(int min, int max)
 	{
 		Random random = new Random();
 		int randomNumber = random.nextInt(max - min + 1) + min;

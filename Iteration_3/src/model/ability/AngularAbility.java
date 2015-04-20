@@ -32,10 +32,10 @@ public abstract class AngularAbility extends RadiusAbility
 
 	public abstract void use(Entity avatar);
 
-	public abstract void scaleEffect(Entity entity, Entity avatar);
+	protected abstract void scaleEffect(Entity entity, Entity avatar);
 
 	@Override
-	public boolean inRadius(Entity avatar, Entity entity)
+	protected boolean inRadius(Entity avatar, Entity entity)
 	{
 //		Location aLx = avatar.getLocation().getX();
 //		Location eLx = entity.getLocation().getX();

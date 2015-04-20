@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b4cf7a0-c22f-4b38-a329-fdbeef2e8a6d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/MainMenuView.java" afterPath="$PROJECT_DIR$/src/view/MainMenuView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/Ability.java" afterPath="$PROJECT_DIR$/src/model/ability/Ability.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/AngularAbility.java" afterPath="$PROJECT_DIR$/src/model/ability/AngularAbility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/Attack.java" afterPath="$PROJECT_DIR$/src/model/ability/Attack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/Cleave.java" afterPath="$PROJECT_DIR$/src/model/ability/Cleave.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/ConeOfCold.java" afterPath="$PROJECT_DIR$/src/model/ability/ConeOfCold.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/DetectRemoveTrap.java" afterPath="$PROJECT_DIR$/src/model/ability/DetectRemoveTrap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/FireNova.java" afterPath="$PROJECT_DIR$/src/model/ability/FireNova.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/Frostbolt.java" afterPath="$PROJECT_DIR$/src/model/ability/Frostbolt.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/ManaTap.java" afterPath="$PROJECT_DIR$/src/model/ability/ManaTap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/PickPocket.java" afterPath="$PROJECT_DIR$/src/model/ability/PickPocket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/ProjectileAbility.java" afterPath="$PROJECT_DIR$/src/model/ability/ProjectileAbility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/RadialAbility.java" afterPath="$PROJECT_DIR$/src/model/ability/RadialAbility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/RadiusAbility.java" afterPath="$PROJECT_DIR$/src/model/ability/RadiusAbility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/RoundHouseSmash.java" afterPath="$PROJECT_DIR$/src/model/ability/RoundHouseSmash.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/SelfAbility.java" afterPath="$PROJECT_DIR$/src/model/ability/SelfAbility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/Smash.java" afterPath="$PROJECT_DIR$/src/model/ability/Smash.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="iteration 3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,8 +41,88 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Stats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/statistics/Stats.java">
+      <file leaf-file-name="PickPocket.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/ability/PickPocket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectileAbility.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/model/ability/ProjectileAbility.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.62068963">
+              <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RadialAbility.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/ability/RadialAbility.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RectangularMovementAbility.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/ability/RectangularMovementAbility.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RadiusAbility.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/ability/RadiusAbility.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoundHouseSmash.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/ability/RoundHouseSmash.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SelfAbility.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/ability/SelfAbility.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Smash.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/ability/Smash.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SmasherLibrary.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/ability/SmasherLibrary.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
@@ -35,95 +131,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SummonerStats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/statistics/SummonerStats.java">
+      <file leaf-file-name="Frostbolt.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/ability/Frostbolt.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InventoryPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/InventoryPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainMenuButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/MainMenuButton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/View.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainMenuView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/MainMenuView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CharacterButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/CharacterButton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateCharacterView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/CreateCharacterView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
               <folding>
-                <element signature="e#367#394#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EntityView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/EntityView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameView.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/view/GameView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49655172">
-              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#648#649#0" expanded="true" />
+                <element signature="e#667#668#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -142,7 +157,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/model/inventory/Chest.java" />
         <option value="$PROJECT_DIR$/src/model/inventory/TwoHandedW.java" />
         <option value="$PROJECT_DIR$/src/model/inventory/NonEquipableItem.java" />
         <option value="$PROJECT_DIR$/src/model/inventory/TakeableItem.java" />
@@ -169,22 +183,7 @@
         <option value="$PROJECT_DIR$/src/create/RunGame.java" />
         <option value="$PROJECT_DIR$/src/model/states/NewGameState.java" />
         <option value="$PROJECT_DIR$/src/view/MapView.java" />
-        <option value="$PROJECT_DIR$/src/model/ability/Ability.java" />
-        <option value="$PROJECT_DIR$/src/model/ability/AngularAbility.java" />
-        <option value="$PROJECT_DIR$/src/model/ability/Attack.java" />
-        <option value="$PROJECT_DIR$/src/model/ability/Cleave.java" />
-        <option value="$PROJECT_DIR$/src/model/ability/ConeOfCold.java" />
-        <option value="$PROJECT_DIR$/src/model/ability/DetectRemoveTrap.java" />
-        <option value="$PROJECT_DIR$/src/model/ability/FireNova.java" />
-        <option value="$PROJECT_DIR$/src/model/ability/Frostbolt.java" />
         <option value="$PROJECT_DIR$/src/model/ability/LinearAbility.java" />
-        <option value="$PROJECT_DIR$/src/model/ability/PickPocket.java" />
-        <option value="$PROJECT_DIR$/src/model/ability/ProjectileAbility.java" />
-        <option value="$PROJECT_DIR$/src/model/ability/RadialAbility.java" />
-        <option value="$PROJECT_DIR$/src/model/ability/RadiusAbility.java" />
-        <option value="$PROJECT_DIR$/src/model/ability/SelfAbility.java" />
-        <option value="$PROJECT_DIR$/src/model/ability/RoundHouseSmash.java" />
-        <option value="$PROJECT_DIR$/src/model/ability/Smash.java" />
         <option value="$PROJECT_DIR$/src/model/ability/SneakLibrary.java" />
         <option value="$PROJECT_DIR$/src/model/ability/SmasherLibrary.java" />
         <option value="$PROJECT_DIR$/src/model/ability/SummonerLibrary.java" />
@@ -193,6 +192,22 @@
         <option value="$PROJECT_DIR$/src/model/statistics/Stats.java" />
         <option value="$PROJECT_DIR$/src/model/statistics/SummonerStats.java" />
         <option value="$PROJECT_DIR$/src/view/MainMenuView.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/Ability.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/Attack.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/AngularAbility.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/Cleave.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/ConeOfCold.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/DetectRemoveTrap.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/FireNova.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/Frostbolt.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/ManaTap.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/PickPocket.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/RadialAbility.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/RadiusAbility.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/RoundHouseSmash.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/SelfAbility.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/Smash.java" />
+        <option value="$PROJECT_DIR$/src/model/ability/ProjectileAbility.java" />
       </list>
     </option>
   </component>
@@ -811,6 +826,12 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -904,12 +925,12 @@
       <workItem from="1429340188248" duration="31000" />
       <workItem from="1429381269684" duration="4376000" />
       <workItem from="1429493247266" duration="1661000" />
-      <workItem from="1429495088719" duration="3789000" />
+      <workItem from="1429495088719" duration="4467000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33141000" />
+    <option name="totallyTimeSpent" value="33819000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1091,16 +1112,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/states/NewGameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.0">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1136,94 +1149,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/entity/Avatar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08275862">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/entity/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08275862">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="14" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/Ability.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/AngularAbility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/Attack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/Cleave.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/ConeOfCold.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/DetectRemoveTrap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/FireNova.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/Frostbolt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/GameAbility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/ability/AbilityLibrary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1236,22 +1161,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/LinearAbility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/ManaTap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/ability/PauseGameAbility.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1260,79 +1169,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/PickPocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/ProjectileAbility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/RadialAbility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/RadiusAbility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/RectangularMovementAbility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/SelfAbility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/RoundHouseSmash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/Smash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/ability/SneakLibrary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ability/SmasherLibrary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
@@ -1440,11 +1277,190 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/GameView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49655172">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/entity/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="14" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/entity/Avatar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/Ability.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="102" column="1" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/Attack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/AngularAbility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/Cleave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="13" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/ConeOfCold.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/DetectRemoveTrap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/FireNova.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/GameAbility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/LinearAbility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/ManaTap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/PickPocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/RadialAbility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/RectangularMovementAbility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/RadiusAbility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/RoundHouseSmash.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/SelfAbility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/Smash.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/SmasherLibrary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/Frostbolt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding>
+            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#667#668#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ability/ProjectileAbility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62068963">
+          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
