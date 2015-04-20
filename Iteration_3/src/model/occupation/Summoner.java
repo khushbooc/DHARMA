@@ -26,5 +26,8 @@ public class Summoner extends Occupation {
     public AbilityLibrary getDefaultAbilityLibrary() {
         return new SummonerLibrary();
     }
+    public String getOcc(){
+		return "Summoner";
+	}
 
 }

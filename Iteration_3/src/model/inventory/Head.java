@@ -17,5 +17,8 @@ public class Head extends EquipableItem{
         e.getOccupation().getStats().modAgility(10);
     }
 
+    public String getItemType() {
+		return "Head";
+	}
 
 }

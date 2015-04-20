@@ -49,4 +49,8 @@ public class Mount extends FriendlyNPC {
         this.getEquipmentContainer().remove(eqi);
         this.getInventory().add(eqi);
     }
+    
+    public String getEntityName(){
+    	return "Mount";
+    }
 }

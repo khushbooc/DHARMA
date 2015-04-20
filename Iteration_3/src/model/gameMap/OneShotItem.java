@@ -22,4 +22,8 @@ public class OneShotItem extends Item {
     public boolean isCollidable(){
         return true;
     }
+
+	public String getItemType() {
+		return "One Shot Item";
+	}
 }

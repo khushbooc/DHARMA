@@ -18,4 +18,7 @@ public class Water extends Terrain {
     String getName(){
         return name;
     }
+    public String getTerrainType(){
+    	return "Water";
+    }
 }

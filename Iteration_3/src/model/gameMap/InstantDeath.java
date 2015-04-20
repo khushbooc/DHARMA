@@ -16,5 +16,8 @@ public class InstantDeath extends AreaEffect{
     public String getName(){
         return name;
     }
+    public String getAreaEffectType(){
+    	return "Instant Death";
+    }
 
 }

@@ -41,4 +41,6 @@ public abstract class Occupation {
     public static Summoner summonerFactory() {
         return new Summoner();
     }
+    
+    public abstract String getOcc();
 }

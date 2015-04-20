@@ -256,9 +256,13 @@ public class GameMap extends View
     	BufferedWriter bw = new BufferedWriter(new FileWriter(new File("/src/res/file")));
     	for(int i = 0; i < map.length; i++){
     		for(int j = 0; j < map[0].length; j++){
-    			bw.write(map[i][j].getLocation() + "," + map[i][j].getAreaEffect() + "," +
-    					map[i][j].getTerrain() + "," + map[i][j].getItem() + "," +	
-    					map[i][j].getEntity() + "\n");
+    			bw.write(map[i][j].getLocation() + "," + map[i][j].getAreaEffect().getAreaEffectType() + "," +
+    					map[i][j].getTerrain().getTerrainType() + "," + map[i][j].getItem().getItemType() + "," +	
+    					map[i][j].getEntity().getOccupation().getOcc() + "," + map[i][j].getEntity().getInventory().getTakeableItems() + "," + 
+    					map[i][j].getEntity().getInventory().getFirstFreeSlot() + "," + map[i][j].getEntity().getInventory().getCount() + "," +
+    					map[i][j].getEntity().getEquipmentContainer().getEquipmentContainer() + "," + 
+    					map[i][j].getEntity().getEquipmentContainer().getFirstFreeSlot() + "," + map[i][j].getEntity().getEquipmentContainer().getCount() +
+    					"\n");
     		}
     	}
     	bw.flush();

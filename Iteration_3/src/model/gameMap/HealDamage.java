@@ -20,4 +20,8 @@ public class HealDamage extends AreaEffect {
     public String getName(){
         return name;
     }
+    
+    public String getAreaEffectType(){
+    	return "Heal Damage";
+    }
 }

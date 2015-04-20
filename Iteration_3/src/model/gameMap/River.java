@@ -22,5 +22,7 @@ public class River extends Terrain {
     public void affectEntity(){
         //TODO
     }
-
+    public String getTerrainType(){
+    	return "River";
+    }
 }

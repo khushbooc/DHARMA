@@ -18,6 +18,15 @@ public class EquipmentContainer extends Observable {
         count = 0;
     }
 
+    public String getEquipmentContainer(){
+    	String ec = "";
+    	for(int i = 0; i < equipmentList.length-1; i++){
+    		ec += equipmentList[i] + ",";
+    	}
+    	ec += equipmentList[equipmentList.length-1];
+    	return ec;
+    }
+    
     public int getCount(){
         return count;
     }

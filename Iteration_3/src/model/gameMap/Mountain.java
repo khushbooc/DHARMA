@@ -18,4 +18,7 @@ public class Mountain extends Terrain {
     String getName(){
         return name;
     }
+    public String getTerrainType(){
+    	return "Mountain";
+    }
 }

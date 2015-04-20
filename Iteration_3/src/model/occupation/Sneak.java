@@ -22,5 +22,7 @@ public class Sneak extends Occupation {
     public AbilityLibrary getDefaultAbilityLibrary() {
         return new SneakLibrary();
     }
-
+    public String getOcc(){
+		return "Sneak";
+	}
 }

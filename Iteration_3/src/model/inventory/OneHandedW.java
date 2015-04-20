@@ -15,6 +15,8 @@ public class OneHandedW extends EquipableItem {
         e.getOccupation().getStats().modStrength(10);
     }
 
-
+    public String getItemType() {
+		return "One Handed W";
+	}
 
 }

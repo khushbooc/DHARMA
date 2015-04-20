@@ -12,7 +12,7 @@ public abstract class Item extends MapObject{
         super(location);
         this.name = name;
     }
-
+    public abstract String getItemType();
     public abstract boolean isCollidable();
 
     public abstract void onTouch(Entity e);

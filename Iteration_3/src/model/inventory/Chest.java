@@ -17,4 +17,7 @@ public class Chest extends EquipableItem
         e.getOccupation().getStats().modAgility(10);
     }
 
+    public String getItemType() {
+		return "Chest";
+	}
 }

@@ -14,5 +14,7 @@ public class TwoHandedW extends EquipableItem{
         e.equipItem(this);
         e.getOccupation().getStats().modStrength(15);
     }
-
+    public String getItemType() {
+		return "Two Handed W";
+	}
 }
