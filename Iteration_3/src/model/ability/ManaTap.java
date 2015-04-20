@@ -24,7 +24,7 @@ public class ManaTap extends SelfAbility
     }
 
     @Override
-    protected void scaleEffect(Entity avatar)
+    protected void scaleEffect()
     {
         int randNum;
         int avatarCrit, damage;
@@ -49,7 +49,7 @@ public class ManaTap extends SelfAbility
     }
 
     @Override
-    public void use(Entity avatar)
+    public void use()
     {
         int cost = getCost();
         SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
@@ -60,7 +60,7 @@ public class ManaTap extends SelfAbility
 
         else
         {
-            scaleEffect(avatar);
+            scaleEffect();
             setCost((int) stats.getMaxMana() / 2);
             stats.modCurrentMana(-cost);
             stats.modCurrentHealth(effect);

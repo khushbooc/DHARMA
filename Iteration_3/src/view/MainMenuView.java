@@ -6,9 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 
 @SuppressWarnings("serial")
@@ -23,6 +21,7 @@ public class MainMenuView extends AbstractView{
     private JLabel title;
     private Game game;
 
+    private JPanel backGroundPanel;
 //	private BufferedImage backgroundImage;
 
     public MainMenuView(){
@@ -35,7 +34,7 @@ public class MainMenuView extends AbstractView{
         title = new JLabel("The Melting Point");
         title.setFont(titleFont.deriveFont(80f));
 
-        JPanel backGroundPanel = new ImagePanel("src/res/main_menu.gif");
+        backGroundPanel = new ImagePanel("src/res/main_menu.gif");
         backGroundPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 800, 5));
         // Insets insets = backGroundPanel.getInsets();
         // Dimension size = backGroundPanel.getPreferredSize();
@@ -62,9 +61,20 @@ public class MainMenuView extends AbstractView{
         add(backGroundPanel);
 
     }
-//    public void render(){
-//        JFram
-//    }
+    public void render(){
+        System.out.println("I am in render");
+        JFrame frame = new JFrame();
+        frame.setFocusable(true);
+        frame.setLayout(new FlowLayout());
+        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Container content = frame.getContentPane();
+        content.add(backGroundPanel,BorderLayout.CENTER);
+        //frame.repaint();
+        frame.pack();
+        frame.setVisible(true);
+
+    }
     private class NewGameButton extends JButton{
 
         public NewGameButton(String str, Font font){

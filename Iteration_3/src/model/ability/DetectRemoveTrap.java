@@ -27,7 +27,7 @@ public class DetectRemoveTrap extends RadialAbility {
     }
 
     @Override
-    public void use(Entity avatar)
+    public void use()
     {
 //        SneakStats stats = (SneakStats) avatar.getOccupation().getStats();
 //        if(stats.getCurrentMana() - this.cost < 0)
@@ -46,7 +46,7 @@ public class DetectRemoveTrap extends RadialAbility {
     }
 
     @Override
-    protected void scaleEffect(Entity avatar, Entity entity)
+    protected void scaleEffect(Entity entity)
     {
         int critical;
         int avatarCrit, base, damage;
