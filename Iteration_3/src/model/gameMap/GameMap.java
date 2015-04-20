@@ -21,6 +21,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class GameMap extends View
@@ -34,6 +35,7 @@ public class GameMap extends View
     private int min_y=3;
     private int max_x=3;
     private int max_y=3;
+    private ArrayList<MapObject> mapObjectList;
     //private Terrain[][] terrain;
 
     public GameMap(Avatar avatar,JFrame frame) {
@@ -41,6 +43,14 @@ public class GameMap extends View
         this.frame=frame;
         initGame();
         createAndShowGUI();
+        for(MapObject mapObject : mapObjectList) {
+            mapObject.setGameMap(this);
+        }
+    }
+
+    public ArrayList getMapObjectList()
+    {
+        return mapObjectList;
     }
 
 //	public static void main(String[] args)

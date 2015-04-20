@@ -5,6 +5,8 @@ import model.statistics.SmasherStats;
 import model.statistics.Stats;
 import model.statistics.SummonerStats;
 
+import java.util.ArrayList;
+
 /*
  * @author Aaron Iglesias
  */
@@ -32,21 +34,24 @@ public class Cleave extends RadialAbility {
     @Override
     public void use()
     {
-//        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
-//        Stats entityStats;
-//        if(stats.getCurrentMana() - this.cost < 0)
-//            return;
-//
-//        // for(all entities on map)
-//        if(!inRadius(avatar, entity) || avatar == entity)
-//            continue; // do nothing
-//        else // do damage
-//        {
-//            entityStats = entity.getOccupation().getStats();
-//            scaleEffect(avatar, entity);
-//            entityStats.modCurrentHealth(-effect);
-//            entityStats.modCurrentMana(-cost);
-//        }
+        ArrayList<Entity> entityList = gameMap.getMapObjectList();
+        SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
+        Stats entityStats;
+        if(stats.getCurrentMana() - this.cost < 0)
+            return;
+
+        for(Entity entity : entityList) {
+
+            if (!inRadius(entity) || avatar == entity)
+                continue; // do nothing
+            else // do damage
+            {
+                entityStats = entity.getOccupation().getStats();
+                scaleEffect(entity);
+                entityStats.modCurrentHealth(-effect);
+                entityStats.modCurrentMana(-cost);
+            }
+        }
         return;
     }
 

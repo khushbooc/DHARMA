@@ -6,6 +6,7 @@ import java.util.Observable;
 
 public abstract class MapObject extends Observable{
     protected Location location;
+    protected GameMap gameMap;
 
     //why is this here?
     private BufferedImage image;
@@ -39,6 +40,16 @@ public abstract class MapObject extends Observable{
 
     public void locationDelta(int x, int y) {
 
+    }
+
+    public GameMap getGameMap()
+    {
+        return gameMap;
+    }
+
+    public void setGameMap(GameMap gameMap)
+    {
+        this.gameMap = gameMap;
     }
 
 

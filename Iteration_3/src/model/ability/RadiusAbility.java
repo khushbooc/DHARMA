@@ -32,7 +32,21 @@ public abstract class RadiusAbility extends Ability
         this.radius = radius;
     }
 
-    protected abstract boolean inRadius(Entity entity);
+    protected boolean inRadius(Entity entity)
+    {
+        int aLx = avatar.getLocation().getX();
+        int eLx = entity.getLocation().getX();
+
+        int aLy = avatar.getLocation().getY();
+        int eLy = entity.getLocation().getY();
+
+        boolean inRadius = Math.pow(eLx - aLx,2) + Math.pow(eLy - aLy, 2) <= Math.pow(radius,2);
+
+        if(inRadius)
+            return true;
+        else
+            return false;
+    }
     protected abstract void scaleEffect(Entity entity);
     public abstract void use();
 }
