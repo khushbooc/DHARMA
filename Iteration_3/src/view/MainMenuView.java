@@ -22,10 +22,11 @@ public class MainMenuView extends AbstractView{
     private Game game;
 
     private JPanel backGroundPanel;
-//	private BufferedImage backgroundImage;
+    private JFrame frame;
 
     public MainMenuView(){
         super();
+        frame = new JFrame();
         startGameButton = new NewGameButton("New Game", buttonFont);
         loadGameButton = new LoadGameButton("Load Game", buttonFont);
         quitGameButton = new ExitGameButton("Quit Game", buttonFont);
@@ -35,7 +36,7 @@ public class MainMenuView extends AbstractView{
         title.setFont(titleFont.deriveFont(80f));
 
         backGroundPanel = new ImagePanel("src/res/main_menu.gif");
-        backGroundPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 800, 5));
+
         // Insets insets = backGroundPanel.getInsets();
         // Dimension size = backGroundPanel.getPreferredSize();
 
@@ -44,34 +45,31 @@ public class MainMenuView extends AbstractView{
 		ghost.setContentAreaFilled(false);
 		ghost.setBorderPainted(false);*/
 
-        setPreferredSize(new Dimension(1280,800));
-        setLayout(new BorderLayout());
+        backGroundPanel.setPreferredSize(new Dimension(600, 600));
+        backGroundPanel.setLayout(new BorderLayout());
 
         startGameButton.setMaximumSize(new Dimension(150,50));
         loadGameButton.setMaximumSize(new Dimension(150,50));
         quitGameButton.setMaximumSize(new Dimension(150,50));
 
         backGroundPanel.add(title);
-        //backGroundPanel.add(ghost);
-
         backGroundPanel.add(startGameButton);
         backGroundPanel.add(loadGameButton);
         backGroundPanel.add(quitGameButton);
+        Container content = frame.getContentPane();
+        content.add(backGroundPanel);
+        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+        frame.setFocusable(true);
+        frame.setResizable(true);
+        frame.setLayout(new FlowLayout(FlowLayout.CENTER));
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
 
-        add(backGroundPanel);
+
 
     }
     public void render(){
         System.out.println("I am in render");
-        JFrame frame = new JFrame();
-        frame.setFocusable(true);
-        frame.setLayout(new FlowLayout());
-        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Container content = frame.getContentPane();
-        content.add(backGroundPanel,BorderLayout.CENTER);
-        //frame.repaint();
-        frame.pack();
         frame.setVisible(true);
 
     }
