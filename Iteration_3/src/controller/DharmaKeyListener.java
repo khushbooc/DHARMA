@@ -28,7 +28,7 @@ public class DharmaKeyListener {
         //the listener may forward the action to its ability, if it is currently enabled
         if(this.isEnabled && e.getKeyCode() == this.key_code) {
             System.out.println("(Debug) Key " + this.key_code + " was pressed, and its Listener is enabled");
-            this.ability.activate();
+            this.ability.use();
         }
         else if(e.getKeyCode() == this.key_code)
             System.out.println("(Debug) Key " + this.key_code + " was pressed, and its Listener is disabled :(");

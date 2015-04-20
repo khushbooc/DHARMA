@@ -31,12 +31,12 @@ public class Frostbolt extends ProjectileAbility
 	}
 
 	@Override
-	protected boolean inRadius(Entity avatar, Entity entity) {
+	protected boolean inRadius(Entity entity) {
 		return false;
 	}
 
 	@Override
-	protected void scaleEffect(Entity avatar, Entity entity) {
+	protected void scaleEffect(Entity entity) {
 		int critical;
 		int avatarCrit, base, damage;
 		double random, criticalBonus, modifier, offense, defense, level, skill;
@@ -66,7 +66,7 @@ public class Frostbolt extends ProjectileAbility
 	}
 
 	@Override
-	public void use(Entity avatar) {
+	public void use() {
 
 	}
 
@@ -89,9 +89,4 @@ public class Frostbolt extends ProjectileAbility
 	}
 	*/
 
-	@Override
-	public void activate()
-	{
-		return;
-	}
 }

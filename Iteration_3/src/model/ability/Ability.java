@@ -7,6 +7,7 @@ import java.util.Random;
  * @author Aaron Iglesias
  */
 public abstract class Ability extends GameAbility{
+	protected Entity avatar;
 	protected String name;
 	protected int base;
 	protected int cost;
@@ -29,6 +30,11 @@ public abstract class Ability extends GameAbility{
 		this.levelRequirement = levelRequirement;
 		this.base = base;
 		this.effect = effect;
+	}
+
+	public void setAvatar(Entity avatar)
+	{
+		this.avatar = avatar;
 	}
 
 	public int getBase()
@@ -81,7 +87,7 @@ public abstract class Ability extends GameAbility{
 		this.levelRequirement = levelRequirement;
 	}
 
-	public boolean meetsLevelRequirements(Entity avatar)
+	public boolean meetsLevelRequirements()
 	{
 		if(avatar.getOccupation().getStats().getLevel() >= levelRequirement)
 			return true;
@@ -99,5 +105,5 @@ public abstract class Ability extends GameAbility{
 		return randomNumber;
 	}
 
-	public abstract void use(Entity avatar);
+	public abstract void use();
 }

@@ -5,6 +5,7 @@ import model.Game;
 import model.ability.GameAbility;
 import model.ability.RectangularMovementAbility;
 import model.direction.RectangularDirection;
+import model.entity.Cursor;
 
 
 /**
@@ -12,11 +13,14 @@ import model.direction.RectangularDirection;
  */
 public class MainMenuState extends GameState {
 
+    private Cursor cursor;
+
     public MainMenuState(Game game) {
         super(game);
+        this.cursor = new Cursor(); //cursor for selecting the menu options
         //default key set
         for (RectangularDirection dir : RectangularDirection.values()) {
-            game.getController().addKeyListenerToSet(RectangularDirectionKeyListenerFactory(dir));
+            game.getController().addKeyListenerToSet(RectangularDirectionKeyListenerFactory(cursor, dir));
         }
 
     }
@@ -27,8 +31,8 @@ public class MainMenuState extends GameState {
     }
 
     //Parameterized Factory Method
-    private DharmaKeyListener RectangularDirectionKeyListenerFactory(RectangularDirection direction) {
-        GameAbility rectMove = new RectangularMovementAbility(direction);
+    private DharmaKeyListener RectangularDirectionKeyListenerFactory(Cursor owner, RectangularDirection direction) {
+        GameAbility rectMove = new RectangularMovementAbility(owner, direction);
         int javaKeyCode;
 
         if(direction.getRelativeDirectionEquivalent().equals("UP"))

@@ -25,7 +25,7 @@ public class FireNova extends RadialAbility {
     }
 
     @Override
-    public void use(Entity avatar)
+    public void use()
     {
 //        SummonerStats stats = summoner.getSummonerStats();
 //        if(stats.getCurrentMana() - this.cost < 0)
@@ -45,7 +45,7 @@ public class FireNova extends RadialAbility {
     }
 
     @Override
-    protected void scaleEffect(Entity avatar, Entity entity)
+    protected void scaleEffect(Entity entity)
     {
         int critical;
         int avatarCrit, base, damage;
@@ -76,10 +76,5 @@ public class FireNova extends RadialAbility {
         setEffect(damage);
     }
 
-    @Override
-    public void activate()
-    {
-        return;
-    }
 
 }

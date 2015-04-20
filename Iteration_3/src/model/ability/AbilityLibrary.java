@@ -38,4 +38,11 @@ public abstract class AbilityLibrary {
                 learnedAbilities.add(abilities.get(i));
         }
     }
+
+    public ArrayList<Ability> getAllAbilities() {
+        ArrayList<Ability> abilitiez = new ArrayList<Ability>();
+        abilitiez.addAll(abilities);
+        abilitiez.addAll(learnedAbilities);
+        return abilitiez;
+    }
 }
