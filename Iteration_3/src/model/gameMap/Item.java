@@ -3,6 +3,8 @@ package model.gameMap;
 import model.entity.Entity;
 import utilities.ItemImageBuilder;
 
+import java.awt.image.BufferedImage;
+
 /**
  * Created by giangnguyen on 4/16/15.
  */
@@ -14,6 +16,11 @@ public abstract class Item extends MapObject{
         super(location);
         imageBuilder = new ItemImageBuilder(location.getX(), location.getY(), this);
         this.name = name;
+    }
+
+    public BufferedImage getImage()
+    {
+        return imageBuilder.getImage();
     }
 
     public abstract String getItemType();
