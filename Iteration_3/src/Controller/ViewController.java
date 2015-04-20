@@ -1,4 +1,4 @@
-
+/*
 
 package controller;
 
@@ -71,7 +71,7 @@ public class ViewController {
 		mvc=new MapViewController(map,mainFrame);
 		*/
 		
-	}
+	/*}
 	public void changePanel(){
         previous = current;
         if(views.get(current.getNext()) == null && !current.nextStateEquals("New")){
@@ -109,6 +109,7 @@ public class ViewController {
  * Reloads game variables and their associated views.
  */
 
+/*
 public void reLoad(String command){
 	// the game only needs to be instantiated once, or we will loose information
 	Game game = null;
@@ -129,11 +130,13 @@ public void reLoad(String command){
     //gc.stopReset();
     frame.revalidate();
     frame.repaint();
-}
+}*/
+
 /**
  * Timer used to initiate changing views and reloading the game state.
  */
 
+/*
 public class RunGameTimer implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (current==null) return;
@@ -149,4 +152,4 @@ public class RunGameTimer implements ActionListener {
 
 	
 
-}
+}*/

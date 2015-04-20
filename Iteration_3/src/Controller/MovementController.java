@@ -1,4 +1,4 @@
-
+/*
 package controller;
 
 import java.awt.Point;
@@ -18,4 +18,4 @@ public abstract class MovementController {
 	
 	public abstract void move(Point step, int direction);
 
-}
+}*/

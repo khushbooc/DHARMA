@@ -37,4 +37,20 @@ public class DharmaKeyListener {
     public void onRelease(KeyEvent e) {
         //TBD if necessary.
     }
+
+    public static int getJavaKeyCodeForKeyBoardUp() {
+        return KeyEvent.VK_UP;
+    }
+
+    public static int getJavaKeyCodeForKeyBoardDown() {
+        return KeyEvent.VK_DOWN;
+    }
+
+    public static int getJavaKeyCodeForKeyBoardLeft() {
+        return KeyEvent.VK_LEFT;
+    }
+
+    public static int getJavaKeyCodeForKeyBoardRight() {
+        return KeyEvent.VK_RIGHT;
+    }
 }
