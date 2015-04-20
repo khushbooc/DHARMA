@@ -16,8 +16,9 @@ public class RunGame {
 
     private RunGame() {
         //TODO: make Game(Controller, View)
-        this.game = new Game(controller);
         this.controller = new Controller();
+        this.game = new Game(controller);
+
         // this.view = new View();
     }
 

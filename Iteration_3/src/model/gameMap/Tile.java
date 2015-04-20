@@ -6,28 +6,28 @@ import java.awt.Graphics2D;
 import model.entity.Entity;
 
 public class Tile extends MapObject{
-	private AreaEffect areaEffect;
+    private AreaEffect areaEffect;
     private Terrain terrain;
     private Item item;
     private Entity entity;
-    
-    public void draw(Graphics2D g, Location location)
-    {
-		item.draw(g);
-		entity.draw(g, location);
-    }
+
+//    public void draw(Graphics2D g, Location location)
+//    {
+//		item.draw(g);
+//		entity.draw(g, location);
+//    }
 
     public Tile(Location location,Terrain terrian){
         super(location);
         this.terrain=terrian;
     }
-	public Tile(Location location, AreaEffect aoe, Terrain terrain, Item item, Entity entity){
+    public Tile(Location location, AreaEffect aoe, Terrain terrain, Item item, Entity entity){
         super(location);
         this.areaEffect = aoe;
         this.terrain = terrain;
         this.item = item;
         this.entity = entity;
-	}
+    }
 
     public AreaEffect getAreaEffect(){
         return this.areaEffect;
@@ -54,11 +54,11 @@ public class Tile extends MapObject{
         this.entity = entity;
     }
 
-	public String toString() {
-		String result = "";
-		result += "Tile:" + this.location.getX() + "," + this.location.getY();
-		return result;
-	}
-	
-	
+    public String toString() {
+        String result = "";
+        result += "Tile:" + this.location.getX() + "," + this.location.getY();
+        return result;
+    }
+
+
 }

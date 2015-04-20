@@ -1,69 +1,54 @@
 package model.entity;
 
-import model.inventory.EquipableItem;
-import model.inventory.EquipmentContainer;
-import model.inventory.Inventory;
-import model.inventory.TakeableItem;
+import model.gameMap.Location;
+import model.inventory.*;
 import model.occupation.Occupation;
 
+import java.awt.*;
+
 public class Avatar extends Entity {
-	
-	public Avatar(Occupation occupation){
-		super(occupation);
-	}
+    private Gold gold;
 
-	public Avatar(Occupation occupation, Inventory inventory,
-			EquipmentContainer equicontainer) {
-		super(occupation, inventory, equicontainer);
-		// TODO Auto-generated constructor stub
-	}
+    public Avatar(Occupation oc){
+        super( null, oc, null, null);
+        this.inventory = new Inventory();
+        this.equicontainer = new EquipmentContainer();
+    }
+    public Avatar(Location location, Occupation occupation, Inventory inventory, EquipmentContainer equipmentContainer){
+        super(location, occupation,inventory, equipmentContainer);
+        gold = new Gold(10);// avatar has 10 golds initially
 
-	@Override
-	public Occupation getOccupation() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    }
 
-	@Override
-	public Inventory getInventory() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public Gold getGold(){
+        return this.gold;
+    }
 
-	@Override
-	public EquipmentContainer getEquipmentContainer() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public void addToInventory(TakeableItem takeableitem) {
+        this.getInventory().add(takeableitem);
 
-	@Override
-	public void addToInventory(TakeableItem takeableitem) {
-		// TODO Auto-generated method stub
-		
-	}
+    }
 
-	@Override
-	public void equipItem(EquipableItem equiItem) {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void equipItem(EquipableItem equiItem) {
+        this.getEquipmentContainer().add(equiItem);
+        this.getInventory().remove(equiItem);
+    }
 
-	@Override
-	public void removeItem(TakeableItem ti) {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void removeItem(TakeableItem ti) {
+        this.getInventory().remove(ti);
 
-	@Override
-	public void unequipItem(EquipableItem eqi) {
-		// TODO Auto-generated method stub
-		
-	}
+    }
+    @Override
+    public void unequipItem(EquipableItem eqi) {
+        this.getEquipmentContainer().remove(eqi);
+        this.getInventory().add(eqi);
+    }
+    public void move(Point step, int direction ){
+        return;
+    }
 
-	public EquipmentContainer getGold() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 
 }

@@ -15,10 +15,12 @@ public class NewGameState extends GameState {
     public NewGameState(Game game) {
         super(game);
         //default key set
-        game.getController().addKeyListenerToSet(RectangularDirectionKeyListenerFactory(RectangularDirection.WEST));
-        game.getController().addKeyListenerToSet(RectangularDirectionKeyListenerFactory(RectangularDirection.EAST));
-        game.getController().addKeyListenerToSet(RectangularDirectionKeyListenerFactory(RectangularDirection.SOUTH));
-        game.getController().addKeyListenerToSet(RectangularDirectionKeyListenerFactory(RectangularDirection.NORTH));
+
+
+            game.getController().addKeyListenerToSet(RectangularDirectionKeyListenerFactory(RectangularDirection.WEST));
+            game.getController().addKeyListenerToSet(RectangularDirectionKeyListenerFactory(RectangularDirection.EAST));
+            game.getController().addKeyListenerToSet(RectangularDirectionKeyListenerFactory(RectangularDirection.SOUTH));
+            game.getController().addKeyListenerToSet(RectangularDirectionKeyListenerFactory(RectangularDirection.NORTH));
 
     }
 

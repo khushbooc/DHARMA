@@ -22,7 +22,7 @@ public class Mount extends FriendlyNPC {
     public Avatar getOwner(){
         return this.owner;
     }
-//    public void use(){
+    //    public void use(){
 //        if(owner == null){
 //            return;
 //        }
@@ -49,19 +49,4 @@ public class Mount extends FriendlyNPC {
         this.getEquipmentContainer().remove(eqi);
         this.getInventory().add(eqi);
     }
-	@Override
-	public Occupation getOccupation() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public Inventory getInventory() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public EquipmentContainer getEquipmentContainer() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
