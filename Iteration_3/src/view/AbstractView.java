@@ -39,7 +39,9 @@ public abstract class AbstractView extends JLayeredPane {
 
     public abstract void render();
     public abstract void addKeyListenerToCurrentView(Controller controller);
-    public abstract void highlightLabel(int x, int y);
+    public void highlightLabel(int x, int y) {
+    //empty method so we don't get AbstractMethodError when switching states
+    }
     public abstract void onSelection();
     public abstract void killWindow();
 }

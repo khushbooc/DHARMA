@@ -142,7 +142,7 @@ public class CreateCharacterView extends AbstractView {
     @Override
     public void addKeyListenerToCurrentView(Controller controller) {
         frame.addKeyListener(controller);
-        backgroundPanel.addKeyListener(controller);
+        //backgroundPanel.addKeyListener(controller);
     }
 
     @Override
