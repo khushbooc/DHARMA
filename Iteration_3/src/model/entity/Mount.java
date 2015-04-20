@@ -49,5 +49,19 @@ public class Mount extends FriendlyNPC {
         this.getEquipmentContainer().remove(eqi);
         this.getInventory().add(eqi);
     }
-
+	@Override
+	public Occupation getOccupation() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Inventory getInventory() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public EquipmentContainer getEquipmentContainer() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

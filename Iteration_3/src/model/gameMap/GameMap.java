@@ -7,6 +7,8 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Position.Bias;
 
 import model.entity.Avatar;
+import model.inventory.Head;
+import view.InventoryPanel;
 import view.View;
 
 import java.awt.event.WindowAdapter;
@@ -20,6 +22,7 @@ public class GameMap extends View
 {
 	
 	private DrawingPanel panel;
+	private InventoryPanel inventoryPanel;
 	private Avatar avatar;
 	private JFrame frame; 
 	private int min_x=3;
@@ -68,9 +71,11 @@ public class GameMap extends View
 	 Tile[][] map=new Tile[BSIZE][BSIZE];
  
 	void initGame(){
+		//stone= ImageIO.read(new File("src/res/stone.png"));
 		 try {
 			    grass = ImageIO.read(new File("src/res/grass.png"));
 			    mountain = ImageIO.read(new File("src/res/custom_mountain.png"));
+			   // stone = ImageIO.read(new File("src/res/stone.png"));
 			} catch (IOException e) {
 				System.out.println(e);
 			}
@@ -82,7 +87,13 @@ public class GameMap extends View
 		GameMech.setBorders(BORDERS);
 		
 		//frame = new JFrame("Hex Testing 4");
-		
+		try {
+			stone= ImageIO.read(new File("src/res/stone.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
 		//set up board here
 		//board[3][3] =(int)'A' ;
 		//board[4][3] = (int)'Q';
@@ -108,13 +119,16 @@ public class GameMap extends View
 		}
 		
 		panel = new DrawingPanel();
+		inventoryPanel = new InventoryPanel();
 		
 		//JFrame.setDefaultLookAndFeelDecorated(true);
 		
 		
 		//frame.getContentPane().setLayout(null);
 		Container content = frame.getContentPane();
-		content.add(panel);
+		frame.setLayout(new BorderLayout());
+		content.add(panel,BorderLayout.CENTER);
+		content.add(inventoryPanel,BorderLayout.WEST);
 		
 		//panel.setLocation(100,100);
 		panel.setPreferredSize(new Dimension(800,600));
@@ -164,12 +178,18 @@ public class GameMap extends View
 			}
 			
 			for (int i=0;i<BSIZE;i++) {
+				for (int j=0;j<BSIZE;j++) {
+					map[i][j].draw(g2);
+				}
+			}
+			/*
+			for (int i=0;i<BSIZE;i++) {
 				for (int j=0;j<BSIZE;j++) {					
 					//GameMech.fillHex(i,j,map[i][j],g2);
 				}
-			}
- 
+			}*/
 			GameMech.fillHex(3,3,avatar.getImage(),g2);
+			GameMech.fillHex(2,2,stone,g2);
 		}
  
 	

@@ -1,6 +1,8 @@
 package model.gameMap;
 
 
+import java.awt.Graphics2D;
+
 import model.entity.Entity;
 
 public class Tile extends MapObject{
@@ -8,6 +10,12 @@ public class Tile extends MapObject{
     private Terrain terrain;
     private Item item;
     private Entity entity;
+    
+    public void draw(Graphics2D g, Location location)
+    {
+		item.draw(g);
+		entity.draw(g, location);
+    }
 
     public Tile(Location location,Terrain terrian){
         super(location);

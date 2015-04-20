@@ -42,14 +42,14 @@ public class MainMenuView extends View{
 		title.setFont(titleFont.deriveFont(80f));
 		
 		JPanel backGroundPanel = new ImagePanel("src/res/main_menu.gif");
-		backGroundPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 600, 5));
+		backGroundPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 800, 5));
 		// Insets insets = backGroundPanel.getInsets();
 		// Dimension size = backGroundPanel.getPreferredSize();
 		
-		JButton ghost = new JButton();
-		ghost.setPreferredSize(new Dimension(10, 225));
+		/*JButton ghost = new JButton();
+		ghost.setPreferredSize(new Dimension(10, 35));
 		ghost.setContentAreaFilled(false);
-		ghost.setBorderPainted(false);
+		ghost.setBorderPainted(false);*/
 		
 		setPreferredSize(new Dimension(600,600));
 		setLayout(new BorderLayout());
@@ -59,7 +59,7 @@ public class MainMenuView extends View{
 		quitGameButton.setMaximumSize(new Dimension(150,50));
 		
 		backGroundPanel.add(title);
-		backGroundPanel.add(ghost);
+		//backGroundPanel.add(ghost);
 		
 		backGroundPanel.add(startGameButton);
 		backGroundPanel.add(loadGameButton);

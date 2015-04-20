@@ -15,9 +15,9 @@ public abstract class Pet extends HostileNPC {
 
     public Pet(Occupation oc, Inventory inv, EquipmentContainer eq, Avatar owner) {
         super(null, oc, inv, eq);
-        int x = owner.getLocation().getX();
-        int y = owner.getLocation().getY();
-        this.setLocation(x,y);
+        //int x = owner.getLocation().getX();
+        //int y = owner.getLocation().getY();
+        //this.setLocation(x,y);
         this.owner = owner;
     }
     @Override
@@ -44,9 +44,9 @@ public abstract class Pet extends HostileNPC {
         e.getInventory().remove(ti);
     }
     public void follow(){
-        int x = owner.getLocation().getX();
-        int y = owner.getLocation().getY();
-        this.setLocation(x, y);
+        //int x = owner.getLocation().getX();
+        //int y = owner.getLocation().getY();
+        //this.setLocation(x, y);
     }
     public void attack(Entity e){
         e.getOccupation().getStats().modAgility(-2);
