@@ -1,10 +1,13 @@
 package model.entity;
 
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 import utilities.ImageProcessing;
 import utilities.ShapeAdjust;
 import utilities.SpriteSheetUtility;
+import model.gameMap.GameMech;
+import model.gameMap.Location;
 import model.inventory.EquipableItem;
 import model.inventory.EquipmentContainer;
 import model.inventory.Inventory;
@@ -22,7 +25,12 @@ public abstract class Entity {
 	private BufferedImage[] spriteSheet;
 	protected int direction=0;
 	private BufferedImage image;
-
+	
+	public void draw(Graphics2D g, Location location)
+	{
+		if(image != null)
+    		GameMech.fillHex(location.getX(),location.getY(),image, g);
+	}
 	
 	public Entity(Occupation occupation){
 		this.occupation = occupation;

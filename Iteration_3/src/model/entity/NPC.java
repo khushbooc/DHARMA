@@ -10,7 +10,7 @@ import model.occupation.Occupation;
 
 public abstract class NPC extends Entity {
 	public NPC(Location location, Occupation occupation, Inventory inventory, EquipmentContainer equicontainer) {
-        super(location, occupation, inventory, equicontainer);
+        super(occupation, inventory, equicontainer);
 
     }
     @Override

@@ -59,6 +59,11 @@ public class Avatar extends Entity {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public EquipmentContainer getGold() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 
 }
