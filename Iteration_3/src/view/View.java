@@ -36,7 +36,6 @@ public class View {
     }
 
     public AbstractView getCurrentView() {
-        //forgive me father for I have sinned :(
         return this.currentView;
     }
 
@@ -45,6 +44,7 @@ public class View {
     }
 
     protected void advanceViewState(AbstractView next_view) {
+        currentView.killWindow();
         currentView = next_view;
         currentView.addKeyListenerToCurrentView(controller);
     }

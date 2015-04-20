@@ -8,7 +8,6 @@ import model.ability.RectangularMovementAbility;
 import model.ability.SelectionGameAbility;
 import model.direction.RectangularDirection;
 import model.entity.Cursor;
-import view.MainMenuView;
 
 
 /**
@@ -34,7 +33,6 @@ public class MainMenuState extends GameState {
     }
 
     public void update() {
-        //I can't think of a better (OOP) way :(
         game.getView().getCurrentView().highlightLabel(cursor.getLocation().getX(), cursor.getLocation().getY());
         if(cursor.isSelected()) {
             cursor.setUnselected();

@@ -67,7 +67,7 @@ public class MainMenuView extends AbstractView{
         frame.repaint();
     }
 
-    private class NewGameLabel extends GameLabel{
+    protected class NewGameLabel extends GameLabel{
 
         public NewGameLabel(String str, Font font, MainMenuView parent_view){
             super(str, parent_view);
@@ -80,7 +80,7 @@ public class MainMenuView extends AbstractView{
         }
 
     }
-    private class LoadGameLabel extends GameLabel{
+    protected class LoadGameLabel extends GameLabel{
         public LoadGameLabel(String str, Font font, MainMenuView parent_view){
             super(str, parent_view);
             setForeground(Color.BLACK);
@@ -91,7 +91,7 @@ public class MainMenuView extends AbstractView{
             //TODO
         }
     }
-    private class ExitGameLabel extends GameLabel{
+    protected class ExitGameLabel extends GameLabel{
         public ExitGameLabel(String str, Font font, MainMenuView parent_view){
             super(str, parent_view);
             setForeground(Color.BLACK);
