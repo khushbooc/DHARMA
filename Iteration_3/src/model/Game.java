@@ -36,7 +36,7 @@ public class Game {
 
     private void setNewGameState() {
         this.game_state = new MainMenuState(this);
-        view.displayMainMenu();
+        view.render();
     }
 
     public void newSmasherGame() {
@@ -69,6 +69,10 @@ public class Game {
 
     public void update() {
         this.game_state.update();
+    }
+
+    public void updateView() {
+        this.view.updateView();
     }
 }
 

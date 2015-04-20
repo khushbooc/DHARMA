@@ -7,6 +7,7 @@ import model.ability.GameAbility;
 import model.ability.RectangularMovementAbility;
 import model.direction.RectangularDirection;
 import model.entity.Cursor;
+import view.MainMenuView;
 
 
 /**
@@ -31,7 +32,12 @@ public class MainMenuState extends GameState {
     }
 
     public void update() {
-        //draw the view
+        //I can't think of a better (OOP) way :(
+        ((MainMenuView) game.getView().getCurrentView()).highlightLabel(cursor.getLocation().getY());
+        game.updateView();
+    }
+
+    private void highLightSelection() {
 
     }
 

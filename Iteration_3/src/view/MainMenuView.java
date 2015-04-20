@@ -9,11 +9,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.plaf.synth.ColorType;
 
 
 @SuppressWarnings("serial")
@@ -21,9 +21,9 @@ public class MainMenuView extends AbstractView{
     private Font titleFont = new Font("serif", Font.PLAIN, 20);
     private Font buttonFont = new Font("serif", Font.PLAIN, 18);
 
-    private JButton startGameButton;
-    private JButton loadGameButton;
-    private JButton quitGameButton;
+    private JLabel startGameLabel;
+    private JLabel loadGameLabel;
+    private JLabel quitGameLabel;
     // private JLabel background;
     private JLabel title;
     private Game game;
@@ -37,84 +37,62 @@ public class MainMenuView extends AbstractView{
     public MainMenuView(){
         super();
         frame = new JFrame();
-        startGameButton = new NewGameButton("New Game", buttonFont);
-        loadGameButton = new LoadGameButton("Load Game", buttonFont);
-        quitGameButton = new ExitGameButton("Quit Game", buttonFont);
+        startGameLabel = new NewGameLabel("New Game", buttonFont);
+        loadGameLabel = new LoadGameLabel("Load Game", buttonFont);
+        quitGameLabel = new ExitGameLabel("Quit Game", buttonFont);
 
 
         title = new JLabel("DHARMA");
         title.setFont(titleFont.deriveFont(80f));
-//        BufferedImage img = null;
-//        try{
-//            img = ImageIO.read(new File("src/res/main_menu.gif"));
-//        }
-//        catch (Exception e){
-//            e.printStackTrace();
-//        }
 
         backGroundPanel = new ImagePanel("Iteration_3/src/res/main_menu.gif");
         backGroundPanel.setPreferredSize(new Dimension(600, 600));
-        //backGroundPanel = new ImagePanel();
         backGroundPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 700, 5));
-
-
-        startGameButton.setMaximumSize(new Dimension(150,50));
-        loadGameButton.setMaximumSize(new Dimension(150,50));
-        quitGameButton.setMaximumSize(new Dimension(150,50));
-
-
-        backGroundPanel.add(title);
-        backGroundPanel.add(startGameButton);
-
-        backGroundPanel.add(loadGameButton);
-//        backGroundPanel.add(quitGameButton);
         frame.setFocusable(true);
         frame.setResizable(true);
-        frame.setLayout(new FlowLayout(FlowLayout.CENTER));
+        frame.setLayout(new FlowLayout(FlowLayout.CENTER) );
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //frame.setExtendedState(Frame.MAXIMIZED_BOTH);
         frame.setPreferredSize(new Dimension(1280, 800));
-        //Container content = frame.getContentPane();
-        //content.add(backGroundPanel);
+        startGameLabel.setMaximumSize(new Dimension(150,50));
+        loadGameLabel.setMaximumSize(new Dimension(150,50));
+        quitGameLabel.setMaximumSize(new Dimension(150,50));
+
+        backGroundPanel.add(title);
+        backGroundPanel.add(startGameLabel);
+        backGroundPanel.add(loadGameLabel);
+        backGroundPanel.add(quitGameLabel);
         frame.getContentPane().add(backGroundPanel);
         frame.pack();
     }
     public void render(){
-        System.out.println("I am in render");
         frame.setVisible(true);
         frame.repaint();
     }
+    private class NewGameLabel extends JLabel{
 
-    private class NewGameButton extends JButton{
-
-        public NewGameButton(String str, Font font){
+        public NewGameLabel(String str, Font font){
             super(str);
             setForeground(Color.BLACK);
             setFont(font.deriveFont(40f));
-            setContentAreaFilled(true);
-            setBorderPainted(true);
+
         }
         public void activate(){
 
         }
 
     }
-    private class LoadGameButton extends JButton{
-        public LoadGameButton(String str, Font font){
-            super();
+    private class LoadGameLabel extends JLabel{
+        public LoadGameLabel(String str, Font font){
+            super(str);
             setForeground(Color.BLACK);
             setFont(font.deriveFont(40f));
-            setContentAreaFilled(false);
-            setBorderPainted(false);
         }
     }
-    private class ExitGameButton extends JButton{
-        public ExitGameButton(String str, Font font){
-            super();
-            setForeground(Color.WHITE);
+    private class ExitGameLabel extends JLabel{
+        public ExitGameLabel(String str, Font font){
+            super(str);
+            setForeground(Color.BLACK);
             setFont(font.deriveFont(40f));
-            setContentAreaFilled(false);
-            setBorderPainted(false);
         }
     }
 
