@@ -1,6 +1,7 @@
 package utilities;
 
 import model.gameMap.Item;
+import model.gameMap.Trap;
 import model.inventory.Chest;
 import model.inventory.Head;
 import model.inventory.OneHandedW;
@@ -33,6 +34,11 @@ public class ItemImageBuilder extends RepresentationBuilder {
 
     public ItemImageBuilder(int x, int y, OneHandedW weap) {
         super(x, y, "src/res/1h_w.png");
+    }
+
+    public ItemImageBuilder(int x, int y, Trap t)
+    {
+        super(x, y, "src/res/trap.png");
     }
 
     public void setURL(String urlImage) {
