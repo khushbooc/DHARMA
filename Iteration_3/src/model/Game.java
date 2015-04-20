@@ -1,17 +1,19 @@
 package model;
 
 import controller.Controller;
+import model.entity.Avatar;
+import view.View;
 import model.states.*;
 
 public class Game {
 
     GameState game_state;
     Controller controller;
-    //View view;
+    View view;
 
 	public Game(Controller controller) {
         this.controller = controller;
-        //TODO: this.view = view;
+        this.view = view;
         setNewGameState();
 
 		//avatar = new Avatar(new Summoner());
@@ -31,7 +33,11 @@ public class Game {
         this.game_state = new MainMenuState(this);
     }
 
-    public void setPlayingState() {
+    public void newPlayingState(Avatar avatar) {
+
+    }
+
+    public void resumePlayingState() {
         //TODO
     }
 

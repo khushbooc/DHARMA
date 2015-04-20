@@ -10,4 +10,10 @@ public class PausedState extends GameState {
     public PausedState(Game game) {
         super(game);
     }
+
+    public void update() {
+        //TODO
+    }
+
+    
 }
