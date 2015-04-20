@@ -7,7 +7,7 @@ import model.Game;
  */
 
 //these are for model to know what state it is in - playing, paused, whatever
-public class GameState {
+public abstract class GameState {
     protected Game game;
     protected boolean isRunning;
 
@@ -19,4 +19,6 @@ public class GameState {
     public boolean isRunning() {
         return this.isRunning;
     }
+
+    public abstract void update();
 }

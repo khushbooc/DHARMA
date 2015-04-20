@@ -28,7 +28,7 @@ public class Game {
     }*/
 
     public void setNewGameState() {
-        this.game_state = new NewGameState(this);
+        this.game_state = new MainMenuState(this);
     }
 
     public void setPlayingState() {

@@ -10,9 +10,9 @@ import model.direction.RectangularDirection;
 /**
  * Created by agemery on 4/18/15.
  */
-public class NewGameState extends GameState {
+public class MainMenuState extends GameState {
 
-    public NewGameState(Game game) {
+    public MainMenuState(Game game) {
         super(game);
         //default key set
         for (RectangularDirection dir : RectangularDirection.values()) {
@@ -21,6 +21,12 @@ public class NewGameState extends GameState {
 
     }
 
+    public void update() {
+        //draw the view
+
+    }
+
+    //Parameterized Factory Method
     private DharmaKeyListener RectangularDirectionKeyListenerFactory(RectangularDirection direction) {
         GameAbility rectMove = new RectangularMovementAbility(direction);
         int javaKeyCode;
