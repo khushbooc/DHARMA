@@ -1,6 +1,7 @@
 package model.ability;
 
 import model.direction.RectangularDirection;
+import model.entity.Cursor;
 
 /**
  * Created by agemery on 4/18/15.
@@ -14,13 +15,16 @@ public class RectangularMovementAbility extends GameAbility{
     //TODO: a cursor for highlighting a selected item
     //private Cursor cursor;
 
-    public RectangularMovementAbility(RectangularDirection direction) {
+    public RectangularMovementAbility(Cursor owner, RectangularDirection direction) {
+        super(owner);
         this.direction = direction;
     }
 
     @Override
-    public void activate() {
+    public void use() {
         //execute movement
-
+        int current_x = owner.getLocation().getX();
+        int current_y = owner.getLocation().getY();
+        owner.setLocation((current_x+direction.getDx()), (current_y+direction.getDy()));
     }
 }

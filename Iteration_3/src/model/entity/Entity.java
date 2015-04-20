@@ -10,6 +10,8 @@ import model.inventory.Inventory;
 import model.inventory.TakeableItem;
 import model.occupation.Occupation;
 
+import java.util.ArrayList;
+
 /**
  * Created by giangnguyen on 4/16/15.
  */
@@ -20,16 +22,22 @@ public abstract class Entity extends MapObject{
     protected int direction;
 
     public Entity(Location location, Occupation occupation, Inventory inventory , EquipmentContainer equicontainer) {
-        super(location);
+        this(occupation);
         this.occupation = occupation;
         this.inventory = inventory;
         this.equicontainer= equicontainer;
+        this.location = location;
     }
     public Entity(Occupation oc){
         super();
         this.occupation  = oc;
         this.inventory = new Inventory();
         this.equicontainer = new EquipmentContainer();
+        ArrayList<Ability> abilities = this.occupation.getAbilityLibrary().getAllAbilities();
+
+        for(Ability a : abilities) {
+            a.setAvatar(this);
+        }
     }
 
 

@@ -2,7 +2,6 @@ package model.gameMap;
 
 import java.awt.image.*;
 import java.awt.*;
-import java.io.File;
 import java.util.Observable;
 
 public abstract class MapObject extends Observable{
@@ -18,7 +17,8 @@ public abstract class MapObject extends Observable{
     public MapObject(Location location){
         this.location = location;
     }
-    
+
+    //this shouldn't be a part of the model
     public void draw(Graphics2D g)
     {
     	if(image != null)
