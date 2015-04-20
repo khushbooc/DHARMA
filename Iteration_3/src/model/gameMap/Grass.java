@@ -18,4 +18,7 @@ public class Grass extends Terrain{
     String getName(){
         return name;
     }
+    public String getTerrainType(){
+    	return "Grass";
+    }
 }

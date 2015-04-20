@@ -12,4 +12,7 @@ public class Telescope extends InteractiveItem {
         int observation = e.getOccupation().getStats().getObservation();
         e.getOccupation().getStats().setObservation(observation * 2);
     }
+    public String getItemType() {
+		return "Telescope";
+	}
 }

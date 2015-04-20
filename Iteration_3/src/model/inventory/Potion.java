@@ -17,5 +17,7 @@ public class Potion extends NonEquipableItem {
         e.getOccupation().getStats().modCurrentHealth(5);
         e.getOccupation().getStats().modCurrentMana(5);
     }
-
+    public String getItemType() {
+		return "Potion";
+	}
 }

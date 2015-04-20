@@ -21,6 +21,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class GameMap extends View
@@ -34,6 +35,7 @@ public class GameMap extends View
     private int min_y=3;
     private int max_x=3;
     private int max_y=3;
+    private ArrayList<MapObject> mapObjectList;
     //private Terrain[][] terrain;
 
     public GameMap(Avatar avatar,JFrame frame) {
@@ -41,6 +43,14 @@ public class GameMap extends View
         this.frame=frame;
         initGame();
         createAndShowGUI();
+        for(MapObject mapObject : mapObjectList) {
+            mapObject.setGameMap(this);
+        }
+    }
+
+    public ArrayList getMapObjectList()
+    {
+        return mapObjectList;
     }
 
 //	public static void main(String[] args)
@@ -246,9 +256,13 @@ public class GameMap extends View
     	BufferedWriter bw = new BufferedWriter(new FileWriter(new File("/src/res/file")));
     	for(int i = 0; i < map.length; i++){
     		for(int j = 0; j < map[0].length; j++){
-    			bw.write(map[i][j].getLocation() + "," + map[i][j].getAreaEffect() + "," +
-    					map[i][j].getTerrain() + "," + map[i][j].getItem() + "," +	
-    					map[i][j].getEntity() + "\n");
+    			bw.write(map[i][j].getLocation() + "," + map[i][j].getAreaEffect().getAreaEffectType() + "," +
+    					map[i][j].getTerrain().getTerrainType() + "," + map[i][j].getItem().getItemType() + "," +	
+    					map[i][j].getEntity().getOccupation().getOcc() + "," + map[i][j].getEntity().getOccupation().getStats() + "," + map[i][j].getEntity().getInventory().getTakeableItems() + "," + 
+    					map[i][j].getEntity().getInventory().getFirstFreeSlot() + "," + map[i][j].getEntity().getInventory().getCount() + "," +
+    					map[i][j].getEntity().getEquipmentContainer().getEquipmentContainer() + "," + 
+    					map[i][j].getEntity().getEquipmentContainer().getFirstFreeSlot() + "," + map[i][j].getEntity().getEquipmentContainer().getCount() +
+    					"\n");
     		}
     	}
     	bw.flush();

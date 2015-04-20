@@ -15,7 +15,15 @@ public class Inventory {
         firstFreeSlot = 0;
         count = 0;
     }
-
+    
+    public String getTakeableItems(){
+    	String take = "";
+    	for(int i = 0; i < takeableItems.length-1; i++){
+    		take += takeableItems[i] + ",";
+    	}
+    	take += takeableItems[takeableItems.length-1];
+    	return take;
+    }
     public int getFirstFreeSlot(){
         return firstFreeSlot;
     }

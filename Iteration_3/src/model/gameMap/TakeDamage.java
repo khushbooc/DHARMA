@@ -14,4 +14,8 @@ public class TakeDamage extends AreaEffect {
         e.getOccupation().getStats().modStrength(-2);
         e.getOccupation().getStats().modHardiness(-2);
     }
+    
+    public String getAreaEffectType(){
+    	return "Take Damage";
+    }
 }

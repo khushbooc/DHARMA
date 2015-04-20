@@ -1,5 +1,6 @@
 package model.ability;
 import model.entity.Entity;
+import model.gameMap.GameMap;
 
 import java.util.Random;
 
@@ -13,6 +14,7 @@ public abstract class Ability extends GameAbility{
 	protected int cost;
 	protected int effect;
 	protected int levelRequirement;
+	protected GameMap gameMap;
 
 	public Ability()
 	{

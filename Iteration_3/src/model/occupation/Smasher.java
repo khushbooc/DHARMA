@@ -23,5 +23,7 @@ public class Smasher extends Occupation {
         return new SmasherLibrary();
     }
 
-	
+	public String getOcc(){
+		return "Smasher";
+	}
 }

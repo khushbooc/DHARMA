@@ -15,4 +15,7 @@ public class LevelUp extends AreaEffect {
     public String getName(){
         return name;
     }
+    public String getAreaEffectType(){
+    	return "Level up";
+    }
 }

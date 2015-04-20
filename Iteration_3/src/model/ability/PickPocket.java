@@ -1,8 +1,11 @@
 package model.ability;
 
 import model.entity.Entity;
+import model.entity.Gold;
 import model.statistics.SneakStats;
 import model.statistics.Stats;
+
+import java.util.ArrayList;
 
 /*
  * @author Aaron Iglesias
@@ -27,20 +30,24 @@ public class PickPocket extends RadialAbility {
     @Override
     public void use()
     {
-//        SummonerStats stats = summoner.getSummonerStats();
-//        if(stats.getCurrentMana() - this.cost < 0)
-//            return;
-//
-//        // for(all entities on map)
-//        if(!inRadius(summoner, entity) || avatar == entity)
-//            continue; // do nothing
-//        else // do damage
-//        {
-//            scaleEffect(avatar, entity);
-//            entity.modHealth(-effect);
-//            entity.modMana(-cost);
-//        }
+        ArrayList<Entity> entityList = gameMap.getMapObjectList();
+        SneakStats stats = (SneakStats) avatar.getOccupation().getStats();
+        Stats entityStats;
+        Gold gold = avatar.getGold();
+        if(stats.getCurrentMana() - this.cost < 0)
+            return;
 
+        for(Entity entity : entityList) {
+
+            if (!inRadius(entity) || avatar == entity)
+                continue; // do nothing
+            else // do damage
+            {
+                entityStats = entity.getOccupation().getStats();
+                scaleEffect(entity);
+                gold.increaseGoldCount(effect);
+            }
+        }
         return;
     }
 

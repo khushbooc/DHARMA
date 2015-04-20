@@ -20,5 +20,9 @@ public class Obstable extends Item {
     public void onTouch(Entity e){
         return;
     }
+    
+    public String getItemType(){
+    	return "Obstable";
+    }
 
 }

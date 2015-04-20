@@ -14,5 +14,5 @@ public abstract class Terrain {
     protected BufferedImage getImage(){
     	return this.img;
     }
-
+    public abstract String getTerrainType();
 }

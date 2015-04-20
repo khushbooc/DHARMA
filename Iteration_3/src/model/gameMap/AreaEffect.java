@@ -8,5 +8,5 @@ public abstract class AreaEffect {
         this.name = name;
     }
     public abstract void applyEffect(Entity e);
-
+    public abstract String getAreaEffectType();
 }
