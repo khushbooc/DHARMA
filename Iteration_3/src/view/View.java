@@ -9,6 +9,7 @@ import model.Game;
 public class View {
     private AbstractView currentView;
     private Game game;
+    private Controller controller;
 
     public View(){
         setMainMenuState();
@@ -29,17 +30,8 @@ public class View {
         currentView.render();
     }
 
-    //advance to next page
-    public void nextView() {
-        currentView.nextView();
-    }
-
-    //retreat one page
-    public void prevView() {
-        currentView.prevView();
-    }
-
     public void addKeyListenersToCurrentView(Controller controller) {
+        this.controller = controller;
         this.currentView.addKeyListenerToCurrentView(controller);
     }
 
@@ -54,6 +46,7 @@ public class View {
 
     protected void advanceViewState(AbstractView next_view) {
         currentView = next_view;
+        currentView.addKeyListenerToCurrentView(controller);
     }
 
     protected void exitGame() {

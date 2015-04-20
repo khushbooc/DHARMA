@@ -35,7 +35,7 @@ public class MainMenuState extends GameState {
 
     public void update() {
         //I can't think of a better (OOP) way :(
-        ((MainMenuView) game.getView().getCurrentView()).highlightLabel(cursor.getLocation().getY());
+        game.getView().getCurrentView().highlightLabel(cursor.getLocation().getX(), cursor.getLocation().getY());
         if(cursor.isSelected()) {
             cursor.setUnselected();
             game.onSelection();

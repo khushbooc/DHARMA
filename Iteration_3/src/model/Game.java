@@ -18,7 +18,7 @@ public class Game {
         this.controller = controller;
         this.view = view;
         this.view.setGameParent(this);
-        setNewGameState();
+        setMainMenuState();
 
         this.game_logger = GameLogger.getInstance();
 	}
@@ -35,7 +35,7 @@ public class Game {
         this.view.addKeyListenersToCurrentView(this.controller);
     }
 
-    private void setNewGameState() {
+    private void setMainMenuState() {
         this.game_state = new MainMenuState(this);
         view.render();
     }

@@ -67,17 +67,6 @@ public class MainMenuView extends AbstractView{
         frame.repaint();
     }
 
-    private abstract class GameLabel extends JLabel {
-        protected MainMenuView parent_view;
-
-        public GameLabel(String str, MainMenuView view) {
-            super(str);
-            this.parent_view = view;
-        }
-
-        public abstract void onSelection();
-    }
-
     private class NewGameLabel extends GameLabel{
 
         public NewGameLabel(String str, Font font, MainMenuView parent_view){
@@ -87,7 +76,7 @@ public class MainMenuView extends AbstractView{
 
         }
         public void onSelection(){
-            parent_view.advanceToAvatarCreation();
+            ((MainMenuView) parent_view).advanceToAvatarCreation();
         }
 
     }
@@ -110,12 +99,12 @@ public class MainMenuView extends AbstractView{
         }
 
         public void onSelection() {
-            parent_view.exitGame();
+            ((MainMenuView) parent_view).exitGame();
         }
 
     }
 
-    public void highlightLabel(int y_toHighlight) {
+    public void highlightLabel(int x, int y_toHighlight) {
         for(JLabel l : labels) {
             l.setForeground(Color.black);
         }
@@ -136,7 +125,6 @@ public class MainMenuView extends AbstractView{
 
 
     public void addKeyListenerToCurrentView(Controller controller) {
-
         frame.addKeyListener(controller);
         backGroundPanel.addKeyListener(controller);
         //content.setFocusable(true);
@@ -155,15 +143,6 @@ public class MainMenuView extends AbstractView{
         parent_view.exitGame();
     }
 
-    @Override
-    public void nextView() {
-        //advance to avatar selection
-    }
-
-    @Override
-    public void prevView() {
-        //go back duh
-    }
 
     @Override
     public void onSelection() {
