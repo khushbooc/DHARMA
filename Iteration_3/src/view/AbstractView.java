@@ -9,7 +9,7 @@ import javax.swing.JLayeredPane;
 
 
 @SuppressWarnings("serial")
-public class AbstractView extends JLayeredPane {
+public abstract class AbstractView extends JLayeredPane {
 
     private boolean redraw;
     private String next;
@@ -63,5 +63,10 @@ public class AbstractView extends JLayeredPane {
         }
         return false;
     }
+
+    public abstract void render();
+    public abstract void addKeyListenerToCurrentView(Controller controller);
+    public abstract void nextView();
+    public abstract void prevView();
 }
 

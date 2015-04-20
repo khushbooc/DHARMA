@@ -6,17 +6,39 @@ import controller.Controller;
 
 
 public class View {
-    private MainMenuView mainMenuView;
+    private AbstractView currentView;
 
     public View(){
-        mainMenuView = new MainMenuView();
+        setMainMenuState();
     }
 
-    public void displayMainMenu(){
-        mainMenuView.render();
+    public void setMainMenuState() {
+        currentView = new MainMenuView();
+    }
+    public void render(){
+        currentView.render();
+    }
+
+    public void updateView() {
+        currentView.render();
+    }
+
+    //advance to next page
+    public void nextView() {
+        currentView.nextView();
+    }
+
+    //retreat one page
+    public void prevView() {
+        currentView.prevView();
     }
 
     public void addKeyListenersToCurrentView(Controller controller) {
-        this.mainMenuView.addKeyListenerToCurrentView(controller);
+        this.currentView.addKeyListenerToCurrentView(controller);
+    }
+
+    public AbstractView getCurrentView() {
+        //forgive me father for I have sinned :(
+        return this.currentView;
     }
 }

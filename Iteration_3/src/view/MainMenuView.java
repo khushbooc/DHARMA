@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -29,6 +31,9 @@ public class MainMenuView extends AbstractView{
     private JPanel backGroundPanel;
     private JFrame frame;
 
+    private ArrayList<JLabel> labels;
+
+
     public MainMenuView(){
         super();
         frame = new JFrame();
@@ -47,7 +52,7 @@ public class MainMenuView extends AbstractView{
 //            e.printStackTrace();
 //        }
 
-        backGroundPanel = new ImagePanel("src/res/main_menu.gif");
+        backGroundPanel = new ImagePanel("Iteration_3/src/res/main_menu.gif");
         backGroundPanel.setPreferredSize(new Dimension(600, 600));
         //backGroundPanel = new ImagePanel();
         backGroundPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 700, 5));
@@ -78,16 +83,16 @@ public class MainMenuView extends AbstractView{
         System.out.println("I am in render");
         frame.setVisible(true);
         frame.repaint();
-
     }
+
     private class NewGameButton extends JButton{
 
         public NewGameButton(String str, Font font){
-            super();
+            super(str);
             setForeground(Color.BLACK);
             setFont(font.deriveFont(40f));
-            setContentAreaFilled(false);
-            setBorderPainted(false);
+            setContentAreaFilled(true);
+            setBorderPainted(true);
         }
         public void activate(){
 
@@ -113,6 +118,14 @@ public class MainMenuView extends AbstractView{
         }
     }
 
+    public void highlightLabel(int y_toHighlight) {
+        for(JLabel l : labels) {
+            l.setForeground(Color.black);
+        }
+        labels.get(y_toHighlight).setForeground(Color.red);
+    }
+
+
     public void addKeyListenerToCurrentView(Controller controller) {
 
         frame.addKeyListener(controller);
@@ -123,6 +136,16 @@ public class MainMenuView extends AbstractView{
         loadGameButton.addKeyListener(controller);
         quitGameButton.addKeyListener(controller);*/
         GameLogger.getInstance().logMessage("added controller to the views");
+    }
+
+    @Override
+    public void nextView() {
+        //advance to avatar selection
+    }
+
+    @Override
+    public void prevView() {
+        //go back duh
     }
 
 }
