@@ -1,5 +1,6 @@
 package model.ability;
 
+import model.GameLogger;
 import model.direction.RectangularDirection;
 import model.entity.Cursor;
 
@@ -26,5 +27,6 @@ public class RectangularMovementAbility extends GameAbility{
         int current_x = owner.getLocation().getX();
         int current_y = owner.getLocation().getY();
         owner.setLocation((current_x+direction.getDx()), (current_y+direction.getDy()));
+        GameLogger.getInstance().logMessage(direction.getRelativeDirectionEquivalent() + " was pressed!!!");
     }
 }

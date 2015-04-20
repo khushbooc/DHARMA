@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.event.KeyEvent;
 
+import model.GameLogger;
 import model.ability.GameAbility;
 
 public class DharmaKeyListener {
@@ -13,6 +14,7 @@ public class DharmaKeyListener {
         this.key_code = key_code;
         this.ability = abile;
         this.isEnabled = true; //all key listeners are enabled by default
+        GameLogger.getInstance().logMessage("Made a key listener");
     }
 
     public DharmaKeyListener(GameAbility abile, char key_char) {
@@ -27,11 +29,11 @@ public class DharmaKeyListener {
         //call this method when this KeyListener's key was pressed.
         //the listener may forward the action to its ability, if it is currently enabled
         if(this.isEnabled && e.getKeyCode() == this.key_code) {
-            System.out.println("(Debug) Key " + this.key_code + " was pressed, and its Listener is enabled");
+            GameLogger.getInstance().logMessage("(Debug) Key " + this.key_code + " was pressed, and its Listener is enabled");
             this.ability.use();
         }
         else if(e.getKeyCode() == this.key_code)
-            System.out.println("(Debug) Key " + this.key_code + " was pressed, and its Listener is disabled :(");
+            GameLogger.getInstance().logMessage("(Debug) Key " + this.key_code + " was pressed, and its Listener is disabled :(");
     }
 
     public void onRelease(KeyEvent e) {

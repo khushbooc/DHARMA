@@ -1,5 +1,7 @@
 package view;
 
+import controller.Controller;
+
 import java.awt.Color;
 import java.awt.Toolkit;
 
@@ -61,6 +63,5 @@ public class AbstractView extends JLayeredPane {
         }
         return false;
     }
-
 }
 

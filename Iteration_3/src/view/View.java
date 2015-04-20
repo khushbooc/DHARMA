@@ -1,6 +1,10 @@
 package view;
 
 
+
+import controller.Controller;
+
+
 public class View {
     private MainMenuView mainMenuView;
 
@@ -10,5 +14,9 @@ public class View {
 
     public void displayMainMenu(){
         mainMenuView.render();
+    }
+
+    public void addKeyListenersToCurrentView(Controller controller) {
+        this.mainMenuView.addKeyListenerToCurrentView(controller);
     }
 }

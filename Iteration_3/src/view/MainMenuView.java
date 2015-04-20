@@ -1,5 +1,6 @@
 package view;
 
+import controller.Controller;
 import model.Game;
 
 import java.awt.*;
@@ -104,6 +105,14 @@ public class MainMenuView extends AbstractView{
             setContentAreaFilled(false);
             setBorderPainted(false);
         }
+    }
+
+    public void addKeyListenerToCurrentView(Controller controller) {
+        frame.addKeyListener(controller);
+        backGroundPanel.addKeyListener(controller);
+        startGameButton.addKeyListener(controller);
+        loadGameButton.addKeyListener(controller);
+        quitGameButton.addKeyListener(controller);
     }
 
 }

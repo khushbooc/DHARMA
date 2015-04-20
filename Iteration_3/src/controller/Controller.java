@@ -1,5 +1,7 @@
 package controller;
 
+import model.GameLogger;
+
 import javax.swing.JFrame;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -22,6 +24,7 @@ public class Controller implements KeyListener {
     public void keyPressed(KeyEvent e) {
         //forward the event to the set to let it handle it
         keyListenerSet.handleKeyPressedEvent(e);
+        GameLogger.getInstance().logMessage("Controller.keyPressed() was called!!");
     }
 
     @Override
@@ -39,7 +42,7 @@ public class Controller implements KeyListener {
     }
 
 
-    public void addKeyListenersToFrame(JFrame frame) {
+    /*public void addKeyListenersToFrame(JFrame frame) {
         frame.addKeyListener(this);
-    }
+    }*/
 }

@@ -3,9 +3,6 @@ package model;
 import controller.Controller;
 import model.entity.Avatar;
 import model.occupation.Occupation;
-import model.occupation.Smasher;
-import model.occupation.Sneak;
-import model.occupation.Summoner;
 import view.View;
 import model.states.*;
 
@@ -15,26 +12,31 @@ public class Game {
     Controller controller;
     View view;
 
-	public Game(Controller controller) {
+    GameLogger game_logger;
+
+	public Game(Controller controller, View view) {
         this.controller = controller;
         this.view = view;
         setNewGameState();
 
-		//avatar = new Avatar(new Summoner());
-		//Map<String, GameMap> maps = world.getMaps();
-		//Set<String> mapNames = maps.keySet();
+        this.game_logger = GameLogger.getInstance();
 	}
 
     public Controller getController() {
         return this.controller;
     }
 
-    /*public View getView() {
+    public View getView() {
         return this.view;
-    }*/
+    }
+
+    public void addControllerToCurrentView() {
+        this.view.addKeyListenersToCurrentView(this.controller);
+    }
 
     private void setNewGameState() {
         this.game_state = new MainMenuState(this);
+        view.displayMainMenu();
     }
 
     public void newSmasherGame() {

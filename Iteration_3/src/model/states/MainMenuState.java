@@ -2,6 +2,7 @@ package model.states;
 
 import controller.DharmaKeyListener;
 import model.Game;
+import model.GameLogger;
 import model.ability.GameAbility;
 import model.ability.RectangularMovementAbility;
 import model.direction.RectangularDirection;
@@ -19,10 +20,14 @@ public class MainMenuState extends GameState {
         super(game);
         this.cursor = new Cursor(); //cursor for selecting the menu options
         //default key set
+        GameLogger.getInstance().logMessage("created cursor");
         for (RectangularDirection dir : RectangularDirection.values()) {
             game.getController().addKeyListenerToSet(RectangularDirectionKeyListenerFactory(cursor, dir));
         }
+        RectangularMovementAbility direct = new RectangularMovementAbility(cursor, RectangularDirection.NORTH);
+        game.getController().addKeyListenerToSet(new DharmaKeyListener(direct, 'a'));
 
+        this.game.addControllerToCurrentView();
     }
 
     public void update() {
