@@ -258,7 +258,7 @@ public class GameMap extends View
     		for(int j = 0; j < map[0].length; j++){
     			bw.write(map[i][j].getLocation() + "," + map[i][j].getAreaEffect().getAreaEffectType() + "," +
     					map[i][j].getTerrain().getTerrainType() + "," + map[i][j].getItem().getItemType() + "," +	
-    					map[i][j].getEntity().getOccupation().getOcc() + "," + map[i][j].getEntity().getInventory().getTakeableItems() + "," + 
+    					map[i][j].getEntity().getOccupation().getOcc() + "," + map[i][j].getEntity().getOccupation().getStats() + "," + map[i][j].getEntity().getInventory().getTakeableItems() + "," + 
     					map[i][j].getEntity().getInventory().getFirstFreeSlot() + "," + map[i][j].getEntity().getInventory().getCount() + "," +
     					map[i][j].getEntity().getEquipmentContainer().getEquipmentContainer() + "," + 
     					map[i][j].getEntity().getEquipmentContainer().getFirstFreeSlot() + "," + map[i][j].getEntity().getEquipmentContainer().getCount() +

@@ -424,4 +424,13 @@ public abstract class Stats
 
 	// to be overwritten
 	public abstract void levelUp();
+	
+	public String getStats(){
+		String stat = Integer.toString(getLives()) + "," + Integer.toString(getStrength()) + "," +
+				Integer.toString(getAgility()) + "," + Integer.toString(getIntellect()) +
+				Integer.toString(getHardiness()) + "," + Integer.toString(getMovement()) + "," +
+				Integer.toString(getExperience()) + "," + Integer.toString(getCritical()) ;
+		return stat;
+		
+	}
 }
