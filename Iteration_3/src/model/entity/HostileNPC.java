@@ -1,5 +1,6 @@
 package model.entity;
 
+import model.ability.Ability;
 import model.gameMap.Location;
 import model.inventory.EquipableItem;
 import model.inventory.EquipmentContainer;
