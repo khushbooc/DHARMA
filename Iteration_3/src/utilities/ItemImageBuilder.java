@@ -49,8 +49,7 @@ public class ItemImageBuilder extends RepresentationBuilder {
     public void setRepresentation(String url)
     {
         try {
-            setRepresentation(ImageIO.read(new File( (String)getRepresentation())).getSubimage(super.getOffSetX(),
-                    super.getOffSetY(), 32, 32));
+            setRepresentation(ImageIO.read(new File(url)));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -58,6 +57,7 @@ public class ItemImageBuilder extends RepresentationBuilder {
 
     @Override
     public void setRepresentation(Object representation) {
-            image = (BufferedImage)(representation);
+            image = ((BufferedImage) representation).getSubimage(super.getOffSetX(),
+                super.getOffSetY(), 32, 32);
     }
 }
