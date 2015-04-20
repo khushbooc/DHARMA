@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b4cf7a0-c22f-4b38-a329-fdbeef2e8a6d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/Ability.java" afterPath="$PROJECT_DIR$/src/model/ability/Ability.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/AngularAbility.java" afterPath="$PROJECT_DIR$/src/model/ability/AngularAbility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/Attack.java" afterPath="$PROJECT_DIR$/src/model/ability/Attack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/Cleave.java" afterPath="$PROJECT_DIR$/src/model/ability/Cleave.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/ConeOfCold.java" afterPath="$PROJECT_DIR$/src/model/ability/ConeOfCold.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/DetectRemoveTrap.java" afterPath="$PROJECT_DIR$/src/model/ability/DetectRemoveTrap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/FireNova.java" afterPath="$PROJECT_DIR$/src/model/ability/FireNova.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/Frostbolt.java" afterPath="$PROJECT_DIR$/src/model/ability/Frostbolt.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/LinearAbility.java" afterPath="$PROJECT_DIR$/src/model/ability/LinearAbility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/PickPocket.java" afterPath="$PROJECT_DIR$/src/model/ability/PickPocket.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/ProjectileAbility.java" afterPath="$PROJECT_DIR$/src/model/ability/ProjectileAbility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/RadialAbility.java" afterPath="$PROJECT_DIR$/src/model/ability/RadialAbility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/RadiusAbility.java" afterPath="$PROJECT_DIR$/src/model/ability/RadiusAbility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/RoundHouseSmash.java" afterPath="$PROJECT_DIR$/src/model/ability/RoundHouseSmash.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/SelfAbility.java" afterPath="$PROJECT_DIR$/src/model/ability/SelfAbility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/Smash.java" afterPath="$PROJECT_DIR$/src/model/ability/Smash.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/SmasherLibrary.java" afterPath="$PROJECT_DIR$/src/model/ability/SmasherLibrary.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/statistics/SmasherStats.java" afterPath="$PROJECT_DIR$/src/model/statistics/SmasherStats.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/SneakLibrary.java" afterPath="$PROJECT_DIR$/src/model/ability/SneakLibrary.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/statistics/SneakStats.java" afterPath="$PROJECT_DIR$/src/model/statistics/SneakStats.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/statistics/Stats.java" afterPath="$PROJECT_DIR$/src/model/statistics/Stats.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ability/SummonerLibrary.java" afterPath="$PROJECT_DIR$/src/model/ability/SummonerLibrary.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/statistics/SummonerStats.java" afterPath="$PROJECT_DIR$/src/model/statistics/SummonerStats.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/MainMenuView.java" afterPath="$PROJECT_DIR$/src/view/MainMenuView.java" />
     </list>
     <ignored path="iteration 3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,86 +25,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SelfAbility.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/ability/SelfAbility.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RoundHouseSmash.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/ability/RoundHouseSmash.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Smash.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/ability/Smash.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SneakLibrary.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/ability/SneakLibrary.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SmasherLibrary.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/ability/SmasherLibrary.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SummonerLibrary.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/ability/SummonerLibrary.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SmasherStats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/statistics/SmasherStats.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SneakStats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/statistics/SneakStats.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Stats.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/statistics/Stats.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -137,12 +35,96 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SummonerStats.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SummonerStats.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/statistics/SummonerStats.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.2689655">
+            <state vertical-scroll-proportion="0.0">
               <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InventoryPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/InventoryPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainMenuButton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/MainMenuButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/View.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainMenuView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/MainMenuView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CharacterButton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/CharacterButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateCharacterView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/CreateCharacterView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+              <folding>
+                <element signature="e#367#394#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EntityView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/EntityView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/view/GameView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.49655172">
+              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -160,7 +142,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/model/inventory/Inventory.java" />
         <option value="$PROJECT_DIR$/src/model/inventory/Chest.java" />
         <option value="$PROJECT_DIR$/src/model/inventory/TwoHandedW.java" />
         <option value="$PROJECT_DIR$/src/model/inventory/NonEquipableItem.java" />
@@ -211,6 +192,7 @@
         <option value="$PROJECT_DIR$/src/model/statistics/SneakStats.java" />
         <option value="$PROJECT_DIR$/src/model/statistics/Stats.java" />
         <option value="$PROJECT_DIR$/src/model/statistics/SummonerStats.java" />
+        <option value="$PROJECT_DIR$/src/view/MainMenuView.java" />
       </list>
     </option>
   </component>
@@ -922,12 +904,12 @@
       <workItem from="1429340188248" duration="31000" />
       <workItem from="1429381269684" duration="4376000" />
       <workItem from="1429493247266" duration="1661000" />
-      <workItem from="1429495088719" duration="2329000" />
+      <workItem from="1429495088719" duration="3789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31681000" />
+    <option name="totallyTimeSpent" value="33141000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1138,38 +1120,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/InventoryPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/MainMenuButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/MainMenuView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/MapView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22758621">
@@ -1183,42 +1133,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/EntityView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/GameView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/CharacterButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/CreateCharacterView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08275862">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-          <folding>
-            <element signature="e#367#394#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1460,9 +1374,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/statistics/SummonerStats.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2689655">
+        <state vertical-scroll-proportion="0.0">
           <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/InventoryPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/MainMenuButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/MainMenuView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/CharacterButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/CreateCharacterView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding>
+            <element signature="e#367#394#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/EntityView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/GameView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49655172">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
