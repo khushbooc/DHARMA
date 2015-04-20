@@ -1,18 +1,17 @@
 package utilities;
 
+import model.occupation.Smasher;
+import model.occupation.Sneak;
+import model.occupation.Summoner;
+
+import javax.imageio.ImageIO;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-import javax.imageio.ImageIO;
-
-import model.occupation.Summoner;
-import model.occupation.Smasher;
-import model.occupation.Sneak;
-
-public class SpriteSheetUtility {
+public class SpriteSheetUtility extends RepresentationBuilder {
 	private String imagePath="";
 	private BufferedImage image;
 	private BufferedImage[] spriteArray = new BufferedImage[10];
@@ -25,7 +24,7 @@ public class SpriteSheetUtility {
 		imagePath = "src/res/summoner.gif";
 		initialize();
 	}
-	
+
 	public SpriteSheetUtility(Summoner s) {
 		imagePath = "src/res/summoner.gif";
 		initialize();
@@ -114,5 +113,14 @@ public class SpriteSheetUtility {
 		BufferedImage subSprite = image.getSubimage(offsetX , offsetY , width, height);
 		return subSprite;
 	}
-	
+
+	@Override
+	public void setRepresentation(Object representation) {
+		setRepresentation((String) representation);
+	}
+
+	public void setRepresentation(String imagePath)
+	{
+		this.imagePath = imagePath;
+	}
 }
