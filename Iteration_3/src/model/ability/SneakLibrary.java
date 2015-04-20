@@ -1,5 +1,8 @@
 package model.ability;
 
+/*
+ * @author Aaron Iglesias
+ */
 public class SneakLibrary extends AbilityLibrary
 {
     public void SneakLibrary()

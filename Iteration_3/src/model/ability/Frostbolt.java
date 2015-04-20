@@ -3,6 +3,9 @@ package model.ability;
 import model.entity.Entity;
 import model.statistics.SummonerStats;
 
+/*
+ * @author Aaron Iglesias
+ */
 public class Frostbolt extends ProjectileAbility
 {
 	private int damage;

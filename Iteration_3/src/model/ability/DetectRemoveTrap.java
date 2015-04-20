@@ -6,6 +6,9 @@ import model.statistics.SneakStats;
 import model.statistics.Stats;
 import model.statistics.SummonerStats;
 
+/*
+ * @author Aaron Iglesias
+ */
 public class DetectRemoveTrap extends RadialAbility {
 
     public DetectRemoveTrap()

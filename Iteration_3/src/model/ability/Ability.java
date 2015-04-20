@@ -3,6 +3,9 @@ import model.entity.Entity;
 
 import java.util.Random;
 
+/*
+ * @author Aaron Iglesias
+ */
 public abstract class Ability extends GameAbility{
 	protected String name;
 	protected int base;

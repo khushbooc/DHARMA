@@ -1,4 +1,8 @@
 package model.statistics;
+
+/*
+ * @author Aaron Iglesias
+ */
 public class SummonerStats extends Stats
 {
 	private int enchantment;

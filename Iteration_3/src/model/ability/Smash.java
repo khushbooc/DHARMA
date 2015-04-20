@@ -4,6 +4,9 @@ import model.entity.Entity;
 import model.statistics.SmasherStats;
 import model.statistics.Stats;
 
+/*
+ * @author Aaron Iglesias
+ */
 public class Smash extends LinearAbility
 {
 	public Smash()

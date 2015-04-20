@@ -5,6 +5,9 @@ import model.statistics.SmasherStats;
 import model.statistics.Stats;
 import model.statistics.SummonerStats;
 
+/*
+ * @author Aaron Iglesias
+ */
 public class Cleave extends RadialAbility {
 
     public Cleave()

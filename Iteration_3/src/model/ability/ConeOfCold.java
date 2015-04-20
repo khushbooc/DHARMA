@@ -4,6 +4,9 @@ import model.entity.Entity;
 import model.statistics.Stats;
 import model.statistics.SummonerStats;
 
+/*
+ * @author Aaron Iglesias
+ */
 public class ConeOfCold extends RadialAbility {
 
     public ConeOfCold()

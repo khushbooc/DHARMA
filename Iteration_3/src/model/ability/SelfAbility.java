@@ -2,6 +2,10 @@ package model.ability;
 import model.entity.Entity;
 
 import java.util.Random;
+
+/*
+ * @author Aaron Iglesias
+ */
 public abstract class SelfAbility extends Ability
 {
     public SelfAbility()

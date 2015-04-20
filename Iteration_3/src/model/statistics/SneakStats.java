@@ -1,4 +1,8 @@
 package model.statistics;
+
+/*
+ * @author Aaron Iglesias
+ */
 public class SneakStats extends Stats
 {
 	private int pickPocket;

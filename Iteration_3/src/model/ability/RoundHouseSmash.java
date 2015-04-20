@@ -4,6 +4,9 @@ import model.entity.Entity;
 import model.statistics.SmasherStats;
 import model.statistics.Stats;
 
+/*
+ * @author Aaron Iglesias
+ */
 public class RoundHouseSmash extends RadialAbility {
 
     public RoundHouseSmash()

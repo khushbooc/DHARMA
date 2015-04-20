@@ -2,6 +2,9 @@ package model.ability;
 
 import model.entity.Entity;
 
+/*
+ * @author Aaron Iglesias
+ */
 public abstract class LinearAbility extends RadiusAbility
 {
 	protected int radius;

@@ -1,4 +1,8 @@
 package model.statistics;
+
+/*
+ * @author Aaron Iglesias
+ */
 public class SmasherStats extends Stats
 {
 	private int oneHandedWeapon;

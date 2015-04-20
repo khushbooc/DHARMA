@@ -1,5 +1,8 @@
 package model.ability;
 
+/*
+ * @author Aaron Iglesias
+ */
 public class SummonerLibrary extends AbilityLibrary
 {
     public void SummonerLibrary()
