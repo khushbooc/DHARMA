@@ -17,6 +17,7 @@ public class MainMenuView extends AbstractView{
     private JLabel startGameLabel;
     private JLabel loadGameLabel;
     private JLabel quitGameLabel;
+    private JLabel currentSelection;
     // private JLabel background;
     private JLabel title;
     private Game game;
@@ -101,7 +102,16 @@ public class MainMenuView extends AbstractView{
         int length = labels.size();
         //GameLogger.getInstance().logMessage("length is " + length);
         //GameLogger.getInstance().logMessage("y is " + y_toHighlight);
-        labels.get(y_toHighlight%length).setForeground(Color.red);
+        if(y_toHighlight < 0)
+            //getting the highlighter to wrap properly
+            y_toHighlight = Math.abs(Math.abs(y_toHighlight) - length);
+
+        setSelected(labels.get(y_toHighlight%length));
+    }
+
+    private void setSelected(JLabel select) {
+        select.setForeground(Color.red);
+        this.currentSelection = select;
     }
 
 
@@ -125,6 +135,11 @@ public class MainMenuView extends AbstractView{
     @Override
     public void prevView() {
         //go back duh
+    }
+
+    @Override
+    public void onSelection() {
+
     }
 
 }

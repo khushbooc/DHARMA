@@ -35,4 +35,6 @@ public class RunGame {
                 System.out.println(game_logger.getMessage());
         }
     }
+
+
 }

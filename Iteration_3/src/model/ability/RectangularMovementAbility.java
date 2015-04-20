@@ -14,7 +14,6 @@ public class RectangularMovementAbility extends GameAbility{
 
     private RectangularDirection direction;
     //TODO: a cursor for highlighting a selected item
-    //private Cursor cursor;
 
     public RectangularMovementAbility(Cursor owner, RectangularDirection direction) {
         super(owner);

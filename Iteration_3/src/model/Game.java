@@ -74,5 +74,9 @@ public class Game {
     public void updateView() {
         this.view.updateView();
     }
+
+    public void onSelection() {
+        this.view.onSelection();
+    }
 }
 

@@ -41,4 +41,8 @@ public class View {
         //forgive me father for I have sinned :(
         return this.currentView;
     }
+
+    public void onSelection() {
+        currentView.onSelection();
+    }
 }

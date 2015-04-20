@@ -176,4 +176,9 @@ public class CreateCharacterView extends AbstractView {
     public void prevView() {
         //TODO
     }
+
+    @Override
+    public void onSelection() {
+        //TODO
+    }
 }

@@ -5,6 +5,7 @@ import model.Game;
 import model.GameLogger;
 import model.ability.GameAbility;
 import model.ability.RectangularMovementAbility;
+import model.ability.SelectionGameAbility;
 import model.direction.RectangularDirection;
 import model.entity.Cursor;
 import view.MainMenuView;
@@ -22,24 +23,26 @@ public class MainMenuState extends GameState {
         this.cursor = new Cursor(); //cursor for selecting the menu options
         //default key set
         GameLogger.getInstance().logMessage("created cursor");
+
         for (RectangularDirection dir : RectangularDirection.values()) {
             game.getController().addKeyListenerToSet(RectangularDirectionKeyListenerFactory(cursor, dir));
         }
-        RectangularMovementAbility direct = new RectangularMovementAbility(cursor, RectangularDirection.NORTH);
-        game.getController().addKeyListenerToSet(new DharmaKeyListener(direct, 'a'));
+
+        game.getController().addKeyListenerToSet(SelectionKeyListenerFactory(cursor));
 
         this.game.addControllerToCurrentView();
     }
 
     public void update() {
         //I can't think of a better (OOP) way :(
-        ((MainMenuView) game.getView().getCurrentView()).highlightLabel(Math.abs(cursor.getLocation().getY()));
+        ((MainMenuView) game.getView().getCurrentView()).highlightLabel(cursor.getLocation().getY());
+        if(cursor.isSelected()) {
+            cursor.setUnselected();
+            game.onSelection();
+        }
         game.updateView();
     }
 
-    private void highLightSelection() {
-
-    }
 
     //Parameterized Factory Method
     private DharmaKeyListener RectangularDirectionKeyListenerFactory(Cursor owner, RectangularDirection direction) {
@@ -55,6 +58,14 @@ public class MainMenuState extends GameState {
         else
             javaKeyCode = DharmaKeyListener.getJavaKeyCodeForKeyBoardRight();
 
-        return (new DharmaKeyListener(rectMove,javaKeyCode));
+        return (new DharmaKeyListener(rectMove, javaKeyCode));
+    }
+
+    private DharmaKeyListener SelectionKeyListenerFactory(Cursor owner) {
+        GameAbility selectAbilility = new SelectionGameAbility(owner);
+
+        int javaKeyCode = DharmaKeyListener.getJavaKeyCodeForKeyBoardEnter();
+
+        return (new DharmaKeyListener(selectAbilility, javaKeyCode));
     }
 }

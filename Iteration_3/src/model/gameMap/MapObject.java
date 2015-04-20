@@ -32,8 +32,13 @@ public abstract class MapObject extends Observable{
         this.location = location;
     }
 
+    //use locationDelta in favor of this method
     public void setLocation(int x, int y){
         this.location = new Location(x,y);
+    }
+
+    public void locationDelta(int x, int y) {
+
     }
 
 
