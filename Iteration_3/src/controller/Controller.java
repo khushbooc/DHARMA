@@ -16,6 +16,7 @@ public class Controller implements KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {
         // TODO Auto-generated method stub
+        GameLogger.getInstance().logMessage("Controller.keyTyped() was called!!");
         //do nothing
 
     }
@@ -23,14 +24,16 @@ public class Controller implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         //forward the event to the set to let it handle it
-        keyListenerSet.handleKeyPressedEvent(e);
         GameLogger.getInstance().logMessage("Controller.keyPressed() was called!!");
+        keyListenerSet.handleKeyPressedEvent(e);
+
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         //do nothing
         //might need this to do something later
+        GameLogger.getInstance().logMessage("Controller.keyReleased() was called!!");
     }
 
     public void setKeyListenerSet(KeyListenerSet newKeySet) {

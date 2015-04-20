@@ -2,6 +2,7 @@ package view;
 
 import controller.Controller;
 import model.Game;
+import model.GameLogger;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -24,6 +25,7 @@ public class MainMenuView extends AbstractView{
 
     private JPanel backGroundPanel;
     private JFrame frame;
+    private Container content;
 
     public MainMenuView(){
         super();
@@ -57,7 +59,7 @@ public class MainMenuView extends AbstractView{
         backGroundPanel.add(startGameButton);
         backGroundPanel.add(loadGameButton);
         backGroundPanel.add(quitGameButton);
-        Container content = frame.getContentPane();
+        this.content = frame.getContentPane();
         content.add(backGroundPanel);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
         frame.setFocusable(true);
@@ -65,6 +67,7 @@ public class MainMenuView extends AbstractView{
         frame.setLayout(new FlowLayout(FlowLayout.CENTER));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+
 
 
 
@@ -108,11 +111,15 @@ public class MainMenuView extends AbstractView{
     }
 
     public void addKeyListenerToCurrentView(Controller controller) {
+
         frame.addKeyListener(controller);
         backGroundPanel.addKeyListener(controller);
-        startGameButton.addKeyListener(controller);
+        content.setFocusable(true);
+        content.addKeyListener(controller);
+        /*startGameButton.addKeyListener(controller);
         loadGameButton.addKeyListener(controller);
-        quitGameButton.addKeyListener(controller);
+        quitGameButton.addKeyListener(controller);*/
+        GameLogger.getInstance().logMessage("added controller to the views");
     }
 
 }
