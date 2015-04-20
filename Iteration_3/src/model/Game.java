@@ -3,6 +3,9 @@ package model;
 import controller.Controller;
 import model.entity.Avatar;
 import model.occupation.Occupation;
+import model.occupation.Smasher;
+import model.occupation.Sneak;
+import model.occupation.Summoner;
 import view.View;
 import model.states.*;
 

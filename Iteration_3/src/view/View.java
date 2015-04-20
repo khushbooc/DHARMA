@@ -9,6 +9,6 @@ public class View {
     }
 
     public void renderMainMenu(){
-        mainMenuView.render();
+        //mainMenuView.render();
     }
 }
