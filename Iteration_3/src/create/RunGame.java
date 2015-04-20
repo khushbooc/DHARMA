@@ -12,17 +12,18 @@ public class RunGame {
 
     private Controller controller; //The Controller
     private Game game; //The 'Model'
-    // private View viewClass; //is this the right one?
+    private View view; //is this the right one?
 
     private RunGame() {
         //TODO: make Game(Controller, View)
         this.controller = new Controller();
         this.game = new Game(controller);
 
-        // this.view = new View();
+        this.view = new View();
     }
 
     protected void run() {
+        view.displayMainMenu();
         while(game.isRunning()) {
             game.update();
         }

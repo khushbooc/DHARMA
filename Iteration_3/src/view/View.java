@@ -8,7 +8,7 @@ public class View {
         mainMenuView = new MainMenuView();
     }
 
-    public void renderMainMenu(){
-        //mainMenuView.render();
+    public void displayMainMenu(){
+        mainMenuView.render();
     }
 }
