@@ -10,10 +10,9 @@ public class Avatar extends Entity {
     private Gold gold;
 
     public Avatar(Occupation oc){
-        super( null, oc, null, null);
-        this.inventory = new Inventory();
-        this.equicontainer = new EquipmentContainer();
+        super(oc);
     }
+
     public Avatar(Location location, Occupation occupation, Inventory inventory, EquipmentContainer equipmentContainer){
         super(location, occupation,inventory, equipmentContainer);
         gold = new Gold(10);// avatar has 10 golds initially

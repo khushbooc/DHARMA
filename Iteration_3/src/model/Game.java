@@ -2,6 +2,7 @@ package model;
 
 import controller.Controller;
 import model.entity.Avatar;
+import model.occupation.Occupation;
 import view.View;
 import model.states.*;
 
@@ -29,12 +30,24 @@ public class Game {
         return this.view;
     }*/
 
-    public void setNewGameState() {
+    private void setNewGameState() {
         this.game_state = new MainMenuState(this);
     }
 
-    public void newPlayingState(Avatar avatar) {
+    public void newSmasherGame() {
+        newPlayingState(Occupation.smasherFactory());
+    }
 
+    public void newSneakGame() {
+        newPlayingState(Occupation.sneakFactory());
+    }
+
+    public void newSummonerGame() {
+        newPlayingState(Occupation.summonerFactory());
+    }
+
+    private void newPlayingState(Occupation occupation) {
+        this.game_state = new PlayingState(this, new Avatar(occupation));
     }
 
     public void resumePlayingState() {
@@ -50,25 +63,7 @@ public class Game {
     }
 
     public void update() {
-        //do game stuff
+        this.game_state.update();
     }
-	
-	/*public Game(Avatar avatar) {
-		this.avatar = avatar;
-	}
-	
-	public Game(Occupation occupation, String name) {
-		//avatar = new Avatar(occupation);
-		//build the Avatar equipment
-		//avatar.setName(name);
-	}
-	public Avatar getAvatar() {
-		return avatar;
-	}
-
-	public void setAvatar(Avatar avatar) {
-		this.avatar = avatar;
-	}*/
-	
 }
 

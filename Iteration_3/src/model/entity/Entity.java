@@ -25,7 +25,8 @@ public abstract class Entity extends MapObject{
         this.inventory = inventory;
         this.equicontainer= equicontainer;
     }
-    public void Entity(Occupation oc){
+    public Entity(Occupation oc){
+        super();
         this.occupation  = oc;
         this.inventory = new Inventory();
         this.equicontainer = new EquipmentContainer();

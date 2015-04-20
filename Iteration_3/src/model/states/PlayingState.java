@@ -15,8 +15,9 @@ public class PlayingState extends GameState {
     private Avatar avatar;
     private ArrayList<Entity> entities;
 
-    public PlayingState(Game game) {
+    public PlayingState(Game game, Avatar av) {
         super(game);
+        this.avatar = av;
     }
 
     public void update() {

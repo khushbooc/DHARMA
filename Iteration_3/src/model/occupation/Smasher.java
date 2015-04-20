@@ -1,15 +1,14 @@
 package model.occupation;
 
 import model.ability.AbilityLibrary;
+import model.ability.SmasherLibrary;
 import model.statistics.SmasherStats;
-import model.statistics.Stats;
 import utilities.SpriteSheetUtility;
 
 public class Smasher extends Occupation {
-	//private SmasherLibrary smasherLibrary;
-	private SmasherStats smasherStats;
-
 	public Smasher() {
+        super();
+        this.stat = new SmasherStats();
 		//super(this.abilitylibrary, this.stat);
 		// TODO Auto-generated constructor stub
 	}
@@ -19,10 +18,10 @@ public class Smasher extends Occupation {
 		return new SpriteSheetUtility(this);
 }
 
-	@Override
-	public SmasherStats getStats()
-	{
-		return smasherStats;
-	}
+    @Override
+    public AbilityLibrary getDefaultAbilityLibrary() {
+        return new SmasherLibrary();
+    }
+
 	
 }
