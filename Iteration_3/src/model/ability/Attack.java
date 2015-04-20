@@ -59,10 +59,11 @@ public class Attack extends LinearAbility {
         base = getBase();
 
         Stats stats = avatar.getOccupation().getStats();
+        Stats entityStats = entity.getOccupation().getStats();
 
         level = stats.getLevel();
         offense = stats.getOffense();
-        defense = stats.getArmor();
+        defense = entityStats.getArmor();
         skill = 0;
         avatarCrit = (int) Math.pow(2,stats.getCritical());
 

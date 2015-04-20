@@ -27,16 +27,18 @@ public class Mount extends FriendlyNPC {
 //            return;
 //        }
 //
-//    }
+//  }
     @Override
     public void addToInventory(TakeableItem takeableitem){
         this.getInventory().add(takeableitem);
     }
+
     @Override
     public void equipItem(EquipableItem equiItem){
         this.getEquipmentContainer().add(equiItem);
         this.getInventory().add(equiItem);
     }
+
     @Override
     public void removeItem(TakeableItem ti){
         this.getInventory().remove(ti);
@@ -47,4 +49,5 @@ public class Mount extends FriendlyNPC {
         this.getEquipmentContainer().remove(eqi);
         this.getInventory().add(eqi);
     }
+
 }

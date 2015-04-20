@@ -56,10 +56,11 @@ public class ConeOfCold extends RadialAbility {
         base = getBase();
 
         SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
+        Stats entityStats = entity.getOccupation().getStats();
 
         level = stats.getLevel();
         offense = stats.getSpellPower();
-        defense = stats.getArmor();
+        defense = entityStats.getArmor();
         skill = stats.getBoon();
         avatarCrit = (int) Math.pow(2,stats.getCritical());
 

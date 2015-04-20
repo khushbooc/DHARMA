@@ -1,22 +1,22 @@
 package model.ability;
 
 import model.entity.Entity;
+import model.statistics.SneakStats;
 import model.statistics.Stats;
-import model.statistics.SummonerStats;
 
-public class FireNova extends RadialAbility {
+public class PickPocket extends RadialAbility {
 
-    public FireNova()
+    public PickPocket()
     {
-        base = 90;
+        base = 10;
         cost = 1;
-        levelRequirement = 2;
-        name = "Fire Nova";
+        levelRequirement = 1;
+        name = "Pick Pocket";
         radius = 3;
         degree = 360;
     }
 
-    public FireNova(String name, int cost, int levelRequirement, int radius, int base, int degree)
+    public PickPocket(String name, int cost, int levelRequirement, int radius, int base, int degree)
     {
         super(name, cost, levelRequirement, radius, base, degree);
     }
@@ -45,21 +45,23 @@ public class FireNova extends RadialAbility {
     public void scaleEffect(Entity avatar, Entity entity)
     {
         int critical;
-        int avatarCrit, base, damage;
-        double random, criticalBonus, modifier, offense, defense, level, skill;
+        int avatarCrit, base, moneyStolen;
+        double random, criticalBonus, defense, offense, modifier, level, skill;
 
         base = getBase();
 
-        SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
+        SneakStats stats = (SneakStats) avatar.getOccupation().getStats();
         Stats entityStats = entity.getOccupation().getStats();
 
         level = stats.getLevel();
-        offense = stats.getSpellPower();
-        defense = entityStats.getArmor();
-        skill = stats.getBoon();
+        skill = stats.getPickPocket();
         avatarCrit = (int) Math.pow(2,stats.getCritical());
 
         random = (double) random(85,100) / 100;
+
+        offense = stats.getAgility();
+        defense = entityStats.getArmor();
+
         critical = random(1,16 / avatarCrit);
         if(critical == 1)
             criticalBonus = 1.5;
@@ -68,9 +70,9 @@ public class FireNova extends RadialAbility {
 
         modifier = random * criticalBonus * (1 + 0.5 * skill / 125);
 
-        damage = (int) Math.floor(((2 * level + 10) / 250 * offense / defense * base + 2) * modifier);
+        moneyStolen = (int) Math.floor(((2 * level + 10) / 250 * offense/defense * base + 2) * modifier);
 
-        setEffect(damage);
+        setEffect(moneyStolen);
     }
 
     @Override

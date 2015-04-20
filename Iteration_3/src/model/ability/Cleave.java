@@ -57,10 +57,11 @@ public class Cleave extends RadialAbility {
         base = getBase();
 
         SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
+        Stats entityStats = entity.getOccupation().getStats();
 
         level = stats.getLevel();
         offense = stats.getOffense();
-        defense = stats.getArmor();
+        defense = entityStats.getArmor();
         skill = stats.getTwoHandedWeapon(); // fix this later
         avatarCrit = (int) Math.pow(2,stats.getCritical());
 

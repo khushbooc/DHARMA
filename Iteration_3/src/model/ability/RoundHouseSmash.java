@@ -2,6 +2,7 @@ package model.ability;
 
 import model.entity.Entity;
 import model.statistics.SmasherStats;
+import model.statistics.Stats;
 
 public class RoundHouseSmash extends RadialAbility {
 
@@ -51,10 +52,11 @@ public class RoundHouseSmash extends RadialAbility {
         base = getBase();
 
         SmasherStats stats = (SmasherStats) avatar.getOccupation().getStats();
+        Stats entityStats = entity.getOccupation().getStats();
 
         level = stats.getLevel();
         offense = stats.getOffense();
-        defense = stats.getArmor();
+        defense = entityStats.getArmor();
         skill = stats.getTwoHandedWeapon();
         avatarCrit = (int) Math.pow(2,stats.getCritical());
 
