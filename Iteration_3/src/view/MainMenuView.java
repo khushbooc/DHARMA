@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class MainMenuView extends View{
+public class MainMenuView extends AbstractView{
 	private Font titleFont = new Font("serif", Font.PLAIN, 20);
 	private Font buttonFont = new Font("serif", Font.PLAIN, 18);
 	
