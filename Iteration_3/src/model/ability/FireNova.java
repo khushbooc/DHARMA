@@ -27,7 +27,7 @@ public class FireNova extends RadialAbility {
     }
 
     @Override
-    public void use() 
+    public void use()
     {
         ArrayList<Entity> entityList = gameMap.getMapObjectList();
         SummonerStats stats = (SummonerStats) avatar.getOccupation().getStats();
