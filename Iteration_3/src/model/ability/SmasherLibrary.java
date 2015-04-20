@@ -1,5 +1,8 @@
 package model.ability;
 
+/*
+ * @author Aaron Iglesias
+ */
 public class SmasherLibrary extends AbilityLibrary
 {
     public void SmasherLibrary()

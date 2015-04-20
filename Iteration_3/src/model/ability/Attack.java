@@ -3,6 +3,9 @@ package model.ability;
 import model.entity.Entity;
 import model.statistics.Stats;
 
+/*
+ * @author Aaron Iglesias
+ */
 public class Attack extends LinearAbility {
 
     public Attack()

@@ -1,6 +1,9 @@
 package model.ability;
 import model.entity.Entity;
 
+/*
+ * @author Aaron Iglesias
+ */
 public abstract class AngularAbility extends RadiusAbility
 {
 	protected int degree;

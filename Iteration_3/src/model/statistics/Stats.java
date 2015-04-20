@@ -1,5 +1,8 @@
 package model.statistics;
 
+/*
+ * @author Aaron Iglesias
+ */
 public abstract class Stats
 {
 	// primary stats

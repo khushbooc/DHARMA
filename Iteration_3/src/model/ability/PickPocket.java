@@ -4,6 +4,9 @@ import model.entity.Entity;
 import model.statistics.SneakStats;
 import model.statistics.Stats;
 
+/*
+ * @author Aaron Iglesias
+ */
 public class PickPocket extends RadialAbility {
 
     public PickPocket()
