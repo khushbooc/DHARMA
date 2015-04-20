@@ -7,7 +7,10 @@ import model.GameLogger;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 
@@ -25,7 +28,6 @@ public class MainMenuView extends AbstractView{
 
     private JPanel backGroundPanel;
     private JFrame frame;
-    private Container content;
 
     public MainMenuView(){
         super();
@@ -35,53 +37,54 @@ public class MainMenuView extends AbstractView{
         quitGameButton = new ExitGameButton("Quit Game", buttonFont);
 
 
-        title = new JLabel("The Melting Point");
+        title = new JLabel("DHARMA");
         title.setFont(titleFont.deriveFont(80f));
+//        BufferedImage img = null;
+//        try{
+//            img = ImageIO.read(new File("src/res/main_menu.gif"));
+//        }
+//        catch (Exception e){
+//            e.printStackTrace();
+//        }
 
         backGroundPanel = new ImagePanel("src/res/main_menu.gif");
-
-        // Insets insets = backGroundPanel.getInsets();
-        // Dimension size = backGroundPanel.getPreferredSize();
-
-		/*JButton ghost = new JButton();
-		ghost.setPreferredSize(new Dimension(10, 35));
-		ghost.setContentAreaFilled(false);
-		ghost.setBorderPainted(false);*/
-
         backGroundPanel.setPreferredSize(new Dimension(600, 600));
-        backGroundPanel.setLayout(new BorderLayout());
+        //backGroundPanel = new ImagePanel();
+        backGroundPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 700, 5));
+
 
         startGameButton.setMaximumSize(new Dimension(150,50));
         loadGameButton.setMaximumSize(new Dimension(150,50));
         quitGameButton.setMaximumSize(new Dimension(150,50));
 
+
         backGroundPanel.add(title);
         backGroundPanel.add(startGameButton);
+
         backGroundPanel.add(loadGameButton);
-        backGroundPanel.add(quitGameButton);
-        this.content = frame.getContentPane();
-        content.add(backGroundPanel);
-        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+//        backGroundPanel.add(quitGameButton);
         frame.setFocusable(true);
         frame.setResizable(true);
         frame.setLayout(new FlowLayout(FlowLayout.CENTER));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+        frame.setPreferredSize(new Dimension(1280, 800));
+        //Container content = frame.getContentPane();
+        //content.add(backGroundPanel);
+        frame.getContentPane().add(backGroundPanel);
         frame.pack();
-
-
-
-
     }
     public void render(){
         System.out.println("I am in render");
         frame.setVisible(true);
+        frame.repaint();
 
     }
     private class NewGameButton extends JButton{
 
         public NewGameButton(String str, Font font){
             super();
-            setForeground(Color.WHITE);
+            setForeground(Color.BLACK);
             setFont(font.deriveFont(40f));
             setContentAreaFilled(false);
             setBorderPainted(false);
@@ -94,7 +97,7 @@ public class MainMenuView extends AbstractView{
     private class LoadGameButton extends JButton{
         public LoadGameButton(String str, Font font){
             super();
-            setForeground(Color.WHITE);
+            setForeground(Color.BLACK);
             setFont(font.deriveFont(40f));
             setContentAreaFilled(false);
             setBorderPainted(false);
@@ -114,8 +117,8 @@ public class MainMenuView extends AbstractView{
 
         frame.addKeyListener(controller);
         backGroundPanel.addKeyListener(controller);
-        content.setFocusable(true);
-        content.addKeyListener(controller);
+        //content.setFocusable(true);
+        //content.addKeyListener(controller);
         /*startGameButton.addKeyListener(controller);
         loadGameButton.addKeyListener(controller);
         quitGameButton.addKeyListener(controller);*/
