@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
-public class CreateCharacterView extends View {
+public class CreateCharacterView extends AbstractView {
 	private JButton backGameButton;
 	private JButton startsneakButton;
 	private JButton startsmasherButton;

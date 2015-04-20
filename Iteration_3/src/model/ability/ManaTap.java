@@ -24,7 +24,7 @@ public class ManaTap extends SelfAbility
     }
 
     @Override
-    public void scaleEffect(Entity avatar)
+    protected void scaleEffect(Entity avatar)
     {
         int randNum;
         int avatarCrit, damage;

@@ -51,7 +51,7 @@ public class Cleave extends RadialAbility {
     }
 
     @Override
-    public void scaleEffect(Entity avatar, Entity entity)
+    protected void scaleEffect(Entity avatar, Entity entity)
     {
         int critical;
         int avatarCrit, base, damage;

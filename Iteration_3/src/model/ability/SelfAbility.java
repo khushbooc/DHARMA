@@ -18,6 +18,6 @@ public abstract class SelfAbility extends Ability
         super(name, cost, levelRequirement, base, effect);
     }
 
-    public abstract void scaleEffect(Entity avatar);
+    protected abstract void scaleEffect(Entity avatar);
     public abstract void use(Entity avatar);
 }

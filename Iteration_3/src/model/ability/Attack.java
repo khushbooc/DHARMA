@@ -27,7 +27,7 @@ public class Attack extends LinearAbility {
     }
 
     @Override
-    public boolean inRadius(Entity avatar, Entity entity) {
+    protected boolean inRadius(Entity avatar, Entity entity) {
         return false;
     }
 
@@ -53,7 +53,7 @@ public class Attack extends LinearAbility {
     }
 
     @Override
-    public void scaleEffect(Entity avatar, Entity entity)
+    protected void scaleEffect(Entity avatar, Entity entity)
     {
         int critical;
         int avatarCrit, base, damage;

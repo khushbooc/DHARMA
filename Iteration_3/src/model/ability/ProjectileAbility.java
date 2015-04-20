@@ -41,7 +41,7 @@ public abstract class ProjectileAbility extends Ability
         this.base = base;
     }
 
-    public abstract boolean inRadius(Entity avatar, Entity entity);
-    public abstract void scaleEffect(Entity avatar, Entity entity);
+    protected abstract boolean inRadius(Entity avatar, Entity entity);
+    protected abstract void scaleEffect(Entity avatar, Entity entity);
     public abstract void use(Entity avatar);
 }
