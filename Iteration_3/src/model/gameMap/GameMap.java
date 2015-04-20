@@ -17,7 +17,9 @@ import view.View;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 
@@ -234,6 +236,23 @@ public class GameMap extends View
             min_y=3;
 
 
+    }
+    
+    public Tile[][] getMap(){
+    	return map;
+    }
+    
+    public void saveGame() throws IOException{
+    	BufferedWriter bw = new BufferedWriter(new FileWriter(new File("/src/res/file")));
+    	for(int i = 0; i < map.length; i++){
+    		for(int j = 0; j < map[0].length; j++){
+    			bw.write(map[i][j].getLocation() + "," + map[i][j].getAreaEffect() + "," +
+    					map[i][j].getTerrain() + "," + map[i][j].getItem() + "," +	
+    					map[i][j].getEntity() + "\n");
+    		}
+    	}
+    	bw.flush();
+    	bw.close();
     }
 
 }
