@@ -15,6 +15,8 @@ public abstract class GameAbility {
     protected MapObject owner;
     protected DharmaKeyListener keyListener; //not sure if this is needed
 
+    public GameAbility() {}
+
     public GameAbility(MapObject owner) {
         this.owner = owner;
     }
