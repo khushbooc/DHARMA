@@ -11,4 +11,8 @@ public class ExitingState extends GameState{
         super(game);
         this.isRunning = false;
     }
+
+    public void update() {
+        //TODO
+    }
 }

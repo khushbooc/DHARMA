@@ -18,4 +18,8 @@ public class PlayingState extends GameState {
     public PlayingState(Game game) {
         super(game);
     }
+
+    public void update() {
+        //todo
+    }
 }
